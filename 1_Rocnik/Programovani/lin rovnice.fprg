@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-20 01:24:19 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wMTswMTowOTo1NCBvZHAuOzMxMzg="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wMTswMToyMzo1OSBvZHAuOzE7MzI0Nw=="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1Mjc7MjAyMi0xMi0yMDswMToyNDoxOSBvZHAuOzE7MzI0NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, X" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <input variable="B"/>
+            <if expression="A=0">
+                <then>
+                    <if expression="B=0">
+                        <then>
+                            <output expression="&quot;nekone&#269;n&#283; &#345;e&#353;en&#237;&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;nem&#225; &#345;e&#353;en&#237;&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="X" expression="-B/A"/>
+                    <output expression="&quot;v&#253;sledek je &quot; &amp; ToFixed(X,2)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

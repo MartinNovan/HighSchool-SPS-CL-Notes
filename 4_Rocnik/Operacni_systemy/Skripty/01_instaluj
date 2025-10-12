@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Definice proměnné
+program=$1 # Vlož první parametr do proměnné program
+log=/var/log/instalace_programu.log # Odkaz kam se má logovat
+
+sudo rm -f $log
+
+# Kontrola použití parametru
+if [ -z $1 ]; then # Pokud je parametr prázdný
+    echo "U need to specify program!"; # Vypiš hlášku pro uživatele
+    exit -1; # Ukonči skript s hodnotou -1 (můžeme použít v jiném skriptu využívající tento skript)
+fi # ukončení podmínky
+
+echo "Synchronizing repositories..."
+sudo apt update | sudo tee -a "$log" # Updnatni a loguj všechno do místa určené proměnou log
+
+echo "Installing package..."
+sudo apt install $program | sudo tee -a "$log" # Nainstaluj a zaloguj
+
+echo "Upgrading system..."
+sudo apt full-upgrade -y | sudo tee -a "$log" # Upgradni systém a zaloguj
+
+echo "Cleaning system..."
+sudo apt autoremove -y | sudo tee -a "$log" # Vyčisti systém a zaloguj

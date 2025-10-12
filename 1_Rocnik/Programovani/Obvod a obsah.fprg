@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-01 01:49:20 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wMTswMToyNjoxMCBvZHAuOzMxMjk="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wMTswMTo0OToyMCBvZHAuOzE7MzI0Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, S, o" type="Integer" array="False" size=""/>
+            <output expression="&quot;Zdejte d&#233;lku prvn&#237; strany&quot;" newline="True"/>
+            <input variable="A"/>
+            <output expression="&quot;Zadejte d&#233;lku druh&#233; strany&quot;" newline="True"/>
+            <input variable="B"/>
+            <assign variable="S" expression="A*B"/>
+            <assign variable="o" expression="2*(A+B)"/>
+            <output expression="&quot;D&#233;lka obvodu &#269;ty&#345;&#250;heln&#237;ku je &quot; &amp;o&amp; &quot; a obsah je &quot; &amp;S" newline="False"/>
+        </body>
+    </function>
+</flowgorithm>

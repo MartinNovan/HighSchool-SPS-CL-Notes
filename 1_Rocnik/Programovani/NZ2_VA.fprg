@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-01-10 01:00:16 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMS0xMDsxMjo1NDoyNCBvZHAuOzMxMzU="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMS0xMDswMTowMDoxNiBvZHAuOzE7MzIzMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="F, G, H, E" type="Real" array="False" size=""/>
+            <output expression="&quot;napi&#353;te hodnotu F&quot;" newline="True"/>
+            <input variable="F"/>
+            <output expression="&quot;Napi&#353;te hodnotu G&quot;" newline="True"/>
+            <input variable="G"/>
+            <assign variable="H" expression="F+G"/>
+            <assign variable="E" expression="sqrt(H)/4"/>
+            <output expression="&quot;V&#253;sledek je &quot; &amp;E" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

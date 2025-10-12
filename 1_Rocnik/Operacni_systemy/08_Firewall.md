@@ -1,0 +1,101 @@
+# Firewall
+- Firewall
+	- Zařízení – ochrana počítače nebo lokální počítačové sítě
+		- Před škodlivými útoky zvenčí (WAN – internet)
+- Vnější útoky
+	- U připojení počítačových sítí do Internetu
+		- Zabezpečení přístupové cesty do počítačové sítě
+	- Spojeno s monitoringem vstupních cest
+		- Získáme včas informaci o tom že se snaží někdo prolomit naši ochranu
+- **FIREWALL NENÍ ANTIVIR**
+	- Antivirový program:
+		- kontroluje obsah dat/souborů/programů
+		- Hledá škodlivý kód (řetězec dat) a porovnává se vzorky v databázi
+		- Databáze musí být vždy aktuální
+		- Zpomaluje činnost počítače
+	- Firewall: 
+		- kontroluje komunikaci
+		- Kdo s kým komunikuje (kdo posílá/přijímá data)
+		- Kontroluje IP adresy, porty, služby,…
+- Vnitřní útoky
+	- Vyřešení vnějších útoků (z internetu):
+		- Není zdaleka vyhráno
+	- Je možné škodit i uvnitř počítačové sítě
+		- Př. Nevhodná práce s osobními daty
+		- Viry – zasílání informací/dat na cizí servery
+	- Navrhnout opatření
+		- K minimalizaci případné ztráty/odesílaní dat
+- Ochrana jednoho počítače (1. síť. karta)
+	- Jednoduchý osobní (personal) firewall
+		- Instalován na koncovém zařízení
+- Ochrana LAN (min. 2 síť. karty)
+	- Odděluje LAN1 od LAN2 (LAN – WAN – internet)
+	- Kontroluje tok dat (ne obsah dat) mezi sítěmi
+	- Může ale vykonávat i jiné složitější úkoly
+## Paketový filtr Firewall
+- Sleduje síťový provoz
+	- IP adresy (síť. Identifikace PC)
+	- Porty (služby, běžící programy)
+- Mnohem rychlejší než proxy
+	- Jeho správa je komplikovanější
+	- Nemá tolik možností jako aplikační/stavové proxy servery
+## Stavový Firewall
+- Speciální varianta filtru
+- Sleduje spojení – mezi zdrojem (PC) a cílem (server)
+	- Dokáže filtrovat datagramy podle stavu spojení
+		- Datagram – část přenesených dat
+	- Zachovat probíhající spojení
+	- Omezit nová nevyžádaná/nebezpečná spojení
+- Ochrana:
+	- Proti skenování portů (programů, běžících v OSW)
+	- Zjišťování typu OS
+	- Falšování zdrojové IP adresy
+	- DoS/DDoS útoky
+## Aplikační proxy server – proxy brána
+- Plnohodnotný „průchozí“ PC (2 síť. Karty)
+	- Pro plnohodnotný dohled nad přenášenými daty
+		- Včetně antivirové ochrany/analýzy škodlivého obsahu
+	- Filtrování dat
+	- Řízení přístupu do LAN/WAN: autentizace/autorizace uživatele
+	- Vyhrazen pro konkrétní/více služeb (DNS, Cache…)
+	- Nevýhoda aplikačního proxy serveru => zpomalení internetu
+## Princip firewallu
+- Realizuje naše pravidla, co dělat s daty
+- Pravidla pro manipulace s daty
+	- Obsahují podmínky
+	- Obsahují akce (co s daty dělat)
+		1. propustit paket
+		2. zahodit paket
+		3. zahodit paket s oznámením
+- Pravidla Firewallu
+	- Potřebné informace pro pravidla z headeru:
+		- Header (hlavička) paketu
+		- Zdrojová IP adresa
+			- Source (např.: 192.168.0.123)
+		- Cílová IP adresa
+			- Destination
+		- Čísla portů (kterých služeb se pravidla týkají)
+		- Příznaky – doplňující informace z paketu
+	- Pravidla se ukládají do tzv. řetězců (chain)
+		- Jako „pole pravidel – zásbník pravidel“
+	- Pravidla se vybírají a realizují
+		- V definovaném pořadí (od prvního uloženého)
+	- Řetězce pravidel Firewallu
+		- INPUT -pravidla pro příchozí pakety (z WAN => do LAN)
+			- Do PC/routeru
+		- OUTPUT -pravidla pro odchozí pakety (z LAN => do WAN)
+			- Z PC/routeru
+		- Implicitní nastavení
+			- Řetězce prázdné - bez pravidel
+		- Akce pro pravidla
+			- Definovány 2 základní akce pro pravidla
+				- Povolit packet (ACCEPT => packet propustí)
+				- Zamítnout packet (DENY/DROP => packet zahodí)
+					- Zamítnout packet (REJECT => typ hlášky)
+					- Zamítnutí vše s zdvořilou hláškou
+		- Pravidla pro zdrojovou/cílovou adresu packetu
+			- Parametr `-s` adresa/maska (source)
+			- Parametr `-d` adresa/maska (destination)
+				- Př.: INPUT -s 10.6.6.6/24 -j DROP
+				- Podobně: FOWARD udp ! -d 10.0.0.1 -j DROP
+					 	- `!` -> neguje podmínku

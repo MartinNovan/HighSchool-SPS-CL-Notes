@@ -1,0 +1,19 @@
+;-------------------------------------------------------------------- 
+;			Podprogram zpozdeni (R12,R22)
+
+Delay:		ldi r22,DelayTime	;nastaveni zpozdeni (x0.192ms)
+			clr r12
+Delay0:		nop
+			nop
+			nop 
+			nop
+			nop
+			nop
+			nop
+			nop
+			nop
+			dec r12		;snizeni hodnoty
+			brne Delay0	;opakovani dokud neni 0 (256x)
+			dec r22		;snizeni hodnoty
+			brne Delay0	;opakovani dokud neni 0 (R22x)
+			ret

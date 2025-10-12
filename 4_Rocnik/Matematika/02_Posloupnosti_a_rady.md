@@ -1,0 +1,143 @@
+# Posloupnosti a řady
+## Zápis
+- výčtem 
+	- $2,4,6,8,...$
+- Vzorcem pro N-tý člen 
+	- $(n+1)_{n=1}^{\infty}$ -> 2,3,4,5,6,...
+	- $a_n=\frac{2n+1}{n}$
+- Rekurentní zadání
+	- využívá předchozí členy
+	- $a_{n+1}=a_n-2$
+	- $a_1 =1$
+		- $a_2 = -1$
+		- $a_3 =-3$
+		- $a_4 =-5$
+- Za $n$ dosazujeme pouze přirozená čísla, maximálně můžeme přidat 0. Jiné čísla nejsou připuštěna.
+### Příklady
+- Zadání
+	- máme posloupnost $1,2,3,4,5,6,7,8$ vyrobte vzorec pro N-tý člen
+		- Je to konečná posloupnost (končí na čísle 8)
+		- $(n)^8_{n=1}$
+	- máme posloupnost $1,4,9,16,25$ vyrobte vzorec pro N-tý člen
+		- také je to konečná posloupnost
+		- $(n²)^{5}_{n=1}$
+	- máme posloupnost $5,5,5,5,5,...$ vyrobte vzorec pro N-tý člen
+		- Jedná se o nekonečnou posloupnost
+		- $(5)^{\infty}_{n=1}$
+	- Máme N-tý vzorec $((-1)^{n+1}*3)^{10}_{n=1}$
+		- Jedná se o konečnou posloupnost
+		- $3,-3,3,-3,3,-3,3,-3,3,-3$
+	- máme posloupnost $\frac12+\frac23+\frac34+\frac45,\ldots$ vyrobte vzorec pro N-tý člen
+		- Jedná se o nekonečnou posloupnost
+		- $(\frac{n}{n+1})_{n=1}^{\infty}$
+	- Máme zadaný zápis $a_n=\frac{2n+1}{n}$ napište prvních 5 členů
+		- $3;\frac52;\frac73;\frac94;\frac{11}{5}$
+	- Máme zadány hodnoty $1;3;5;7;...$ zapište vzorcem pro n-tý člen a také rekurentně
+		- N-tý člen
+			- $a_n=2n-1$
+		- Rekurentní zadání
+			- $a_1=1;a_{n+1}=a_n+2$
+	- Máme zadané hodnoty $1;-1;1;-1;1;-1;...$ zapište vzorcem pro n-tý člen a také rekurentně
+		- N-tý člen
+			- $a_n=(-1)^{n+1}$
+		- Rekurentní zadání
+			- $a_1=1;a_{n+1}=-a_n$
+	- Máme zadané hodnoty $5;7;9;11;13;...$ zapište vzorcem pro n-tý člen a také rekurentně
+		- N-tý člen
+			- $a_n=2n+3$
+		- Rekurentní zadání
+			- $a_1=5;a_{n+1}=a_n+2$
+	- Máme zadanou rovnici $a_{n+2}=a_{n+1}-a_n;a_1=1;a_2=2$
+		- $a_1=1$
+		- $a_2=2$
+		- $a_3=a_2−a_1=2−1=1$
+		- $a_4=a3−a2=1−2=−1$
+		- $a_5=a4−a3=−1−1=−2$
+	- Máme zadanou rovnici $a_{n+2}=a_{n+1}+a_n;a_1=1;a_2=2$
+		- $a_1=1$
+		- $a_2=2$
+		- $a_3=a_2+a_1=2+1=3$
+		- $a_4=a3+a2=3+2=5$
+		- $a_5=a4+a3=5+3=8$
+## Aritmetická posloupnost
+- V posloupnosti se přičítá nebo odčítá určitá hodnota 
+	- např. $1;3;5;7;9$ u každé další hodnoty přičítáme hodnotu $2$
+### Vzorečky
+- $a_{n+1}=a_n+d$
+	- číslo $d$ se nazývá **diference**
+	- Vzoreček pro 2 členy co jsou po sobě
+- $a_n=a_1+(n-1)d$
+	- Přepis N-tý člen
+- $a_s=a_r+(s-r)d$
+	- Vzoreček pro 2 libovolné členy
+- $s_{n}=\frac{n}{2}\left(a_1+a_{n}\right)$
+	- Součet prvních N-členů (vždy se začíná na čísle 1 a hodnota $n$ udá kolik prvků sečíst dohromady)
+###  Příklady
+- Příklad
+	- Máme posloupnost $a_n=2n-4$ zjistěte zda je aritmetická
+	- Postup
+		- Zjistíme $d$ a to zjistíme pomocí dopočtení prvních pár hodnot a zjistíme zda se jedná o aritmetickou posloupnost 
+			- samozřejmě jde i vidět že vzorec odpovídá aritmetické posloupnosti ale zde si to dokážeme že se opravdu jedná o aritmetickou posloupnost
+		- Dopočítáme prvních 5 hodnot
+			- $a_1=-2$
+			- $a_2=0$
+			- $a_3=2$
+			- $a_4=4$
+			- $a_5=6$
+			- Jde vidět, že se hodnoty zvedají o $+2$ tím pádem se jedná o aritmetickou posloupnost
+- Příklad
+	- Máme zadané hodnoty $a_3=5;a_8=15$ zjistěte zda se jedná o aritmetickou posloupnost, popřípadě zjistěte hodnoty $d,a_1,a_{17}$
+	- Postup
+		- Zjistíme dosazením hodnoty do vzorečku $a_s=a_r+(s-r)d$
+			- $a_8=a_3+(8-3)d$
+			- $15=5+(5)d$
+			- $d=2$
+		- Nyní potřebujeme zjistit hodnotu $a_1$, to zjistíme pomocí dosazení do vzorečku $a_n=a_1+(n-1)d$
+			- $a_8=a_1+(8-1)2$ 
+				- Dosadit můžeme také $a_3$ je to libovolné ale musíme znát velikost hodnoty
+			- $15=a_1+14$
+			- $a_1=1$
+		- Nyní zjistíme hodnotu $a_{17}$ to provedeme pomocí vzorečku $a_n=a_1+(n-1)d$
+			- $a_{17}=1+(17-1)2$
+			- $a_{17}=33$
+- Příklad
+	- Máme zadaný vzorec $(n)_{n=1}^{\infty}$ zjistěte $s_{100}$
+	- Postup
+		- Použijeme vzorec $s_{n}=\frac{n}{2}\left(a_1+a_{n}\right)$, potřebujeme k tomu hodnotu $a_1$ a $a_n$
+		- $a_1$ a $a_100$ jsou zde jednoduché jelikož se jedná o přičítání 1 tudíž $a_1=1$ a $a_{100}=100$
+		- Nyní to vše hodíme do vzorce
+			- $s_{100}=\frac{100}{2}\left(1+100\right)$
+			- $s_{100}=5050$
+- Příklad
+	- Máme zadané diferenci $d=0.04$ hodnotu $a_{50}=6$ Zjistěte hodnoty $a_1$ $a_{100}$ a $s_100$
+	- Postup
+		- a
+		- $a_1=4.04$ $a_{100}=8$ $s_{100}=602$
+- Příklad
+	- Máme střechu do tvaru lichoběžníku, do první řady se vejde 85 tašek, v poslední řadě je 102 tašek, do každé řady přidáváme 1 tašku navíc než do minulé. Kolik tašek budeme potřebovat?
+	- Postup
+		- Máme hodnoty $a_1=85;a_n=102;d=1$
+		- 
+## Geometrická posloupnost
+
+
+- příklad
+	- máme zadané hodnoty $a_1=6$ a $a_{2}=24$ vypočítejte kvocient $q$ a hodnoty $a_5$ a $a_8$
+	- Postup
+		- $q=4$
+			- vzorec pouzity je q=a2/a1
+		- dopocitani pak pomoci vzorce an=blablabla
+- Příklad
+	- Máme hodnoty $a_4=\frac{1}{3}$ a $a_5=\frac{1}{9}$ vypočtěte součet prvních 7 hodnot $S_7$
+	- Postup
+		- Dopočítáme a1
+		- Dosadíme do vzorce pro S7 (s7=13.5)
+- Příklad
+	- Máme hodnoty $a_1-a_3=-1.5$ a $a_2+a_1=1.5$ vypočtěte součet prvních 5 hodnot $S_7$
+	- Postup
+		- $a_n=a_1\cdot q^{n-1}$
+		- $a_3=a_1\cdot q^2$
+		- $a_2=a_1\cdot q$
+		- $a_1-a_1\cdot q^2=-1.5$
+		- $a_1\cdot q+a_1=1.5$
+  

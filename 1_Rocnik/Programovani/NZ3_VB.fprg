@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-28 01:27:54 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMi0yODswMToyMDo0OCBvZHAuOzMxNDI="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMi0yODswMToyNzo1NCBvZHAuOzE7MzI1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hodnota, krok, pocet, konec" type="Integer" array="False" size=""/>
+            <input variable="hodnota"/>
+            <input variable="krok"/>
+            <input variable="pocet"/>
+            <assign variable="konec" expression="hodnota+krok*pocet"/>
+            <while expression="konec&lt;&gt;hodnota">
+                <output expression="hodnota" newline="True"/>
+                <assign variable="hodnota" expression="hodnota+krok"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

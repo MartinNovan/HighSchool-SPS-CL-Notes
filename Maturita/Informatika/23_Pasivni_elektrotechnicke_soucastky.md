@@ -1,0 +1,1 @@
+# Pasivní elektrotechnické součástky

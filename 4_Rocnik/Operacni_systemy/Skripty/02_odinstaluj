@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Definice proměnné
+program=$1 # Vlož první parametr do proměnné program
+log=/var/log/odinstalace_programu.log # Odkaz kam se má logovat
+
+# Kontrola použití parametru
+if [ -z $1 ]; then # Pokud je parametr prázdný
+    echo "U need to specify program!"; # Vypiš hlášku pro uživatele
+    exit -1; # Ukonči skript s hodnotou -1 (můžeme použít v jiném skriptu využívající tento skript)
+fi # ukončení podmínky
+
+sudo rm -f $log # Odstraň minulý log 
+
+echo "Removing package..."
+sudo apt remove $program | sudo tee -a "$log" # Nainstaluj a zaloguj
+
+echo "Cleaning system..."
+sudo apt autoremove -y | sudo tee -a "$log" # Vyčisti systém a zaloguj

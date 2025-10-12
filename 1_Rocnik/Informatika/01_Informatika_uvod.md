@@ -1,0 +1,111 @@
+# Informatika úvod
+- Obor
+	- Zkoumá strukturu, chování a interakce navržených a přirozených výpočetních systémů
+- Člověk
+	- Orientace na výsledek s cílem získat co je požadováno -> deklarativní přístup
+- Počítač
+	- Nástroj provádějící výpočetní proces určující jak dojít k výsledku -> imperativní přístup
+- Zaměření
+	- Podle oblasti související s informatikou a s příklady na různé úrovni abstrakce
+	- Automatické zpracování a transformace dat, informací a znalostí pro účely inteligence
+- Automatické
+	- Materiálová věda, technické vybavení počítače (CPU, GPU, TPU, ...)
+- Zpracování
+	- Spočetnost, automaty, počítače, proces, OS, FW, ovladače
+- Transformace
+	- Logika, formální jazyky, algoritmy, programování, programy, řízení, virtualizace
+- Data
+	- Kódování, šifrování, datová věda a inženýrství, databáze, grafika, SQL, HTML, JSON
+- Informace
+	- Teorie informace, informační věda a inženýrství, systémy a technologie
+- Znalosti
+	- Knihověda, znalostní věda a inženýrství, expertní systémy a strojové učení (ML - Machine Learning)
+- Inteligence
+	- Kognitivní věda, modely, inteligence, neuronové sítě, člověk a umělá inteligence
+- Využití
+	- Informatiku může inteligence použít v různých situacích vyžadující rozhodování
+	- Vyhodnocení
+		- Poskytnout odpověď na předložené tvrzení týkajícího se předmětu dotazu
+	- Předpověď
+		- Odhad možného budoucího stavu podle aktuálního stavu a dalších informací
+	- Rizika
+		- Posouzení a minimalizace možných rizik a negativních vlivů pro budoucí vývoj
+	- Řízení
+		- Ovlivňování aktuálního stavu systému s cílem dosáhnout požadovaný stav
+	- Plánování
+		- Návrh budoucího stavu s ohledem na požadované vlastnosti
+	- Rozvrhování
+		- Přiřazení dostupných zdrojů požadavkům a jejich správa a řízení
+	- Zdokonalování
+		- Zvýšení efektivity a schopnosti systému poskytující nové možnosti využití
+- Úrovně
+	- Rozdělení zaměření podle úrovně abstrakce (obecnosti), použitých nástrojů a výstupů
+	- Teorie
+		- Formálně definuje, popisuje a dokazuje základní vlastnosti matematických objektů
+	- Věda
+		- Na základě teorie zkoumá možnosti a limity objektů nebo způsoby jak je tvořit
+	- Nástroje
+		- Samostatně fungující prvek umožňující provádět akci nebo operaci s objektem
+	- Systémy
+		- Soubor nástrojů specializující se na různé oblasti a poskytují služby
+	- Technologie
+		- Soubor nástrojů a systémů do jednoho celku využitelného pro aplikaci
+	- Využití
+		- Nasazení kombinace vybraných technologií do praxe se stanoveným cílem
+- Specializace
+	- Informatika podle úrovní abstrakce, použitých nástrojů
+	- Matematická
+		- Matematika využitá pro informatiku
+	- Teoretická
+		- Základ pro výzkum
+	- Inženýrská
+		- Tvorba jednotlivých nástrojů a samostatně fungující součástí
+	- Praktická
+		- Návrh celých systémů
+	- Aplikovaná
+		- Informační technologie, jako soubor fyzického vybavení i programů
+	- Technická
+		- Návrh HW, tj. fyzických přímo zpracovávajících informace
+- Činnosti
+	- Prováděné mezi různými úrovněmi specializace
+	- Předpoklady
+		- Určení toho co je nebo není možné dosáhnout
+	- Výzkum
+		- Cílem je najít neznámý postup
+	- Vývoj
+		- Vytvoření nástrojů používající postupy od výzkumu
+	- Realizace
+		- Využití nástrojů pro vytvoření technologie řešící typ úlohy
+	- Aplikace
+		- Přizpůsobení a nasazení technologie do praxe
+## Základy informatiky
+- Počátky
+	- Programy jako nedělitelná část hardwaru
+- Informatika
+	- Zaměřuje se na přenos, zpracování a využití informací
+- Větve
+	- Výstupy větví na sobě navazují, tj. matematická -> teoretická -> praktická -> aplikace
+- Informace
+	- Základ pro rozhodování a možná výhoda proti ostatním
+## Historie informatiky
+- Obrázek
+	- Reprezentuje grafický záznam popisovaného objektu na různé úrovni detailů 
+- Písmo
+	- Uchování informací a významu v symbolické podobě pro přenos prostorem a časem
+	- Potřeba -> sdílený a spolehlivý způsob přenosu informací
+- Kódování
+	- Přenos informace do podoby strojově zpracovatelného kódu
+- Proces
+	- Transformace kódované informace výpočetním procesem pomocí výpočetního modelu
+- Měření
+	- C. Shannon (1948) matematicky popsal jak měřit množství informace ve zprávě
+	- Jednotka -> bit jako množství informace nutné k rozhodnutí mezi dvěma výsledky
+- Fyzika
+	- Propojení informace a termodynamicky popisující přenos energie ve formě tepla
+	- Médium -> informaci vždy přenáší a uchovává fyzický systém
+	- Maxvellův démon -> J.C. Maxvell (1867), experiment zísnání energie pomocí informací
+	- Limity
+		- Odvození omezení reálného světa podle poznání fyzikálních zákonů
+		- R. Landaurem (1961) -> minimum energie nutné pro přepsání jednoho bitu
+		- H.J. Bremermann (1962) -> maximální rychlost fyzického výpočetního systému
+		- J. Bekestein (1981) -> maximum informace dokonale popisující fyzický systém

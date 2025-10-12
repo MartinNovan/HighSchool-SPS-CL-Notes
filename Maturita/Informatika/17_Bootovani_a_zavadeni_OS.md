@@ -1,0 +1,1 @@
+# Bootování a zavádění OS

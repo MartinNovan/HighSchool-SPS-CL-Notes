@@ -1,0 +1,56 @@
+# Návrh LAN sítí
+- Topologie
+- IP adresy (maska, subnety, třídy - privátní/veřejné, zabezpečení)
+- Pasivní prvky (kabely)
+- Wifi
+- Trasy (jak navrhnout trasy, kudy táhnout kabely)
+
+- moderní topologie
+	- Hvězda
+		- výhoda
+			- levná na provoz/vytvoření
+			- jednodušší na konfiguraci
+		- nevýhoda
+			- pokud umře centrální prvek, nic nefunguje
+			- centrální prvek musí mít výkon, jelikož vše jde přes něj
+	- Strom
+		- Je to propojení hvězd (kaskádová hvězda)
+		- výhoda
+			- odolnější než hvězda (i když ne o moc)
+		- nevýhoda
+			- pokud umře nadřazený prvek, umře vše pod ním
+	- Mesh
+		- obyč. Mesh má nahodile propojené prvky mezi sebou
+			- výhoda
+				- 
+			- nevýhoda
+				- a
+			- Wifi mesh systém
+				- 
+		- full Mesh je to že každý prvek je propojený s každým
+			- Není moc používaný v realitě
+			- výhoda
+				- absolutní odolnost proti výpadkům
+			- nevýhoda
+				- brutálně drahý
+	- Kruh
+		- výhoda
+			- pokud se přeruší jedna cesta, může se jít druhým směrem
+		- nevýhoda
+			- potřeba STP (spanning tree protocol)
+- Zastaralé technologie
+	- lajna
+		- nevýhoda
+			- každý pc potřebuje 2 síťové karty
+			- výhradně na koaxiáálních kabelech
+			- všechny počítače museli být zapnuté (vypne se počítač na začátku a ostatní jsou bez internetu)
+	- bus
+		- neexistuje na ethernetových kabelech, používal se koaxiální kabel
+		- nevýhoda
+			- všichni sdílejí jedno vlákno
+			- všichni mohou číst všechna data
+			- museli se terminovat na konci speciálními koncovky
+- speciální topologie
+	- point to point
+
+- 

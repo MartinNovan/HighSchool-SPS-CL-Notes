@@ -1,0 +1,1 @@
+# SQL dotazy v aplikacích

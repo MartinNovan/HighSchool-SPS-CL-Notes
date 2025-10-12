@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-08 01:26:38 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wODswMToxNDo1NCBvZHAuOzMxNDE="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wODswMToyNjozOCBvZHAuOzE7MzI1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, o" type="Integer" array="False" size=""/>
+            <declare name="S" type="Real" array="False" size=""/>
+            <output expression="&quot;zadejte d&#233;lku strany rovnostrann&#233;ho troj&#250;heln&#237;ku&quot;" newline="True"/>
+            <input variable="A"/>
+            <assign variable="o" expression="3*A"/>
+            <assign variable="S" expression="SQRT(3)/4*A*A"/>
+            <output expression="&quot;obovd je &quot; &amp;o&amp; &quot; a obsah je &quot; &amp;S" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

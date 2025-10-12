@@ -1,0 +1,112 @@
+# Hasící přístroje
+- Hasicí přístroj je nádoba naplněná hasivem a opatřená zařízením, kterým se přístroj uvádí v činnost.
+- Hasivo se samočinně vytlačuje z nádoby trvalým tlakem z vložené patrony či láhve nebo tlakem vyvinutým chemickou reakcí.
+- Podle velikosti se hasicí přístroje dělí na:
+	- Ruční hasicí přístroje: ručně přenosný, s hmotností náplně asi do 10 kg a dobou činnosti nejvýše 60 sekund.
+	- Pojízdné a přívěsné hasící přístroje:  mají větší obsah hasicí látky a jsou umístěny na podvozku (obvykle dvoukolovém).
+- Hasicí přístroje, zejména ruční, jsou **určeny k hašení začínajícího požáru,** tj. pro první protipožární zásah, prováděný uživateli objektu.
+- Ruční hasicí přístroje se umísťují v blízkosti pravděpodobného vzniku požáru, ale v poloze chráněné před jeho přímými účinky a dobře přístupné též po vzniku požáru.
+- V případě že požár nedokážu zvládnout vlastními silami, je nutné přivolat hasiče.
+- Podle použitého druhu hasiva mohou být hasicí přístroje:
+	- vodní
+	- pěnové
+	- práškové
+	- sněhové
+	- halotronové
+- Každý z typů hasicích přístrojů je sice určen pro jiný účel, ale jejich princip je společný: **hasivo odnímá plamenům kyslík a ochlazuje je**.
+- _Vodní hasicí přístroje navíc smáčením hořícího materiálu znemožňují jeho dalšímu hoření._
+## Vodní hasící přístroje
+- Pro hašení většiny běžných materiálů jsou vodní hasicí přístroje zcela postačující.
+- Mají však jedinou výraznou nevýhodu: proud vody, který při hašení z přístroje stříká, je elektricky vodivý, takže přístroj nelze použít k hašení obytného domu, u něhož není vypnuta elektrická instalace.
+- Přístroje jsou mrazuvzdorné.
+- **Jsou vhodné na hašení:**
+	- Pevných hořlavých (organických) látek (papír, dřevo, textil,...). _Voda hasí přímo „u zdroje“, likviduje i žhnutí, které bývá spojeno s hořením pevných látek._
+	- Hořlavých kapalin rozpustných ve vodě (alkoholy, ketony,...).
+- **Jsou nevhodné na hašení:**
+	- Hořlavých kapalin nemísících se s vodou jako benzín, motorová nafta, minerální oleje, líh, ředidlo,…). _Je třeba velkého množství vody, abychom kapalinu zředili, některé neuhasíme vůbec, např. benzín na vodě plave._ 
+	- Hořlavých plynů a k hašení látek, materiálů a zařízení, kde je nebezpečí škod promáčením vzhledem k cennosti. _Uhasit plamen hořícího plynu, který uniká pod tlakem je více než obtížné._
+- **Nesmí** **být použity na hašení:**
+	- **Elektrických zařízení pod napětím** **a v jejich blízkosti**.
+	- K hašení lehkých a hořlavých alkalických kovů, termitů, karbidu vápníku a pod. _Hoření kovů probíhá za velmi vysokých teplot_ _a při styku s vodou si tu reakci určitě dokážete představit sami._ _Reakce může být navíc doprovázena vznikem nebezpečných plynů (jedovatých a hořlavých)._ 
+	- Látky prudce reagující s vodou.
+## Pěnové hasící přístroje
+- Jsou naplněny směsí pěnidla Pyrocool s vodou.
+- **Jsou vhodné na hašení:**
+	- Pevných hořlavých látek. _Hasební pěna obsahuje vodu, eliminuje tedy_ _i žhnutí. Voda je však pro hašení účinnější._
+	- Hořlavých kapalin nemísících se s vodou (benzín, motorová nafta, minerální oleje, tuky apod.). _Hasební pěna oddělí hořlavou kapalinu od plamene, oheň nemá „potravu“._
+- **Jsou nevhodné na hašení:**
+	- Hořlavých kapalin mísících se s vodou.
+	- Hořlavých kapalin nízkovroucích t.j. na úrovni okolní teploty a níže jako petoleter, ditileter, monochloretan.
+	- Hořlavé plyny - _stejný problém jako u vody._
+	- Hořlavé kovy - _hasební pěna obsahuje vodu._
+- **Nesmí být použity na hašení:**
+	- **Na požáry elektrických zařízení pod napětím a v jejich blízkosti.**  _Díky obsahu vody je totiž vodivost zaručena._
+	- Lehkých hořlavých a alkalických termitů, karbidů vápníku apod.
+## Práškové hasící přístroje
+- Prášek nevede elektrický proud, je tedy možné jimi hasit zařízení pod napětím.
+- Pozor na následné škody způsobené samotným práškem. Ten je velmi jemný a jeho odstraňování např. z elektroniky (počítače nebo jiná drahá elektronika) či potravin je velmi obtížné,  či nemožné.
+- **Jsou vhodné na hašení:**
+	- Prakticky všech pevných materiálů.
+	- Kapalných látek (ředidla, pohonné hmoty, oleje).
+	- Hořících plynů (propan-butan).
+	- Hořlavých kapalin. _Hasební prášek působí proti samotnému plameni, plamen je rychle likvidován._
+	- Hořlavých plynů. _Stejně jako v případě hořlavých kapalin, je plamen sražen prakticky okamžitě._
+	- **Elektrických zařízení pod napětím.**
+- **Jsou nevhodné na hašení:**
+	- Hašení pevných hořlavých látek látky (typu dřeva, uhlí, textilií). _Plamen je uhašen rychle, avšak látka žhne dál a může se znovu rozhořet._
+	- Hašení hořlavých kovů. _Může docházet ke vzniku nebezpečných plynů._
+	- Hašení jemné mechaniky a elektroniky.
+- **Nesmí být použity na hašení:**
+	- Hašení lehkých hořlavých a alkalických kovů.  
+	- Hašení volně uložených kusovitých, vláknitých a podobných materiálů pro nebezpečí požáru a případný výbuch.
+## Sněhové hasící přístroje - CO2
+- Sněhový přístroj vyvíjí bohatou pěnu tvořenou CO2, kysličníkem uhličitým.
+- Pěna pokrývá hořící předměty, jimž odnímá kyslík a teplo a u hořících tekutin zabraňuje jejich rozstřikování, ke kterému by došlo pod proudem vody.
+- Pěna je elektricky nevodivá, mimoto nevadí potravinám nebo jemné mechanice.
+- Při hašení je nutno dát pozor na omrzliny - expandující pěna má teplotu mínus 78°C
+- **Jsou vhodné na hašení:**
+	- K hašení elektrických zařízení pod napětím. 
+	- Hořlavých plynů. _Velmi rychle zřeďuje hořlavý plyn a likviduje plamen._
+	- Hořlavých kapalin. _Rychle zředí hořlavé páry kapaliny a likviduje plamen._
+	- Potravin a k využití pro laboratoře, jemnou mechaniku a elektronická zařízení.
+	- Pevné hořlavé látky. _Srazí plamen, ale nezlikviduje žhnutí._
+	- Hořlavé kovy. _Opět nebezpečí reakcí spojených s tvorbou nebezpečných plynů._
+- **Jsou nevhodné na hašení:**
+	- Pro požáry tuhých hořlavin typu dřeva.
+	- Textilií, uhlí na otevřených prostranstvích s velkou výměnou vzduchu.
+- **Nesmí být použity na hašení:**
+	- K hašení lehkých hořlavých a alkalických kovů.
+	- Hořlavých prachů a volně uložených kusovitých, vláknitých a pod.
+	- Materiálů pro nebezpečí výbuchu a rozšíření požáru.
+	- Sypkých látek, alkalických kovů, atd.
+- **Upozornění:** 
+	- Při hašení pozor na prostor, kde k hašení dochází.
+	- Ve venkovních prostorách je často CO2 rozháněn větrem.
+	- Při hašení v uzavřených prostorách pozor na vlastnosti CO2, je těžší než vzduch.
+	- V podzemních prostorách může vytlačit vzduch a udělat tak prostředí nedýchatelným _(to platí především pro velké hasicí přístroje o větším obsahu – 10kg a více)._
+	- V nadzemních prostorách vyvětrat!
+	- CO2 je v hasicích přístrojích v kapalném stavu, tzn. pod tlakem a podchlazený, pozor na „popálení mrazem“.
+	- Přístroj je velmi vhodný k hašení elektrických zařízení. Po hašení se CO2 vypaří do okolního prostředí a „nezanechává zbytky“ po hašení. 
+	- Pozor!!!  Sníh oxidu uhličitého dosahuje teploty -78°C a při potřísnění pokožky je nebezpečí omrzlin.
+## Halotronové hasící přístroje
+- Halotronové hasicí přístroje, jsou sice ze všech nejdražší, ale pracují s vysokou účinností, přičemž se dají použít pro hašení všech materiálů s výjimkou pevných žhoucích látek.
+- Hasivo na bázi tetradekafluorhexanu účinně ochlazuje plameny a zabraňuje kyslíku k nim pronikat.
+- Protože se beze zbytku rozptýlí a nevytváří žádné nežádoucí usazeniny, jsou vhodné na hašení:
+	- automobilů
+	- jemné mechaniky
+	- počítačové techniky
+	- elektronických zařízení
+- Nedoporučuje se používat je v uzavřených prostorech bez větrání, protože aktivní látka se teplem rozkládá na složky škodící zdraví.
+- Elektricky nevodivé hasivo je bez korozivních účinků.
+- Lze hasit zařízení pod el.napětím do 1000 V ze vzdálenosti 1 m.
+## Hasící spreje
+- Pohotoví a účinní pomocníci pro případ začínajícího požáru.
+- Jejich hlavními přednostmi jsou především snadná manipulace (a z ní plynoucí rychlý zásah), spolehlivost, a výhodná cena.
+- Největší uplatnění naleznou
+	- v automobilech
+	- v domácnostech
+	- v dílnách
+	- v kancelářích
+	- při kempinku a grilování.
+- **Proč si pořídit hasicí sprej?**
+	- _Sprej je vhodným ochranným prostředkem proti začínajícím požárům. Málokdo z nás má doma či_ _ve svém vozidle klasický hasicí přístroj. Kromě vysokých pořizovacích nákladů a nutnosti nechávat jej pravidelně kontrolovat je hasicí přístroj často zbytečně velký, těžký a složitý na ovládání. Proti tomu sprej umí ovládat každý a díky kompaktním rozměrům a malé hmotnosti poslouží stejně dobře v rukách dítěte, tak_ _i babiček či dědečků. Účinnost spreje je dostatečně vysoká k tomu, aby bylo možno uhasit jakýkoli začínající požár, se kterým se běžný člověk_ _může setkat._

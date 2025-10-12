@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-29 01:02:42 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTsxMjo1ODo0NiBvZHAuOzMxNTU="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMTowMjo0MiBvZHAuOzE7MzI0Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <input variable="B"/>
+            <if expression="A &gt; B">
+                <then>
+                    <output expression="&quot;&#269;&#237;slo prvn&#237; je v&#283;t&#353;&#237;&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;&#269;&#237;slo druh&#233; je v&#283;t&#353;&#237;&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

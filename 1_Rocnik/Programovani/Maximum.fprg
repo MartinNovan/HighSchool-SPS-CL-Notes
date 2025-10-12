@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-29 02:07:44 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMTo1OTo0MSBvZHAuOzMxNDk="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMjowNzo0NCBvZHAuOzE7MzI1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, C, MAX" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <input variable="B"/>
+            <input variable="C"/>
+            <assign variable="MAX" expression="A"/>
+            <if expression="MAX&gt;B">
+                <then/>
+                <else>
+                    <assign variable="MAX" expression="B"/>
+                </else>
+            </if>
+            <if expression="MAX&gt;C">
+                <then/>
+                <else>
+                    <assign variable="MAX" expression="C"/>
+                </else>
+            </if>
+            <output expression="MAX" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,18 @@
+# CleanCode
+- Co si pod CleanCode představíme:
+	- Čitelnost
+	- Optimalizace
+	- Redundance
+	- Komentáře
+- Názvy:
+	- Měli vypovídat co dělají / co jsou
+	- Měli by být dohledatelné
+	- Měli by se dát v pohodě vyslovit
+- Funkce:
+	- Měli by být co nejmenší, ale občas se nedá nic dělat
+	- Měla by vykonávat tu věc kterou má ve jméně
+	- Ideální množství argumentů ve funkci je 0
+		- Funkce s jedním argumentem se nazývají monodické
+		- Funkce se dvěma argumenty se nazývají dyadické
+- Komentáře
+	- Vysvětlovat čeho jsme chtěli dosáhnout

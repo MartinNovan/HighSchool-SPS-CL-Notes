@@ -1,0 +1,16 @@
+# Úvod do dějepisu
+- časová osa
+	- pravěk
+		- od vzniku člověka - po vznik písma
+	- starověk
+		- od zániku západořímské říše - po stěhování národů
+	- středověk
+		- Objevení Ameriky Kolumbem
+		- dobytí Cařihradu Turky
+		- konec 30 leté války
+		- vynález knihtisku
+		- reformace (Martin Luther)
+	- novověk
+		- po 1. světovou válku
+	- moderní dějiny
+		- od 1. světové války

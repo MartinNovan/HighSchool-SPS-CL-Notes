@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-10-11 02:15:58 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMC0xMTswMjowOToyOCBvZHAuOzMxNDA="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMC0xMTswMjoxNTo1OCBvZHAuOzE7MzI0OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;jsi chytr&#253; a kr&#225;sn&#253;&quot;" newline="True"/>
+            <output expression="&quot;,ale nejsi looool&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

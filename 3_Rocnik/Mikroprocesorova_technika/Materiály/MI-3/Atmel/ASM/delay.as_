@@ -1,0 +1,21 @@
+.include "M32def.inc"
+.equ cas=0x10			;nastaveni casu
+
+.cseg
+.org 0
+
+	
+;---------------Zpozdeni -------------- 
+
+DELAY:		ldi r22,cas
+		clr r21
+		clr r20
+
+d0:		dec r20			;snizeni hodnoty
+		brne d0			;opakovani dokud neni 0 (256x)
+		dec r21			;snizeni hodnoty
+		brne d0			;opakovani dokud neni 0 (256x)
+		dec r22			;snizeni hodnoty
+		brne d0			;opakovani dokud neni 0 (R22x)
+		ret
+		

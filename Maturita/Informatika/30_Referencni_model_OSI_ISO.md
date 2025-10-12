@@ -1,0 +1,1 @@
+# Referenční model OSI/ISO

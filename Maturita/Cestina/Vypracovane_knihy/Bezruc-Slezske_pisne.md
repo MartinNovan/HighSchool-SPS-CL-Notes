@@ -1,0 +1,55 @@
+# Vypracování 1
+- Petr Bezruč tvořil na přelomu 19. -20. století
+- Psal v duchu realismu a symbolismu. Protispolečenský buřič.
+- Symbolismus: vyjádření pomocí znaků nebo symbolů (např. symbolem smrti je kříž)
+- Realismus: 2.pol. 19. století, snaží se zachytit skutečnost takovou jaká je, tedy pravdivě
+- Protispolečenský buřič: nespokojený se společností:
+	- -anarchismus odmítání zákonů  
+	- -antimilitarismus odmítání války  
+	- -vitalismus oslava života a přírody
+- Význam: Petr Bezruč byl český básník a prozaik, protispolečenský buřič
+- Život:
+	- Narozen v Opavě. Po většinu svého života žil v Brně jako poštovní úředník a nikdy se neoženil. V Brně také psal své první básně, které vydával tajně pod pseudonymem (Petr Bezruč=pseudonym), napsal jednu básnickou sbírku!!!!
+- Další díla: napsal pouze 1 básnickou sbírku! – Slezské písně [napsal i báseň – Stužkonoska modrá; povídku – Studie z Kafé Lustig]
+## Současní autoři:
+- V.Dyk – Krysař– novela
+- Fráňa Šrámek – Měsíc nad řekou- divadelní hra
+	- Setkání bývalých spolužáků ze studií, zamyšlení nad ztracenými iluzemi mládí,  střet starého a nového světa, konflikt mezi generacemi, projev českého impresionismu
+- František Gellner – Po nás ať přijde potopa – básnická sbírka
+----------------------------------------------------------------------------------------------------------
+## Obsah: Slezské písně
+Jsou zde básně např.: Červený květ, Maryčka Magdonová, Kantor Halfar, Labutinka, Ostrava a další
+- Básně:
+	- Červený květ
+		- úvodní báseň, v duchu symbolismu.
+		- Básník se přirovnává ke kaktusu, který jen jednou vykvetl červeným květem. Červený květ je symbolem jedné básnické sbírky, kterou napsal, symbolem jeho samotářského života a symbolem krve – vzpoury dělníků proti těm, co je vykořisťují.
+	- Kantor Halfar:
+		- Je to sociální balada.
+		- Kantor Halfar odmítal učit polsky a stále učil česky. Za trest neměl stálé místo a měl nízký plat. Proto si ho žádné děvče nechtělo vzít. Halfar nakonec spáchá sebevraždu a konečně dostal stálé místo na hřbitově.
+	- Maryčka Magdonová: 
+		- Je to sociální balada.
+		- Maryčce zemřou rodiče a ona se musí starat o své 4 sourozence. Žijí ve velké bídě. Proto jde Maryčka do panského lesa na dříví. Chytí ji ale četník a vede ji do vězení do Frýdku. Maryčka neunese ostudu a spáchá sebevraždu, skočí do řeky.
+	- Labutinka: 
+		- Lyrická báseň, intimní a milostná lyrika. Autobiografické prvky.
+		- Autor zde popisuje, jak se chlapec zamiloval do dívky, která ho ale nechtěla a on poté odjel. Ona se začala chovat jako nevěstka. Když se vrátil, zjistil, že je mu nevěrná. A nakonec zůstal sám.
+- Charakteristika hlavních postav:
+	- V mnoha básních se objevuje autor sám jako např. tulák, bard aj. Kritizuje tak sociální problémy a za hlavního viníka národního pokoření označuje markýze Géra (symbolismus).
+	- Rektor Halfar: vlastenec, neuměl se postavit osudu
+	- Maryčka Magdonová: hodná, starostlivá, neunese ostudu.
+- Téma: Je to sbírka, která popisuje sociální a národnostní útlak ve Slezsku. Popisuje těžkou práci havířů na Ostravsku nebo osudy ostatních chudých lidí, kteří dřeli bídu. Továrny patřili Němcům a Polákům.
+- Časoprostor: Slezsko (Ostrava, Těšín), 2.pol.19.st
+- Žánr: básnická sbírka, básně – tvoří je verše, ty se sdružují do slok!!! jsou zde sociální balady = báseň s pochmurným dějem, končí špatně a člověk zde bojuje se společností (to znamená, že se má špatně-těžká práce, málo peněz atd.)
+- Lit.druh – převládá epika (lyrika méně)
+- Rým – strídavý (abab), přerývaný (abcb)
+- Rytmus – většinou trochej
+- Jazyk a styl: 
+	- umělecký
+	- prvky realismu
+	- prvky symbolismu
+	- prvky nářečí (lašské)
+	- germanismy
+	- v mnoha básních - ich-forma
+	- anafora, hyperbola
+	- ironie
+	- přímé oslovení
+	- krátké úsečné verše

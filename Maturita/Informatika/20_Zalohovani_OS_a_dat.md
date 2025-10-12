@@ -1,0 +1,1 @@
+# Zálohování OS a dat

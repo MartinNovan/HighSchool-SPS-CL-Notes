@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-01-10 01:26:32 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMS0xMDswMTowMDo0NyBvZHAuOzMxMjk="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMS0xMDswMToyNjozMiBvZHAuOzU7MzI0Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c, d, X" type="Real" array="False" size=""/>
+            <output expression="&quot;Napi&#353;te hodnotu a&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Napi&#353;te hodnotu b&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Napi&#353;te hodnotu c&quot;" newline="True"/>
+            <input variable="c"/>
+            <output expression="&quot;Napi&#353;te hodnotu d&quot;" newline="True"/>
+            <input variable="d"/>
+            <if expression="b=0">
+                <then>
+                    <output expression="&quot;Nelze vypo&#269;&#237;tat&quot;" newline="True"/>
+                    <breakpoint/>
+                </then>
+                <else>
+                    <if expression="c=0">
+                        <then>
+                            <output expression="&quot;Nelze vypo&#269;&#237;tat&quot;" newline="True"/>
+                            <breakpoint/>
+                        </then>
+                        <else>
+                            <assign variable="X" expression="(a*d)/(b*c)"/>
+                            <output expression="&quot;v&#253;sledek je &quot;&amp;X" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

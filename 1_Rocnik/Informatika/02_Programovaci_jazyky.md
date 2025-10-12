@@ -1,0 +1,61 @@
+# Programovací jazyky
+## Jazyky přirozené a formální pro komunikaci a data
+- Jazyk
+	- Symbol kóduje informaci a umožňuje přenést význam mezi informačními systémy
+	- Abeceda -> sada symbolů jazyka, např. binární / desítková soustava, latinka, ...
+	- Slova -> sestaveny z abecedy jazyka a přenáší jistý dohodnutý a sdílený význam
+	- Gramatika -> sada pravidel jazyka pro sestavování struktury zprávy
+	- Kontext -> může měnit význam slova v závislosti jiných slov
+- Druhy jazyků
+	- Jazyky lze dělit podle způsobů vzniku na přirozené a formální
+	- Přirozený
+		- Vyvíjí se postupně při komunikaci mezi lidmi
+	- Formální
+		- N. Chomsky (1956) matematicky definoval 4 typy gramatik
+		- Typy
+			- Regulární
+			- Bezkontextové
+			- Kontextové
+			- Rekurzivně spočetné
+		- Zpracovatelnost
+			- Strojově
+			- Konečný automat
+			- Zásobníkový automat
+			- Turingův stroj
+- Komunikace
+	- Lidé (přirozený), člověk <-> počítač (informační, programovací), počítače (datové, strojový kód)
+		- Přirozená -> vrozené prostředky pro komunikaci s okolím
+		- Symbolická -> Přirozeně a strojově zpracovatelné jazyky užívající symboly
+		- Člověk <-> Počítač -> Pro člověka snazší čitelnost, pochopení a upravení informací
+		- Počítač <-> -> Efektivní výměna informací mezi počítači nebo aplikacemi binárním kódem
+- Protokoly
+	- Zajišťující přenos informací mezi systémy a jeho řízení dle dohodnutého protokolu
+		- ITA1, ITA2 -> É. Baudot (1888), CCITT (1924), telegraf, binární kód
+		- ASCII -> ASA/ANSI (1961), American standard code for Inf. Intercharge
+		- TCP/IP -> R. Kaba, V. Cerf (1974), komunikace mezi počítači v decentralizované síti
+		- HTTP -> T. Berners-Lee (1989), přenos souborů mezi klientem a serverem na webu
+- Jazyky
+	- Poskytující jistou úroveň abstrakce od binárního kódu a mechanismů technologie
+		- Nižší -> popisují chování stroje a generování procesu změnu stavů (bližší strojovému kódu)
+		- Vyšší -> popisují požadavky na výstup (bližší přirozenému jazyku) - specifikace -> deklarativní
+- Datové
+	- Symbolicky přenášejí strojově zpracovatelný obsah a strukturu informace
+		- HTML -> T. Berners-Lee (1989), popis obsahu a struktury hypertextových dokumentů
+		- CSS -> H. Lie, B. Bos (1996), popis vzhledu a řízení vykreslování struktury HTML dokumentu
+		- XML -> T. Bray (1996), výměna strukturovaných informací v textové podobě mezi aplikacemi
+		- SVG -> W3C (2001), popis vektorové grafiky pomocí XML
+		- JSON -> R. Hickey (2012), datový formát pro textový přenos dat objektů mezi aplikacemi
+## Programovací jazyky s imperativním přístupem
+- Programovací
+	- Umožní popsat transformaci dat i jejich struktury definovanými pravidly
+	- Algoritmus
+		- Návod pro provedení výpočetní procedury s cílem získat požadovaný výsledek
+		- Obraz vstupní hodnoty transformuje na obraz výstupní hodnoty
+	- Program
+		- Realizace algoritmu v programovacím jazyce s možností generovat výpočetní proces
+- Paradigma
+	- Přístupy a nástroje použitelné pro popis výpočetního procesu algoritmem
+- Imperativní
+	- Program určuje (řídí) počítači změnu stavu od počátečního (vstup) na koncový (výstup)
+	- 
+## Programovací jazyky s deklarativními a jinými přístupy

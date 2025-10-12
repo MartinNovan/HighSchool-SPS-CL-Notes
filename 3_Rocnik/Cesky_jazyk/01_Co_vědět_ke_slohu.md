@@ -1,0 +1,44 @@
+- Slohové cvičení -> 150 slov, 3 odstavce (jediná výjimka vypravování -> 5 odstavců)
+- Slohová práce -> 250 slov, 5 odstavců
+- Nekombinovat český a harvardský styl psaní
+	- Měli bychom používat odsazení bez prázdného řádku
+- Nadpis/titulek musí být v útvaru publicistického,
+	- ! u dalších může, pokud téma specifikuji/konkretizuji!
+	- Nadpisy jsou bez tečky
+- Dávám si pozor na to, aby mi věty navazovali na sebe samý
+- Předložky „s“, „z“, „v“, „k“ a spojka „i“, pokud není v poměru slučovacím, nesmí stát na konci řádku
+- Čárka nesmí být na začátku řádku  
+- Popis:
+	- Je statický/dynamický
+	- Statický
+		- Když tam bude pouze popis místa a nebude zde lyrizovaný nebo subjektivní, tak stačí udělat klasický popis místa, v opačném případě tam musím dát minimálně 2 umělecký prostředky (např přirovnání)
+	- Dynamický
+		- když budu popisovat, nesmím tam dát přímou řeč, pouze popisuji děj
+		- v tom se to liší od vypravování
+- Roky, kdy proběhly světový války
+	- První světová válka 1914-1918
+	- Druhá světová válka 1939-1945
+- Přečíst si stranu 6, zejména první světovou válku, druhou světovou válku, co je komunismus a nacismus + fašismus
+- Na straně 7 si přečíst české země v 20. století
+- Strana 15 -> literární druhy a žánry + pojem ztracená generace
+- Expresionismus
+	- Exprese
+	- Důraz na barvu, kontrasty, tvarové deformace
+- Kubismus
+	- Cube = krychle
+	- Používají tvary
+	- Předmět se rozbije -> v literatuře se rozbije báseň
+	- Kubismus osvobozují slova, věci apod.
+- Futurismus
+	- 1909 F.T. Marinetty: Manifest Futurismu
+	- Futurismus – budoucnost
+	- Snaží se do literatury vnést dynamiku, zachytit pohyb a rychlost
+	- Kubisti a futuristi se sjednotili do kubufutorismu
+- Dadaismus
+	- Ve francouzštině dada -> nesmysl, také dětská hračka
+	- Absurdita a iracionalitu
+	- Jako kritika války
+- Surrealismus
+	- „nadrealismus“
+	- Prakticky nastříhání 2 knížek dohromady bez nějaké logiky
+	- Šlo o zachycení myšlenkových pochodů bez logičnosti reality

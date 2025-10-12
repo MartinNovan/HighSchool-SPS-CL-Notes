@@ -1,0 +1,24 @@
+#! /bin/bash
+
+# Vytvoreni uctu + pridani do skupiny Vbox
+useradd -U -c "Kancelar" -G vboxsf,vboxdrmipc -m -s /bin/bash kancelar
+
+# -U -> vytvorit skupinu stejneho nazvu jako ucet
+# -c -> komentar
+# -G -> pridani do existujicich skupin
+# -m -> vytvorit domovsky adresar
+# -s -> shell pro CLI
+
+useradd -U -c "Sklad" -G vboxsf,vboxdrmipc -m -s /bin/bash sklad
+useradd -U -c "Vyroba" -G vboxsf,vboxdrmipc -m -s /bin/bash vyroba
+
+# Osazeni uctu heslem
+echo "Zadejte heslo pro:"
+echo "Kancelar:"
+passwd kancelar
+
+echo "Sklad:"
+passwd sklad
+
+echo "Vyroba:"
+passwd vyroba

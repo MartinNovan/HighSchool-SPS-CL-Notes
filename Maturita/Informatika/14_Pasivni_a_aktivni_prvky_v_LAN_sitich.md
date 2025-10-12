@@ -1,0 +1,105 @@
+# Pasivní a aktivní prvky v LAN sítích
+- pasivní prvky
+	- cokoliv co nevyžaduje energii pro funkčnost a slouží jako přenos médií/interface
+	- Kabely
+		- Ethernet - TP (twisted pair)
+			- Každý z těch párů je jinak smotaný podle nějakých specifikací
+			- Kategorie
+				- Cat5
+					- limit 100Mb/s na 100m
+					- CAT5E
+						- 2.5Gb/s na 100m
+				- Cat6
+					- necerfikovaný do datacenter
+				- Cat7
+					- certifikovaný do datacenter
+					- a
+			- Není stabilní nad 110m (pokud není v ideálních podmínkách)
+			- 2 typy kabelů
+				- Ve zdi jedno-žílové -> má jen 1 měděný drát uvnitř těch 8 barevných kabílků
+					- Končí v zásuvce / patchpanelu
+					- Křehký (při pár ohnutí praskne a kabel je k ničemu)
+					- Kvalitnější přenos
+				- Všude jinde -> vícežílové
+					- Ohebné
+					- Horší přenos
+		- Optika
+			- typy
+				- MM
+					- Multi Mode
+					- klidně 5x širší než SM
+					- Max 330m (zhruba)
+					- Levnější a starší
+					- Stále se používá ale ve velmi krátkých vzdálenostech
+				- SM
+					- Single Mode
+					- miniaturně tennounký vlákno
+					- Max 110km (zhruba)
+					- Dražší a modernější
+					- používá se v nových budovách
+			- Optiku připojujeme do modulů SFP (Small Formfactor port (module/pluggable))
+				- má za úkol převést optický vstup na digitální data a naopak
+				- tyto moduly definují rychlost optiky
+				- SFP
+					- 1Gb/s
+				- SFP+
+					- 10Gb/s
+				- SFP25
+					- 25Gb/s
+				- QSFP
+					- 4Gb/s
+				- QSFP+
+					- 40Gb/s
+				- QSFP25
+					- 100Gb/s
+				- Q -> quadro -> 4* rychlost
+		- Coax
+	- (teoreticky racky)
+	- Zásuvky a patchpanely
+- aktivní prvky
+	- hub
+	- switch
+		- Pracuje na L2 vrstvě
+		- spojují zařízení v jedné síti
+		- přeposílají packet pouze na zařízení, kterému má přijít (oproti hubu, který to posílá všem)
+		- Pracují s MAC adresama
+		- CAM tabulka
+			- Informace za jakým portem se nachází jaká MAC adresa
+		- rychlosti switchů
+			- přepínací rychlost
+			- rychlost portu
+			- nejrychlejší aktivní prvek (po HUBu)
+		- Standartní počet portů switchu v racku je 42 portů
+			- min. počet jsou 2 porty
+		- funguje na mechanismus bridge portů
+		- L3 vrstva na switchi
+			- Velmi omezené funkce
+			- aaaa
+	- router
+		- Pracuje na R3 vrstvě
+		- Spojuje jednotlivé sítě
+		- Umožňuje nám komunikaci mezi sítěmi
+		- Využívá routovací tabulku
+			- Informace o subnetech a jejich gateway
+		- Maškaráda 
+			- Existuje aby jsme měli privátní IP adresy
+			- Nahrazuje Ip adresu ....
+	- firewall
+		- L3/L4 vrstvy
+		- tabulky
+			- Filter
+				- Input
+				- output
+				- forward
+			- Raw
+			- Mangle
+			- Nat
+				- src-nat
+				- dst-nat
+	- PoE injektor
+	- Server
+	- Stanice
+	- AP
+	- NIC
+	- Proxy server
+	- Nas server

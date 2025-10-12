@@ -1,0 +1,1 @@
+# Pokročilá konfigurace OS Windows

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-29 01:17:18 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMTowMjo0OCBvZHAuOzMxNDQ="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMToxNzoxOCBvZHAuOzE7MzI1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, POM" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <input variable="B"/>
+            <if expression="A&lt;B">
+                <then>
+                    <assign variable="POM" expression="B"/>
+                    <assign variable="B" expression="A"/>
+                    <assign variable="A" expression="POM"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;&#269;&#237;slo&quot; &amp;A&amp; &quot;je v&#283;t&#353;&#237; ne&#382;&quot; &amp;B" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

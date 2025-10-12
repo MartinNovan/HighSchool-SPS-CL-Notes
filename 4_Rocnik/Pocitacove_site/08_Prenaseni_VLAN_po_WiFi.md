@@ -1,0 +1,15 @@
+- jeden router má připojený internet a pc, druhý má pouze připojený pc
+- prakticky identická konfigurace
+	- Jeden má pouze přívod internetu
+	- jeden router je station (STA) a druhý AP
+- budeme fungovat jako switch
+- Jeden router má dhcp server na jednu VLANu, pro každý router je určená 1 vlana 
+- postup
+	- Bridge
+	- DHCP klient
+	- nastavení WiFi
+	- Nastavení VLAN
+	- Nastavit subnety pro vlany (10.10.100.0/24 10.10.200.0/24)
+	- Nastavit dhcp server na vlany
+	- 
+

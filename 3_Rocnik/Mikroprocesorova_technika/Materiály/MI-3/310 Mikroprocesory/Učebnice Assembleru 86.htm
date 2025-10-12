@@ -1,0 +1,2477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://school.lynn.cz/addons/assembler/ucebnice.html -->
+<HTML><HEAD><TITLE>Učebnice Assembleru 86</TITLE>
+<META name=Author content="Mgr. Tomáš Papoušek">
+<META content="text/html; charset=windows-1250" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 8.00.6001.19222"></HEAD>
+<BODY link=#0000ff bgColor=#ffffff vLink=#0000ff><!--MYCHARSET=CP1250-->
+<H1>Učebnice Assembleru 86 
+</H1>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tato učebnice měla být 
+původně vydána jako skripta pro školu, na které učím. Protože však došlo k mnoha 
+objektivním problémům (prostě nebyly peníze), nabízím je touto cestou všem, 
+kteří programují v Turbo Pascalu. I když v současné době převážně programuji v 
+Delphi, znalosti z této učebnice využívám. Pokud budete informace z tohoto 
+dokumentu někdo používat, čiňte tak prosím s poznámkou o autorovi (copyright 
+najdete na konci textu).</FONT></P>
+<H3><FONT face="Arial CE, Arial, Helvetica">Obsah:</FONT></H3>
+<UL>
+  <LI><A 
+  "%DAvodem"><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica">Úvodem</FONT></A> 
+  <LI><A 
+  "Terminologie"><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica">Terminologie</FONT></A><FONT size=2 
+  face=Arial> </FONT>
+  <LI><A 
+  "Program%E1torsk%FD+model+mikroprocesoru+8086"><FONT 
+  size=2 face=Arial>Programátorský model mikroprocesoru 8086</FONT></A><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica"> </FONT>
+  <UL>
+    <LI><A 
+    "Segmentace+pam%ECti"><FONT 
+    size=2 face=Arial>Segmentace paměti</FONT></A> </LI></UL>
+  <LI><A 
+  "Vkl%E1dan%FD+assembler+v+jazyce+Turbo+Pascal"><FONT 
+  size=2 face=Arial>Vkládaný assembler v jazyce Turbo Pascal</FONT></A><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica"> </FONT>
+  <LI><A 
+  "Instrukce+p%F8esun%F9+dat"><FONT 
+  size=2 face=Arial>Instrukce přesunů dat</FONT></A><FONT size=2 face=Arial> 
+  </FONT>
+  <UL>
+    <LI><A 
+    "P%F8esuny+registr+-+registr,+registr+-+pam%EC%9D"><FONT 
+    size=2 face=Arial>Přesuny registr - registr, registr - paměť</FONT></A><FONT 
+    size=2 face=Arial> </FONT>
+    <LI><A 
+    "Metody%20adresace"><FONT 
+    size=2 face=Arial>Metody adresace</FONT></A><FONT size=2 face=Arial> </FONT>
+    <LI><A 
+    "Prefix+p%F8esko%E8en%ED"><FONT 
+    size=2 face=Arial>Prefix přeskočení</FONT></A><FONT size=2 face=Arial> 
+    </FONT>
+    <LI><A 
+    "Pr%E1ce+se+z%E1sobn%EDkem"><FONT 
+    size=2 face=Arial>Práce se zásobníkem</FONT></A><FONT size=2 face=Arial> 
+    </FONT>
+    <LI><A 
+    "P%F8esuny+vstup-v%FDstup+-+registr"><FONT 
+    size=2 face=Arial>Přesuny vstup-výstup - registr</FONT></A><FONT size=-1 
+    face="Arial CE, Arial, Helvetica"> </FONT>
+    <LI><A 
+    "Dal%9A%ED+p%F8esuny"><FONT 
+    size=2 face=Arial>Další přesuny</FONT></A><FONT size=2 face=Arial> 
+    </FONT></LI></UL>
+  <LI><A 
+  "Instrukce+dosazen%ED+adresy"><FONT 
+  size=2 face=Arial>Instrukce dosazení adresy</FONT></A><FONT size=2 face=Arial> 
+  </FONT>
+  <UL>
+    <LI><A 
+    "Ukazatel"><FONT 
+    size=-1 face="Arial CE, Arial, Helvetica">Ukazatel</FONT></A> </LI></UL>
+  <LI><A 
+  "Aritmetick%E9+instrukce"><FONT 
+  size=2 face=Arial>Aritmetické instrukce</FONT></A><FONT size=2 face=Arial> 
+  </FONT>
+  <UL>
+    <LI><A 
+    "S%E8%EDt%E1n%ED"><FONT 
+    size=2 face=Arial>Sčítání</FONT></A><FONT size=2 face=Arial> </FONT>
+    <LI><A 
+    "Od%E8%EDt%E1n%ED"><FONT 
+    size=2 face=Arial>Odčítání</FONT></A><FONT size=2 face=Arial> </FONT>
+    <LI><A 
+    "N%E1soben%ED"><FONT 
+    size=-1 face="Arial CE, Arial, Helvetica">Násobení</FONT></A><FONT size=2 
+    face=Arial> </FONT>
+    <LI><A 
+    "D%EClen%ED"><FONT 
+    size=-1 face="Arial CE, Arial, Helvetica">Dělení</FONT></A><FONT size=2 
+    face=Arial> </FONT>
+    <LI><A 
+    "Zm%ECna+po%E8tu+bit%F9"><FONT 
+    size=2 face=Arial>Změna počtu bitů</FONT></A><FONT size=2 face=Arial> 
+</FONT>
+    <LI><A 
+    "Pr%E1ce+s+%E8%EDsly+v+k%F3du+BCD"><FONT 
+    size=2 face=Arial>Práce s čísly v kódu BCD</FONT></A><FONT size=-1 
+    face="Arial CE, Arial, Helvetica"> </FONT></LI></UL>
+  <LI><A 
+  "Instrukce+logick%FDch+operac%ED"><FONT 
+  size=2 face=Arial>Instrukce logických operací</FONT></A><FONT size=2 
+  face=Arial> </FONT>
+  <UL>
+    <LI><A 
+    "Pou%9Eit%ED+logick%FDch+operac%ED"><FONT 
+    size=2 face=Arial>Použití logických operací</FONT></A><FONT size=-1 
+    face="Arial CE, Arial, Helvetica"> </FONT></LI></UL>
+  <LI><A 
+  "Instrukce+posuv%F9+a+rotac%ED"><FONT 
+  size=2 face=Arial>Instrukce posuvů a rotací</FONT></A><FONT size=2 face=Arial> 
+  </FONT>
+  <UL>
+    <LI><A 
+    "Pou%9Eit%ED+posuv%F9+a+rotac%ED"><FONT 
+    size=2 face=Arial>Použití posuvů a rotací</FONT></A><FONT size=2 face=Arial> 
+    </FONT></LI></UL>
+  <LI><A 
+  "Instrukce%20skoku"><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica">Instrukce skoku</FONT></A><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica"> </FONT>
+  <UL>
+    <LI><A 
+    "N%E1v%EC%9At%ED"><FONT 
+    size=2 face=Arial>Návěští</FONT></A><FONT size=2 face=Arial> </FONT>
+    <LI><A 
+    "Nepodm%EDn%ECn%FD+skok"><FONT 
+    size=2 face=Arial>Nepodmíněný skok</FONT></A><FONT size=2 face=Arial> 
+</FONT>
+    <LI><A 
+    "Podm%EDn%ECn%FD+skok"><FONT 
+    size=2 face=Arial>Podmíněný skok</FONT></A><FONT size=2 face=Arial> 
+    </FONT></LI></UL>
+  <LI><A 
+  "Nepodm%EDn%ECn%FD+a+podm%EDn%ECn%FD+cyklus"><FONT 
+  size=2 face=Arial>Nepodmíněný a podmíněný cyklus</FONT></A><FONT size=-1 
+  face="Arial CE, Arial, Helvetica"> </FONT>
+  <LI><A 
+  "Nastaven%ED+registru+p%F8%EDznak%F9"><FONT 
+  size=2 face=Arial>Nastavení registru příznaků</FONT></A><FONT size=2 
+  face=Arial> </FONT>
+  <LI><A 
+  "Vy%E8len%ECn%ED+pam%ECti+pro+prom%ECnn%E9+v+bloku+asm"><FONT 
+  size=2 face=Arial>Vyčlenění paměti pro proměnné v bloku asm</FONT></A><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica"> </FONT>
+  <LI><A 
+  "Instrukce+pro+pr%E1ci+s+%F8et%ECzci"><FONT 
+  size=2 face=Arial>Instrukce pro práci s řetězci</FONT></A><FONT size=2 
+  face=Arial> </FONT>
+  <UL>
+    <LI><A 
+    "Prefix+opakov%E1n%ED"><FONT 
+    size=2 face=Arial>Prefix opakování</FONT></A> </LI></UL>
+  <LI><A 
+  "Nedokumentovan%E9+instrukce"><FONT 
+  size=2 face=Arial>Nedokumentované instrukce</FONT></A><FONT size=2 face=Arial> 
+  </FONT>
+  <LI><A 
+  "Vol%E1n%ED+podprogram%F9"><FONT 
+  size=2 face=Arial>Volání podprogramů</FONT></A><FONT size=2 face=Arial> 
+</FONT>
+  <LI><A 
+  "Tvorba+podprogram%F9"><FONT 
+  size=2 face=Arial>Tvorba podprogramů</FONT></A><FONT size=2 face=Arial> 
+</FONT>
+  <LI><A 
+  "P%F8eru%9Aen%ED"><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica">Přerušení</FONT></A><FONT size=2 
+  face=Arial> </FONT>
+  <LI><A 
+  "Rezidentn%ED+programy"><FONT 
+  size=2 face=Arial>Rezidentní programy</FONT></A><FONT size=2 face=Arial> 
+  </FONT>
+  <LI><A 
+  "Literatura:"><FONT 
+  size=-1 face="Arial CE, Arial, Helvetica">Literatura</FONT></A><FONT size=2 
+  face=Arial> </FONT><BR><BR>
+  </UL>
+<H3><A name=Úvodem><FONT face="Arial CE, Arial, Helvetica"></FONT></A><FONT 
+size=3 face=Arial>Úvodem </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Žijeme v době, kdy nás 
+počítače obklopují na každém kroku. Jejich výhodou je možnost ovlivnit své 
+chování podle našich potřeb. Proto i ten nejlepší počítač nedokáže pracovat bez 
+programu, který mu dává instrukce, jak se za kterých okolností chovat. Proto 
+bude vždy nutné, aby určitá skupina lidí byla schopna tyto programy tvořit. 
+Myslím si, že programátoři budou i při sebedokonalejším technickém vybavení 
+spolutvůrci systémů, které ulehčují lidem práci. Mezi základní znalosti každého 
+programátora patří alespoň minimální znalost Jazyka symbolických adres, kterému 
+říkáme assembler. Protože tvorba složitějších programů jen v ASM86 by byla 
+zdlouhavá, nabízí se možnost vytvářet je ve vyšším programovacím jazyce, a v 
+assembleru tvořit jen ty jeho části, které se často opakují, a přitom není 
+jejich tvorba náročná. Tyto bloky se nejlépe programují v tzv. vloženém 
+assembleru. </FONT></P>
+<H3><A name=Terminologie><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 
+face=Arial>Terminologie</FONT></H3>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Bit</STRONG> - 
+  nejnižší jednotka nesoucí informaci, může nabývat hodnoty buď 1, nebo 0. 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Slabika</STRONG> - 
+  byte, půlslovo, to je označení pro 8 bitů (bity číslujeme 7-0 popořadě), může 
+  nést hodnotu čísla se znaménkem (-128-127, shortint) nebo bez znaménka (0-255, 
+  byte); za počet slabik píšeme B (kB, MB). </FONT>
+  <LI><FONT size=-1 
+  face="Arial CE, Arial, Helvetica"><STRONG>Půlslabika</STRONG> - půlbyte, nibl, 
+  označení pro 4 bity. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Slovo</STRONG> - 
+  word, dvě slabiky, označení pro 16 bitů (bity číslujeme 15-0 (7-0, 7-0) 
+  popořadě), může nést hodnotu čísla se znaménkem (-32768-32767, integer) nebo 
+  bez znaménka (např. adresa, 0-65535, word). </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Instrukce</STRONG> 
+  - pokyn mikroprocesoru k vykonání nějaké činnosti (přesuň, sečti). </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Program</STRONG> - 
+  posloupnost instrukcí, které vedou k vykonání úlohy. Program je většinou 
+  uložen na disku ve formě souboru (typu EXE, COM). V něm je uložena řada čísel, 
+  které znamenají jednotlivé instrukce (strojový kód). Po spuštění je buď celý 
+  program, nebo jeho část, uložena do paměti počítače. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Překladač</STRONG> 
+  - program umožňující převést algoritmus zapsaný v textovém tvaru do strojového 
+  kódu mikroprocesoru. Ve strojovém kódu jsou jednotlivé instrukce zapsány s 
+  pomocí jedné, či více slabik, které jsou pro každou instrukci odlišné. 
+  Jestliže tedy necháme počítač, aby četl instrukce z části paměti, kde jsou 
+  data (ne operační kód instrukcí), dojde většinou k "zmrznutí" počítače, 
+  protože data mohou obsahovat kódy znamenající instrukce nesmyslného programu. 
+  </FONT>
+  <LI><FONT size=-1 
+  face="Arial CE, Arial, Helvetica"><STRONG>Mikroprocesor</STRONG> - v každém 
+  počítači nalezneme jeden, či více mikroprocesorů. Jedná se o část zajišťující 
+  přesuny dat v počítači a jejich zpracování. Uvnitř mikroprocesoru jsou vždy 
+  tyto části: </FONT>
+  <UL>
+    <LI><FONT size=-1 
+    face="Arial CE, Arial, Helvetica"><STRONG>Aritmeticko-logická jednotka 
+    (ALU)</STRONG> - je to sčítačka doplněná o posuvné registry a logické 
+    obvody. Vykonává operace spojené se zpracováním dat: matematické, logické a 
+    posuvy (rotace). Počet bitů, se kterými je schopna ALU pracovat, udává, 
+    kolikabitový je celý mikroprocesor.</FONT> 
+    <LI><FONT size=-1 
+    face="Arial CE, Arial, Helvetica"><STRONG>Registry</STRONG> - jsou rychlé 
+    paměti určené pro zaznamenávání dat a adres. Jednotlivé mikroprocesory se od 
+    sebe liší počtem registrů a jejich velikostí, která udává, jak velké číslo 
+    jsme schopni v něm uchovat. Jestliže registr slouží jako vstupní a výstupní 
+    pro hodnoty určené ALU, říkáme mu střadač.</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Dekodér 
+    instrukcí </STRONG>- dekóduje číslo, které pro mikroprocesor znamená 
+    instrukci .</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Obvody 
+    řízení</STRONG> - zajistí vykonání instrukce vytvořením posloupnosti 
+    impulsů, která ovlivní jednotlivé části procesoru tak, aby po ukončení této 
+    posloupnosti byla instrukce vykonána. Tato posloupnost je ovlivněna 
+    mikroprogramem popisujícím jednotlivé instrukce. </FONT></LI></UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Paměť</STRONG> - 
+  je část počítače, kde je uložen program a data. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Zásobník</STRONG> 
+  - je část paměti sloužící k odkládání dat, případně k předávání hodnot mezi 
+  podprogramy.</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Vstupní-výstupní 
+  porty</STRONG> - za ně považujeme obvody, které jsou určené k předání dat do, 
+  nebo z počítače. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Adresa</STRONG> - 
+  číslo označující místo slabiky v paměti, nebo vstupního/výstupního portu, se 
+  kterým chceme pracovat (tzn. kam chceme zapsat, odkud chceme číst). Maximální 
+  velikost adresy určuje velikost adresového prostoru, tedy počet slabik v 
+  paměti, nebo počet vstupně/výstupních portů. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Systémová sběrnice 
+  </STRONG>- je soustava vodičů určená k transportu dat, řídících signálů a 
+  adres mezi mikroprocesorem, pamětí a vstupně výstupními obvody. Má tyto části: 
+  </FONT>
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Datová 
+    sběrnice</STRONG> - určená k přesunům dat a kódů instrukcí.</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Adresová 
+    sběrnice </STRONG>- určená k přesunům adres slabik v paměti a adres 
+    vstupně-výstupních portů.</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Řídící 
+    sběrnice</STRONG> - určená k synchronizaci všech částí počítače.</FONT> 
+  </LI></UL></LI></UL>
+<H3><A name="Programátorský model mikroprocesoru 8086"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Programátorský 
+model mikroprocesoru 8086 </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Obvod 8086 je univerzální 
+šestnáctibitový mikroprocesor. Má šestnáctibitovou ALU, to znamená, že je 
+schopen provádět operace s šestnáctibitovými čísly. S okolím komunikuje po 
+šestnáctibitové datové a dvacetibitové adresové sběrnici. </FONT></P>
+<H4><A name="Segmentace paměti"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Segmentace 
+paměti</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Vzhledem k tomu, že obvod 
+8086 je schopen práce s pamětí o velikosti 1MB a obsahuje jen šestnáctibitové 
+registry, je nutná tzv. segmentace paměti. Jedná se o logické dělení paměti do 
+bloků po 64kB. Tomuto bloku říkáme segment a jeho počátek určuje programátor, 
+případně je mu přidělen podle volného místa v paměti. Jediný požadavek na 
+umístění počátku segmentu je, aby jeho adresa byla násobkem šestnácti. Umístění 
+jednotlivých slabik v segmentu určuje offsetová část adresy (offset). Ta určuje, 
+kolikátá je slabika od počátku segmentu. Adresa se skládá ze dvou částí: segment 
+a offset. Obě tyto části jsou šestnáctibitové. Protože ale pro adresování paměti 
+je nutné dvacet bitů, jsou za segmentovou adresu vyjádřenou binárně přidány 
+čtyři bity s hodnotou nula (proto každý segment začíná na násobku šestnácti). K 
+tomuto dvacetibitovému číslu je potom přičteno šestnáctibitové číslo určující 
+offsetovou adresu. Takto vzniká dvacetibitové číslo znamenající skutečné 
+umístění slabiky v paměti (fyzická adresa). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Výpočet skutečné adresy 
+dvojkově:</FONT></P>
+<P><CODE>segment:ssssssssssssssss0000<BR>+offset:0000oooooooooooooooo<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------------<BR>&nbsp;adresa:aaaaaaaaaaaaaaaaaaaa</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">(segment jsou jednotlivé bity 
+segmentové části adresy doplněné na konci o čtyři nuly, offset jsou jednotlivé 
+bity offsetové části adresy doplněné na začátku o čtyři nuly, adresa je součet, 
+tedy jednotlivé bity skutečné adresy)</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Výpočet skutečné adresy 
+hexadecimálně:</FONT></P>
+<P><CODE>segment:ssss0<BR>+offset:0oooo<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----<BR>&nbsp;adresa:aaaaa</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">(segment jsou jednotlivé 
+cifry segmentové části adresy doplněné na konci o jednu nulu, offset jsou 
+jednotlivé cifry offsetové části adresy doplněné na začátku o jednu nulu, adresa 
+je součet, tedy jednotlivé cifry skutečné adresy)</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Například: Místo v paměti s 
+adresou segmentu $AB1E a offsetu $1111&nbsp;má skutečnou adresu:</FONT></P>
+<P><CODE>segment:AB1E0<BR>+offset:01111<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----<BR>&nbsp;adresa:AC2F1</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tento způsob adresace 
+umožňuje snadný přenos programu v paměti a jeho schopnost pracovat v každé její 
+části. Program si pro svoji činnost vyčlení segment pro data, zásobník a 
+strojový kód (instrukce). Na tyto bloky ukazují jednotlivé segmentové registry. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Důsledky 
+segmentace:</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">přičteme-li k segmentové 
+  části adresy jedničku, zvýšíme skutečnou hodnotu adresy o šestnáct (což je to 
+  samé, jako bychom zvýšili offsetovou část adresy o šestnáct)</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">skutečnost, že se adresa 
+  tvoří součtem dvou čísel, vede k tomu, že stejné místo v paměti můžeme určit 
+  několika kombinacemi adres segmentu a offsetu dávajícími v součtu jeho 
+  fyzickou adresu</FONT> </LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Pochopení segmentrace paměti 
+je spíše ve znalosti dvojkové a šestnáctkové číselné soustavy.</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">POZOR!!! Neměli bychom 
+zaměňovat pojmy segment a selektor. Segment určuje jen umístění bloku paměti. 
+Selektor je použit u vyšších typů procesorů a jedná se vlastně o pořadové číslo 
+v tabulce, která nese informace o vyčleněných místech paměti a jejich 
+vlastnostech.</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Z hlediska programátora jsou 
+nejdůležitější registry. Ty se dělí na</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">registry pro všeobecné 
+  použití:</FONT> 
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">datové registry - 
+    šestnáctibitové (všechny vyhovují definici střadače), které je možné dělit 
+    na poloviny po osmi bitech, jejich použití bude probráno v dalších 
+    kapitolách:</FONT> 
+    <UL>
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AX 
+      (AH,AL)</STRONG> - střadač pro násobení a dělení, vstupně-výstuní 
+      operace</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>BX 
+      (BH,BL)</STRONG> - nepřímá adresace paměti (báze)</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CX 
+      (CH,CL)</STRONG> - počitadlo při cyklech, posuvech a rotacích</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DX 
+      (DH,DL)</STRONG> - nepřímá adresace vstupů/výstupů</FONT> </LI></UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">ukazatele a 
+    indexregistry - pro umístění adresy (offsetu):</FONT> 
+    <UL>
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>BP</STRONG> - 
+      bázový registr</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SP</STRONG> - 
+      ukazatel zásobníku</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DI</STRONG> - 
+      adresa cíle</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SI</STRONG> - 
+      adresa zdroje</FONT> 
+      <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>IP</STRONG> - 
+      ukazatel na aktuální místo programu</FONT> </LI></UL></LI></UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">registr příznaků 
+  (<STRONG>F</STRONG>) - obsahuje šest bitů (indikátorů), které mikroprocesor 
+  nastavuje podle výsledku právě provedené operace, a umožňuje tak větvit 
+  program: </FONT>
+  <UL type=square>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CF</STRONG> - 
+    Carry Flag, nastaví se do log. jedna, jestliže při právě provedené operaci 
+    došlo k přenosu z nejvyššího bitu osmibitového, nebo šestnáctibitového 
+    výsledku; tento indikátor je také využíván při posuvech a rotacích</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>PF</STRONG> - 
+    Parity Flag, se nastaví do log. jedna, pokud dolních osm bitů výsledku 
+    obsahuje sudý počet jedniček (a naopak)</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AF</STRONG> - 
+    Auxiliary Carry Flag, nastaví se do log. jedna při přenosu 1 ze spodní 
+    poloviny nižší slabiky do vyšší; využívá se v BCD aritmetice (přenos do 
+    vyššího řádu) </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>ZF</STRONG> - 
+    Zero Flag, je v log. jedna při výsledku rovnému nule</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SF</STRONG> - 
+    Sign Flag, je v log. jedna při záporném výsledku</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>OF</STRONG> - 
+    Overlow Flag, nastaví se do log. jedna, jestliže došlo k aritmetickému 
+    přetečení (výsledek se nevešel do cíle) </FONT></LI></UL>
+  <P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tyto registry se nastavují 
+  automaticky, jestliže proběhla instrukce, která je nastavuje. Registr F je 
+  doplněn i třemi řídicími registry, které ovlivňují běh programu:</FONT></P>
+  <UL type=square>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>TF</STRONG> - 
+    Trap Flag, jestliže je nastavený v log. jedna, mikroprocesor je uveden do 
+    krokovacího režimu; je tak umožněno odladění programu </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>IF</STRONG> - 
+    Interrupt Enable Flag, při log. jedna umožňuje vykonání maskovatelného 
+    přerušení, tzn. programovou obsluhu událostí </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DF</STRONG> - 
+    Direction Flag, je určen k řízení směru zpracování řetězcových operací; při 
+    log. jedna se data zpracovávají sestupně (a naopak) </FONT></LI></UL>
+  <P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tyto tři registry může 
+  nastavit jen programátor vhodnými instrukcemi. Mikroprocesor je sám 
+  nenastavuje. Jestliže s registrem příznaků jako s celkem pracujeme, je 
+  šestnáctibitový a má tvar: X, X, X, X, OF, DF, IF, TF, SF, ZF, X, AF, X, PF, 
+  X, CF (bity X nejsou obsazeny)</FONT></P>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">segmentové registry - 
+  určené pro uložení druhé části adresy, segmentu:</FONT> 
+  <UL type=square>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DS</STRONG> - 
+    segment dat (proměnných)</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>ES</STRONG> - 
+    pomocný segment dat </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SS</STRONG> - 
+    segment zásobníku</FONT> 
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CS</STRONG> - 
+    segment programu </FONT></LI></UL></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Mikroprocesor musí být 
+schopen pracovat i se vstupy-výstupy. Umístění jednotlivých portů určuje 
+šestnáctibitová adresa umístěná nejčastěji v registru DX. Pro programátora je 
+důležitá i ta skutečnost, že si mikroprocesor vytváří tzv. frontu instrukcí. 
+Jedná se o šest slabik znamenajících několik instrukcí, které budou následovat 
+po právě prováděné instrukci. Tato fronta je průběžně doplňována při operacích 
+nezatěžujících sběrnice z paměti. Protože se ale jedná o deset za sebou jdoucích 
+slabik v paměti, je při instrukcích skoku v paměti vyprázdněna. Z tohoto důvodu 
+je vhodné, aby program obsahoval co nejmenší počet skoků. Proto je v poslední 
+době kladen důraz na programovací jazyky, které podporují tzv. strukturované 
+programování bez nepodmíněných skoků. Mezi ně (částečně) patří Turbo Pascal a C. 
+Je jasné, že programovací jazyk Basic se v tomto smyslu k mikroprocesoru nechová 
+moc šetrně a zpomaluje tak běh programu. Mikroprocesor 80286 je strukturou i 
+vlastnostmi podobný 8086. Je schopen pracovat ve dvou režimech. V základním 
+reálném téměř přesně simuluje obvod 8086. Přesto v tomto režimu přináší některá 
+rozšíření pro některé instrukce. Pokud v následujícím výkladu použiji rozšíření 
+instrukcí pro 80286, uvedu to poznámkou [286]. Zdrojový text programu 
+sestaveného i s pomocí instrukcí 80286 ve vkládaném assembleru stačí na prvním 
+řádku (před uses) označit direktivou {$G+}. </FONT></P>
+<H3><A name="Vkládaný assembler v jazyce Turbo Pascal"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Vkládaný assembler 
+v jazyce Turbo Pascal </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Vzhledem k jednoduchosti a 
+názornosti se programovací jazyk Turbo Pascal vyučuje na školách. My se budeme 
+zabývat tzv. vkládaným assemblerem. Jeho znalost umožní zrychlit námi psané 
+programy, a přitom využívat výhod Pascalu ve snadném zápisu algoritmu. Vkládaný 
+assembler je blok v programu psaném v jazyce Pascal. Tento blok začíná klíčovým 
+slovem Asm a končí end. Řádky programu ve vkládaném assembleru se nečíslují a 
+nemusí končit středníkem v případě, že na jednom řádku není více jak jedna 
+instrukce (při více jak jedné instrukci musíme instrukce středníkem oddělit). 
+Komentáře se píší do složených závorek, nesmějí však být uvnitř označení 
+instrukce. Ve vloženém assembleru můžeme měnit obsahy registrů AX, BX, CX, DX, 
+SI, DI, ES, F. Před návratem z bloku asm musíme obnovit hodnoty v registrech 
+BP,SP, SS, DS. </FONT></P>
+<H3><A name="Instrukce přesunů dat"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Instrukce 
+přesunů dat </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Každý program musí být 
+schopen přesunů dat a to mezi registry, registry a pamětí, registry a 
+vstupy/výstupy. Při této operaci si musíme vždy uvědomit, kolikabitové číslo 
+přesouváme. Počet bitů je většinou specifikován jménem použitého registru 
+(osmibitové - AH, AL, BH, BL, . . ., šestnáctibitové - AX, BX, BP, DI, ES, DS . 
+. .). V případě, že používáme jen paměť, specifikuje počet bitů pro operaci 
+označení: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>BYTE</STRONG> 
+  <STRONG>PTR</STRONG> označení pam. místa - specifikuje slabiku </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>WORD</STRONG> 
+  <STRONG>PTR</STRONG> označení pam. místa - specifikuje slovo </FONT></LI></UL>
+<H4><A name="Přesuny registr - registr, registr - paměť"><FONT size=2 
+face=Arial></FONT></A><FONT size=-1 face="Arial CE, Arial, Helvetica">Přesuny 
+registr - registr, registr - paměť </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Všechny přesuny tohoto typu 
+provedeme univerzální instrukcí: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>MOV</STRONG> cíl, 
+  zdroj - do cíle přesuň ze zdroje (registr - registr, registr - paměť, registr 
+  - hodnota, paměť - hodnota, seg. registr - registr, seg.registr - paměť) 
+  </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Použití této instrukce 
+demonstruje příklad: </FONT></P>
+<P><CODE>uses&nbsp;crt; <BR>var&nbsp;&nbsp;slovo:word; &nbsp;{v paměti rezervuj 
+16 bitů a označ je slovo} <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slabika:byte;{v 
+paměti rezervuj 8 bitů a označ je slabika} <BR>begin <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL,10 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru AL dosaď 8 bitů, hodnotu 10} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> slabika,AL 
+&nbsp;{do paměti na místo ozn. slabika dosaď obsah AL} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BX,10 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru BX (16 bitový) dosaď 10} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> slovo, BX 
+&nbsp;&nbsp;{do paměti na místo ozn. slovo dosaď 16 bitů BX} <BR>&nbsp;end; 
+<BR>&nbsp;writeln (slabika,' ',slovo); <BR>&nbsp;readkey; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tento program má po překladu 
+na místech proměnných v bloku asm označení paměťového místa, které pro ně bylo 
+vyčleněno. Místo pro proměnné je vždy v segmentu globálních proměnných. 
+Segmentová adresa tohoto bloku je vždy umístěna v registru DS. To, že DS ukazuje 
+na segment dat programu, může vést k chybě, která spočívá v jeho změně a 
+následném čtení z globálních proměnných. Takže pozor! Po změně registru DS je 
+práce s globálními proměnnými nemožná, protože jsme si k nim uřízli cestu. Do 
+segmentových registrů nejde dosadit hodnota přímo. Tu nejrychleji dosadíme tak, 
+že ji vložíme do některého univerzáního registru a z něj teprve do segmentového 
+registru (například <STRONG>MOV</STRONG> AX,adresa; <STRONG>MOV</STRONG> ES,AX). 
+</FONT></P>
+<H4><A name="Metody adresace"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Metody 
+adresace </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Místo (offset) v paměti 
+označuje vždy určitá hodnota zapsaná v hranatých závorkách. Instrukce 
+<STRONG>MOV</STRONG>&nbsp;<STRONG>BYTE</STRONG>&nbsp;<STRONG>PTR</STRONG>&nbsp;ES:[$100F],&nbsp;10 
+znamená: na adresu slabiky offset 100F ($ označuje použití hexadecimální 
+soustavy) v segmentu určeném adresou v ES, dosaď hodnotu 10. Jestliže segment 
+nespecifikujeme označením a dvojtečkou, vztahuje se adresa k segmentu v DS. V 
+praxi by tato metoda omezovala programátora v rozletu. Proto ASM86 umožňuje i 
+další metody adresace. Ale popořadě . . . </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Přímá adresa 
+  </STRONG><BR><STRONG>MOV</STRONG> AH, ES:[$1A40] - do registru AH předej 8 
+  bitů z adresy určené ES a číslem <BR>Tuto metodu použijeme, jestliže předem 
+  víme adresu hledaného místa v paměti. Na pomoc v Turbo Pascalu jsou operátory: 
+  </FONT>
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>OFFSET</STRONG> 
+    proměnná - vrací offsetovou adresu proměnné </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SEG</STRONG> 
+    proměnná - vrací segmentovou adresu proměnné (pro globální proměnné vrací 
+    vždy obsah DS)</FONT> </LI></UL>
+  <P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jejich použití umožní 
+  zjistit adresu proměnných deklarovaných v části var (const . . .). </FONT></P>
+  <P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+  <P><CODE>var promenna: byte;<BR>begin <BR>&nbsp;asm 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [offset promenna], 10 {na 
+  adresu slabiky proměnné dosaď 10} <BR>&nbsp;end; <BR>end.</CODE></P>
+  <P><FONT size=-1 face="Arial CE, Arial, Helvetica">Segmentová adresa se v 
+  tomto příkladu nemusí určit. Je v DS, a ten se nemusí uvádět. Překladač 
+  Pascalu tuto metodu používá i pro naše globální proměnné. Při překladu je 
+  totiž každé proměnné přiděleno místo v paměti s pevnou offsetovou adresou 
+  (takže zápis <STRONG>OFFSET</STRONG> proměnná nese právě tuto adresu). 
+  Specifikace, jestli se jedná o slabiku, nebo slovo, je nutná, protože jinak by 
+  procesor nevěděl, jestli má číslem obsadit jednu, nebo dvě slabiky. 
+</FONT></P>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Nepřímá adresa 
+  <BR>MOV</STRONG> AH, ES:[BX] - do registru AH předej obsah pam. místa 
+  specifikovaného adresou v BX <BR>Pozor! Do registru AH je uložen obsah v 
+  paměti na adrese v BX, ne obsah registru BX. Offsetová část adresy je uložena 
+  v některém z adresových registrů BX, BP, SP, SI, DI. Vzhledem k tomu, že obsah 
+  těchto registrů můžeme měnit, použijeme tuto metodu v případě pohybu po 
+  paměti. <BR>Příklad: <BR></FONT><CODE>var promenna: byte; <BR>begin 
+  <BR>&nbsp;asm <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  BX, offset promenna {do BX dosaď adresu proměnné} 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [BX], 10 &nbsp;&nbsp;{na její 
+  adresu dosaď hodnotu 10} <BR>&nbsp;end; <BR>end. </CODE>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Bázová adresa 
+  <BR>MOV</STRONG> AH, [BX + adresa] - k registru BX přičti konstantu adresa, 
+  výsledná hodnota je adresou odkud se má načíst do registru AH <BR>Bázová 
+  adresa se tvoří s pomocí obsahu jednoho z bázových registrů BP, BX. Výraz v 
+  závorce se vyhodnotí, přitom označení registrů zastupuje jejich obsahy. Tento 
+  druh adresy používáme při zjišťování hodnot parametrů určených pro podprogramy 
+  (případně k přístupu k lokálním proměnným). </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Indexovaná adresa 
+  <BR>MOV</STRONG> AH, ES:[adresa + SI] &lt;=&gt; (je shodné) 
+  <STRONG>MOV</STRONG> AH, adresa[SI] - registr SI sečti s konstantou adresa, 
+  výsledek je hodnota adresy offsetu do paměti <BR>Tento způsob adresace je 
+  obdobou předchozí tvorby adresy. Používá se však při práci s bloky v paměti. 
+  Zde jsou k dispozici indexové registry SI, DI. <BR>Příklad: 
+  <BR></FONT><CODE>var pole: array [0..9] of byte; <BR>begin <BR>&nbsp;asm 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> SI, 0 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nuluj 
+  registr SI} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> offset pole[SI], 10{adr. pole 
+  sečti s SI a dosaď 10} <BR>&nbsp;end; <BR>end. </CODE>
+  <P><FONT size=-1 face="Arial CE, Arial, Helvetica">Program dosadí na první 
+  místo pole hodnotu. Protože registr SI můžeme zvyšovat, budeme tímto způsobem 
+  realizovat pohyb v poli. </FONT></P>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Kombinovaná adresa 
+  báze + index<BR>MOV</STRONG> AH, [BX + SI] &lt;=&gt; <STRONG>MOV</STRONG> AH, 
+  [BX][SI] - obsahy registrů BX a SI sečti, výsledek je hodnota offsetu odkud se 
+  má číst <BR>Kombinovaná adresa umožňuje pracovat s adresou, která se skládá ze 
+  součtu dvou registrů (jednoho bázového BX, BP a jednoho indexového SI, DI). 
+  <BR>Příklad: <BR></FONT><CODE>var pole: array [0..9] of byte; <BR>begin 
+  <BR>&nbsp;asm <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  BX, offset pole &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru BX dosaď 
+  adresu pole} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  SI, 0 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do 
+  registru SI dosaď 0} 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+  </CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [BX][SI], 10 {na první prvek v 
+  poli ulož 10} <BR>&nbsp;end; <BR>end. </CODE>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Kombinovaná adresa 
+  přímá + báze + index<BR>MOV</STRONG> AH, [adresa + BX + SI] &lt;=&gt; 
+  <STRONG>MOV</STRONG> AH, adresa[BX][SI] - sečti registry BX, SI a přičti 
+  hodnotu adresa, výsledek je hodnota offsetu <BR>Tuto adresaci použijeme 
+  například při práci s hlavičkovými soubory. Bázový registr nastavíme na 
+  počátek bloku paměti vyčleněného k uložení souboru. Indexový registr 
+  vynulujeme. Konstantní hodnota (adresa) může být rovna délce hlavičky. 
+  Zvyšováním hodnoty v indexovém registru se pohybujeme v datech hlavičkového 
+  souboru. Další možné použití této adresace je při pohybu v dvourozměrných 
+  polích. Hodnoty v obou registrech jsou indexy pole. Konstantní adresa je 
+  adresou počátku pole. </FONT></LI></UL>
+<H4><A name="Prefix přeskočení"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Prefix 
+přeskočení </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V assembleru mikroprocesoru 
+8086 se objevuje i nový výraz. Prefix znamená určitou specifikaci pro 
+následující instrukci. Zatím jsme si ukázali, jak změnit specifikaci 
+segmentového registru adresy s pomocí jeho označení a dvojtečky. Dalším způsobem 
+je použití prefixu změny segmentu: <STRONG>SEGDS</STRONG>, 
+<STRONG>SEGES</STRONG>, <STRONG>SEGCS</STRONG>, <STRONG>SEGSS</STRONG>. Tato 
+označení jsou prefixy přeskočení (změny segmentu) pro jednotlivé segmentové 
+registry. Například: <STRONG>MOV</STRONG> AX, ES:[BX] je stejné, jako bychom 
+použili <STRONG>SEGES</STRONG> <STRONG>MOV</STRONG> AX, [BX] (i když zápis je 
+různý, kód programu bude po překladu stejný). </FONT></P>
+<H4><A name="Práce se zásobníkem"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Práce se 
+zásobníkem </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Zásobník je část v paměti 
+počítače vyhrazená k odkládání dat. Je organizovaná tak, že data, která jsou 
+uložena naposledy, vyjímáme jako první. Na vrchol zásobníku ukazují adresy 
+uložené v registrech SS a SP (případně BP). Přidáváním dat do zásobníku se 
+offset v SP automaticky snižuje o dvě (a naopak). Musíme si tedy uvědomit, že do 
+zásobníku můžeme odkládat jen šestnáctibitová data. Pro práci se zásobníkem 
+slouží instrukce: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>PUSH</STRONG> 
+  zdroj - do zásobníku ulož obsah zdroje (registr, paměť, [286] hodnota) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>POP</STRONG> cíl - 
+  ze zásobníku dosaď do cíle (registr, paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>PUSHA</STRONG> - 
+  [286] do zásobníku ulož postupně registry AX, CX, DX, BX, SP, BP, SI, DI 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>POPA</STRONG> - 
+  [286] ze zásobníku dosaď zpět registry uložené instrukcí PUSHA </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>PUSHF</STRONG> - 
+  do zásobníku ulož obsah registru F v šestnáctibitovém tvaru </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>POPF</STRONG> - 
+  hodnotou ze zásobníku obsaď registr F </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var promenna:word; <BR>begin <BR>&nbsp;promenna:=10; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do paměti na adresu proměnné dosaď 10} 
+<BR>&nbsp;asm <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX, 
+promenna&nbsp; {obsah proměnné dosaď do registru AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BX,$BBBB 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do regisru BX dosaď číslo} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož obsah AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> BX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož obsah BX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX,$AAAA 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přepiš obsah AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BX,$CCCC 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přepiš obsah BX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> BX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{obnov obsah 
+BX} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{obnov obsah 
+AX} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> promenna, AX 
+&nbsp;{vrať obsah AX do proměnné} <BR>&nbsp;end; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tento program naznačuje 
+postup ukládání a vybírání dat do a ze zásobníku. V zásobníku jsou uloženy i 
+lokální proměnné procedur a funkcí. Jsou zde i parametry, kterými je podprogram 
+volaný. (Proto lokální proměnné NEMAJÍ segmentovou adresu v DS.) Občas potřebuje 
+programátor uložit registr příznaků F, aby ho později mohl obnovit do původního 
+stavu. K tomu požíváme instrukci <STRONG>PUSHF</STRONG> (pro uložení) a 
+<STRONG>POPF</STRONG> (pro obnovení). Jestliže ve vkládaném assembleru chceme 
+měnit některý ze "zakázaných" registrů (DS, BP), můžeme si jeho obsah uložit do 
+zásobníku. Podmínkou je ale to, že nezměníme registry SS, SP. Tím bychom si 
+podřízli větev pod sebou. Další možné použití zásobníku je při práci s částí 
+pamětí, ve které máme pole slov (šestnáctibitových dat). Nasměrováním vrcholu 
+zásobníku (SS:SP) na konec tohoto pole můžeme instrukcemi <STRONG>PUSH</STRONG> 
+a <STRONG>POP</STRONG> s tímto polem pracovat. Přitom se bude automaticky 
+zvyšovat a snižovat adresa. Pozor ale, obsahy SS a SP je nutné zase uschovat, 
+nejlépe do paměti na místa proměnných. V tom případě ale nemůžeme měnit registr 
+DS (ES). </FONT></P>
+<H4><A name="Přesuny vstup-výstup - registr"><FONT size=2 
+face=Arial></FONT></A><FONT size=-1 face="Arial CE, Arial, Helvetica">Přesuny 
+vstup-výstup - registr </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Každý se někdy pokusíme 
+zapsat na port a číst z něj. Je dobré si uvědomit, že můžeme zapisovat osm i 
+šestnáct bitů. Každý port, stejně jako slabika v paměti, má svojí adresu. Při 
+zápisu šestnácti bitů zapisujeme tedy i na port s adresou o jednu vyšší. Práci s 
+porty provedeme instrukcemi: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>OUT</STRONG> 
+  adresa portu, zdroj - pro zápis na port (AL, AX-&gt; port) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>IN</STRONG> cíl, 
+  adresa portu - pro čtení z portu (port-&gt; AL, AX) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Data se čtou, nebo zapisují z 
+(do) registru AL (osmibitový přístup), AX (šestnáctibitový přístup). Adresu 
+portu specifikuje buď přímo adresa (<STRONG>IN</STRONG> AL, $0F) při adrese 
+osmibitové (spodních 256 portů), nebo registr DX, ve kterém je šestnáctibitová 
+adresa (<STRONG>MOV</STRONG> DX, $F10; <STRONG>OUT</STRONG> DX, AL). </FONT></P>
+<H4><A name="Další přesuny"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Další 
+přesuny</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Mezi přesuny dat patří i: 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>XCHG</STRONG> cíl, 
+  zdroj - vzájemná výměna hodnot zdroje a cíle (paměť - registr, registr - 
+  registr) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LAHF</STRONG> - do 
+  registru AH dosaď nižší slabiku registru příznaků F </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SAHF</STRONG> - z 
+  registru AH dosaď do nižší slabiky registru příznaků F </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>XLAT</STRONG> - do 
+  AL dosaď obsah slabiky v paměti s adresou v DS:[BX + AL] (práce s tabulkou) a 
+  některé řetězcové instrukce o kterých bude řeč později. </FONT></LI></UL>
+<H3><A name="Instrukce dosazení adresy"><FONT size=3 face=Arial></FONT></A><FONT 
+face="Arial CE, Arial, Helvetica">Instrukce dosazení adresy</FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">I když jsme si již popsali, 
+jak dosadit hodnotu adresy do některého z adresových registrů, nebyly možnosti 
+ještě vyčerpány. Nejjednodušší je použití instrukce: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LEA</STRONG> 
+  adresový registr, paměť - do adresového registru dosaď adresu offsetu paměti 
+  </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Paměť je v tomto případě 
+označena jako v instrukci <STRONG>MOV</STRONG>. Instrukce <STRONG>LEA</STRONG> 
+BX, <STRONG>BYTE</STRONG> <STRONG>PTR</STRONG> [$FF00] a <STRONG>MOV</STRONG> 
+BX, $FF00 jsou ekvivalentní. Protože druhá instrukce je jednodušší, neměla by 
+instrukce <STRONG>LEA</STRONG> význam. Proto ji častěji použijeme při hledání 
+hodnoty kombinované adresy (<STRONG>LEA</STRONG> DI, 100[BX][SI] - sečte 
+registry s číslem 100 a dosadí výsledek do DI). Pro nás má význam i ve vkládaném 
+assembleru. Zápis <STRONG>LEA</STRONG> BX, proměnná je jednodušší něž 
+<STRONG>MOV</STRONG> BX, offset proměnná (i když instrukce vykonají stejnou 
+práci). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var pole: array [0..9] of byte; <BR>begin <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LEA</STRONG></CODE><CODE> BX, pole 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru BX dosaď adresu 
+pole} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [BX],10 {na první místo v poli 
+napiš 10} <BR>&nbsp;end; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Zatím jsme ovlivňovali jen 
+registry s offsetem. Přestože bychom byli schopni dosadit i segment, bylo by 
+nutné použít nejméně tři instrukce (nezapomeňte, že <STRONG>MOV</STRONG> neumí 
+dosadit hodnotu do segmentového registru přímo). Abychom pochopili úspornější 
+instrukci, musíme si zopakovat pojem ukazatel. </FONT></P>
+<H4><A name=Ukazatel><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Ukazatel 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Je typ proměnné, který nese 
+celou adresu určitého místa v paměti. S pomocí těchto proměnných můžeme potom 
+dosazovat hodnoty na místa, kam ukazují. Častěji myslíme označením ukazatel 
+právě tyto proměnné. </FONT></P>
+<P><CODE>Příklad: </CODE></P>
+<P><CODE>var cislo:byte; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vyčleň v paměti slabiku, 
+označ jí číslo} <BR>&nbsp;&nbsp;&nbsp;&nbsp;ukazatel:^byte; &nbsp;{vyčleň v 
+paměti čtyři slabiky, které ponesou} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{adresu 
+na proměnnou typu byte, označ je ukazatel}<BR>begin 
+<BR>&nbsp;ukazatel:=@cislo;&nbsp;&nbsp; {ukazateli přiřaď adresu proměnné číslo} 
+<BR>&nbsp;ukazatel^:=10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {na místo kam směřuje 
+ukazatel zapiš 10} <BR>&nbsp;writeln ('Hodnota proměnné 
+číslo:',cislo,'=',ukazatel^); {vypiš} <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Kromě ukazatelů na daný typ 
+existují i ukazatele obecně (typ pointer). Tyto typy jsou pro nás důležité. 
+Čtyři slabiky, které jsou pro proměnnou tohoto typu vyčleněny, nesou totiž 
+segment i offset adresy, kam ukazatel směřuje. V assembleru existují dvě 
+instrukce, které jsou schopny adresy uložené v ukazateli dosadit do registrů 
+segmentu i offsetu: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LES</STRONG> 
+  registr, ukazatel - do ES dosaď segment a registru offset adresy směru 
+  ukazatele </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LDS</STRONG> 
+  registr, ukazatel - do DS dosaď segment a registru offset adresy směru 
+  ukazatele </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var promenna: byte; &nbsp;&nbsp;{v paměti vyčleň slabiku s označením 
+proměnná} <BR>&nbsp;&nbsp;&nbsp;&nbsp;ukazatel: poiter; {v paměti vyčleň čtyři 
+slabiky pro ukazatel} <BR>begin <BR>&nbsp;ukazatel:=@promenna; {nasměruj 
+ukazatele na proměnnou} <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> BX, ukazatel 
+&nbsp;&nbsp;&nbsp;{nastav ES:BX na adresu proměnné} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SEGES</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [BX],10 {zapiš na tuto adresu} 
+<BR>&nbsp;end; writeln (promenna); &nbsp;&nbsp;&nbsp;{vypiš obsah proměnné} 
+<BR>end. </CODE></P>
+<H3><A name="Aritmetické instrukce"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Aritmetické 
+instrukce </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Programátor při své činnosti 
+potřebuje nejen přesuny dat. V každém programu jsou nutné i výpočty a to s 
+běžnými daty, nebo s adresami. Ty se v assembleru provádějí jen s celými čísly. 
+Operace s desetinnými čísly jsou zdlouhavé, i když jsou proveditelné pomocí 
+určitých algoritmů. ASM86 pro ně ale nemá instrukce. Většina matematických 
+operací se provádí s čísly v registrech nebo v paměti. Označení operandů je 
+shodné jako při přesunech. Zároveň tyto instrukce nastavují indikátory registru 
+F. Umožní tak větvit program. Informace o nastavovaných indikátorech najdeme v 
+tabulce instrukcí (<STRONG>+</STRONG>). </FONT></P>
+<H4><A name=Sčítání><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Sčítání 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Při tvorbě programu si musíme 
+ujasnit, jestli chceme k cílovému místu přičíst 1, nebo jiné číslo. Podle toho 
+volíme instrukci:</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>INC</STRONG> cíl - 
+  k cíli přičti jedna (registr, paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>ADD</STRONG> cíl, 
+  zdroj - k cíli přičti zdroj (registr - hodnota, paměť -hodnota, registr - 
+  registr, paměť - registr, registr - paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>ADC</STRONG> cíl, 
+  zdroj - stejně jako <STRONG>ADD</STRONG>, ale přičti i bit CF (přenos)</FONT> 
+  </LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklady: </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>INC</STRONG> AX - 
+přičti k registru AX hodnotu 1 <BR><STRONG>INC</STRONG> <STRONG>WORD</STRONG> 
+<STRONG>PTR</STRONG> [BX] - přičti k slovu na adrese určené DS:BX hodnotu 1 
+<BR><STRONG>INC</STRONG> <STRONG>BYTE</STRONG> <STRONG>PTR</STRONG> CS:[adresa] 
+- přičti k slabice na adrese určené CS:adresa (konstantní) 1 
+<BR><STRONG>SEGES</STRONG> <STRONG>INC</STRONG> <STRONG>BYTE</STRONG> [DI + 2] - 
+přičti k slabice na adrese ES:DI + 2 hodnotu 1 <BR><STRONG>ADD</STRONG> AX, BX - 
+ke slovu v registru AX přičti obsah registru BX (slovo) <BR><STRONG>ADD</STRONG> 
+AH, 8 - k slabice v registru AH přičti číslo 8} <BR><STRONG>SEGCS</STRONG> 
+<STRONG>ADD</STRONG> DX, <STRONG>WORD</STRONG> <STRONG>PTR</STRONG> [BX] - k 
+registru DX přičti slovo na adrese CS:BX <BR><STRONG>ADD</STRONG> promenna, 5 - 
+k deklarované proměnné přičti 5 <BR><STRONG>ADD</STRONG> <STRONG>BYTE</STRONG> 
+<STRONG>PTR</STRONG> [SI], 30 - k slabice na adrese DS:SI přičti 30} 
+<BR><STRONG>ADD</STRONG> <STRONG>BYTE</STRONG> <STRONG>PTR</STRONG> ES:[BP], AL 
+- k slabice na adrese ES:BP přičti obsah registru AL </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Pokud při těchto operacích 
+dojde k přeplnění cíle, nastaví se registr OF do log. 1. Aby při odlaďování 
+vašich programů nedošlo ke zbytečným hádkám s překladačem, uvědomte si, že zdroj 
+i cíl musí mít stejný počet bitů (tzn. 8, nebo 16). </FONT></P>
+<H4><A name=Odčítání><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Odčítání 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Instrukce sloužící k odčítání 
+jsou zápisem operandů shodné s instrukcemi pro sčítání. Proto si uvedeme jen 
+jejich seznam: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DEC</STRONG> cíl - 
+  d cíle odečti 1 (registr, paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SUB</STRONG> cíl, 
+  zdroj - od cíle odečti zdroj (registr - hodnota, paměť - hodnota, registr - 
+  registr, paměť - registr, registr - paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SBB</STRONG> cíl, 
+  zdroj - stejně jako SUB, ale odečti i bit CF Příklady by byly shodné se 
+  sčítáním. </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Přesto jsou zde specifické 
+instrukce: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>NEG</STRONG> cíl - 
+  otoč znaménko v cíli (registr, paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CMP</STRONG> cíl, 
+  zdroj - odečti bez změny cíle, nastav jen registr F (registr - hodnota, paměť 
+  - hodnota, registr - registr, paměť - registr, registr - paměť) 
+</FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Instrukce 
+<STRONG>CMP</STRONG> porovnává dvě čísla odečtením. Protože ale nedojde k jejich 
+změně, použijeme tuto instrukci před větvením programu. Za <STRONG>CMP</STRONG> 
+totiž většinou následu+jí instrukce skoku závislé na stavu příznaků registru F. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>var a,b,s,r:integer; <BR>begin <BR>&nbsp;clrscr; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vymaž obrazovku} <BR>&nbsp;write 
+('a=');<BR>&nbsp;readln(a);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vstup hodnoty a} 
+<BR>&nbsp;write ('b=');<BR>&nbsp;readln(b);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vstup 
+hodnoty b} <BR>&nbsp;asm 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{začátek bloku 
+asm} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX, a 
+&nbsp;&nbsp;&nbsp;&nbsp;{do AX vlož hodnotu proměnné a (z paměti)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>ADD</STRONG></CODE><CODE> AX,b 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{k AX přičti hodnotu proměnné b} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> s, AX 
+&nbsp;&nbsp;&nbsp;&nbsp;{do proměnné s vlož součet z registru AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX,a 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{znovu naber a} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> AX,b 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{odečti od AX hodnotu b} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> r,AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do proměnné r vlož rozdíl z registru AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> a 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{k a přičti 1} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DEC</STRONG></CODE><CODE> b 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{od b odečti 1} <BR>&nbsp;end; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{konec bloku asm} 
+<BR>&nbsp;writeln ('a+b=',s,' a-b=',r);{vypiš obsahy proměnných} 
+<BR>&nbsp;writeln ('a+1=',a,' b-1=',b); <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Uvedený příklad ukazuje 
+nejjednodušší použití instrukcí <STRONG>ADD</STRONG>, <STRONG>SUB</STRONG>, 
+<STRONG>INC</STRONG>, <STRONG>DEC</STRONG>. Všimněte si, že se zápisy adres 
+proměnných si nemusí programátor ani moc lámat hlavu. V tom mu totiž pomáhá 
+překladač Pascalu. </FONT></P>
+<H4><A name=Násobení><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Násobení 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">I když programátoři neradi 
+používají instrukce násobení a dělení pro jejich dlouhou dobu provádění (na 
+procesoru 8086, u jiných procesorů je už rychlé), ASM86 je má. Někdy dokonce 
+neexistuje jiná možnost než je použít. I tyto operace jsou definovány jen na 
+celých číslech. Rozlišujeme také, jestli je provádíme se znaménkem, nebo bez 
+znaménka.</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>MUL</STRONG> zdroj 
+  - registr AL vynásob se zdrojem (osmibitový registr, nebo paměť) a výsledek 
+  zapiš do registru AX (osmibitové násobení).</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>MUL</STRONG> zdroj 
+  - registr AX vynásob se zdrojem (šestnáctibitový registr, nebo paměť) a 
+  výsledek (32 bitů) zapiš do registrového páru DX,AX za sebou (šestnáctibitové 
+  násobení). </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>IMUL</STRONG> 
+  zdroj - jako <STRONG>MUL</STRONG> ale násobení se znaménkem 
+  <STRONG>IMUL</STRONG> cíl,[zdroj,]konstanta - [286], do cíle vlož součin 
+  zdroje a konstanty (šestnáctibitový registr - šestnáctibitový registr - 
+  hodnota, šestnáctibitový registr - slovo v paměti - hodnota, šestnáctibitový 
+  registr - osmibitová hodnota, to znamená cíl := zdroj * konstanta, nebo cíl := 
+  cíl * konstanta) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">POZOR!, o kolikabitové 
+násobení se jedná určuje označení místa zdroje. </FONT></P>
+<H4><A name=Dělení><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Dělení 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tato operace je jednou z 
+nejzdlouhavějších. Její provádění trvá (na 8086) až 190 period hodin (sčítání 
+trvá kolem 3 period). Jeho výhodou je ale to, že je možné zjistit jak výsledek 
+po celočíselném dělení (DIV), tak i zbytek po celočíselném dělení (MOD). A to 
+všechno jen jednou instrukcí.</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DIV</STRONG> zdroj 
+  - registr AX vyděl zdrojem (osmibitový registr, nebo paměť) a podíl ulož do 
+  AL, zbytek po dělení ulož do AH (Osmibitové dělení)</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DIV</STRONG> zdroj 
+  - dvojslovo v registrech DX, AX vyděl zdrojem (šestnáctibitový registr, nebo 
+  paměť) a podíl ulož do AX, zbytek po dělení ulož do DX (Šestnáctibitové 
+  dělení)</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>IDIV</STRONG> 
+  zdroj - jako <STRONG>DIV</STRONG> ale dělení se znaménkem Použití těchto 
+  instrukcí je podobné jako násobení. Program si musíme ošetřit tak, aby nemohlo 
+  dojít k dělení nulou. Jestliže k němu přesto dojde, procesor zavolá přerušení 
+  <STRONG>INT</STRONG> 0. </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>var a,b,d,z:byte; <BR>&nbsp;&nbsp;&nbsp;&nbsp;s:word; 
+<BR>begin <BR>&nbsp;clrscr; <BR>&nbsp;write ('a=');<BR>&nbsp;readln (a); 
+<BR>&nbsp;write ('b=');<BR>&nbsp;readln (b); <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL,a {do AL vlož 
+hodnotu a} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MUL</STRONG></CODE><CODE> b 
+&nbsp;&nbsp;&nbsp;{vynásob hodnotou b (v paměti)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> s,AX {do proměnné 
+s vlož součin z registru AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AH,0 {nuluj AH 
+(číslo je jen 8 bitové)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL,a {do AL vlož 
+hodnotu a} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DIV</STRONG></CODE><CODE> b 
+&nbsp;&nbsp;&nbsp;{vyděl proměnnou b} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> d,AL {výsledek 
+vlož do proměnné d} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> z,AH {zbytek po 
+dělení vlož do proměnné z} <BR>&nbsp;end; <BR>&nbsp;writeln ('a*b=',s); 
+<BR>&nbsp;writeln ('a div b=',d,' a mod b=',z); <BR>&nbsp;readkey; <BR>end. 
+</CODE></P>
+<H3><A name="Změna počtu bitů"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Změna počtu 
+bitů </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Často potřebujeme opravit 
+šestnáctibitové číslo na osmibitové a naopak. Při této změně může ale dojít ke 
+ztrátě informace v případě úbytku bitů. Převod čísel bez znaménka provedeme 
+nejjednodušeji využitím půlení registrů. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Slabika -&gt; 
+  Slovo <BR></STRONG>Do šestnáctibitového registru načteme do dolní poloviny 
+  slabiku. Horní polovinu nulujeme. Slovo potom načteme ze všech šestnácti bitů: 
+  <BR></FONT><CODE>var b:byte; <BR>&nbsp;&nbsp;&nbsp;&nbsp;w:word; <BR>begin 
+  <BR>&nbsp;b:=10; <BR>&nbsp;asm 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, 
+  b&nbsp;&nbsp;&nbsp; &nbsp;{do AL osm bitů z proměnné b} 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AH, 0 
+  &nbsp;&nbsp;&nbsp;&nbsp;{nuluj AH} 
+  <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> w, AX 
+  &nbsp;&nbsp;&nbsp;&nbsp;{do proměnné w vlož všech šestnáct bitů} 
+  <BR>&nbsp;end; <BR>end. </CODE>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Slovo-&gt; Slabika 
+  <BR></STRONG>Operace je opačná. Šestnáctibitové číslo vložíme do celého 
+  šestnáctibitového registru. Do slabiky potom vložíme jen spodních osm bitů. 
+  Ale pozor, tady může dojít ke ztrátě bitů v horních osmi bitech. Protože 
+  úprava čísel se znaménky by byla složitá, přichází opět na pomoc ASM86 s 
+  instrukcemi: </FONT>
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CBW</STRONG> - 
+    převeď obsah AL do AX se zachováním znaménka </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CWD</STRONG> - 
+    převeď obsah AX do DX, AX (32 bitů) se zachováním znaménka 
+  </FONT></LI></UL></LI></UL>
+<H3><A name="Práce s čísly v kódu BCD"><FONT size=3 face=Arial></FONT></A><FONT 
+face="Arial CE, Arial, Helvetica">Práce s čísly v kódu BCD</FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Čísla v BCD kódu mohou být 
+uložena v těchto formátech: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Nezhuštěný tvar 
+  <BR></STRONG>V jedné slabice je uložena jedna číslice v BCD kódu. Má hodnotu 
+  0-9 a obsazuje tedy jen spodní 4 bity. Horní polovina slabiky je nulová (to se 
+  doporučuje pro operace násobení a dělení, pro sčítání a odčítání může mít 
+  libovolný obsah). Tento tvar je vhodný pro převod do kódu ASCII. Stačí jen k 
+  slabice přičíst číslo 48 (logický součet s číslem $30). </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Zhuštěný tvar 
+  <BR></STRONG>V jedné slabice jsou uloženy dvě BCD číslice. Spodní 4 bity nesou 
+  hodnotu nižšího řádu (jednotky), horní 4 nesou hodnotu vyššího řádu (desítky). 
+  Do slabiky jde tedy uložit číslo v rozsahu 0-99. ASM86 nepodporuje přímo 
+  matematické operace s takto kódovanými čísly. Přesto obsahuje instrukce pro 
+  jejich úpravu po provedení běžných operací určených pro čísla v přirozeném 
+  dvojkovém kódu (obyčejné dvojkově uložené číslo). V ASM86 nejdeme i instrukce, 
+  které pro tyto operace čísla v BCD kódu připraví. Jedná se o instrukce: 
+  <STRONG>AAA</STRONG>, <STRONG>AAD</STRONG>, <STRONG>AAM</STRONG>, 
+  <STRONG>AAS</STRONG>, <STRONG>DAA</STRONG>, <STRONG>DAS</STRONG> (bližší 
+  informace v </FONT><A 
+  href="http://www.mujweb.cz/www/j_schwarz/inssou86.html#Instrukce%20aritmetick%FDch%20operac%ED"><FONT 
+  size=2 face=Arial>tabulce instrukcí</FONT></A><FONT size=2 face=Arial>). 
+  </FONT></LI></UL>
+<H3><A name="Instrukce logických operací"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Instrukce 
+logických operací </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Logické instrukce jsou jednou 
+z dobrých pomůcek programátorů. ASM86 je schopen provádět všechny běžné logické 
+operace, a to se slovem nebo slabikou. Chybí zde tedy instrukce pro jednotlivé 
+bity. Ty však volbou vhodných algoritmů můžeme lehce nahradit. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>NOT</STRONG> zdroj 
+  - neguj všechny bity zdroje </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AND</STRONG> 
+  zdroj, cíl - logický součin zdroje s cílem ulož do zdroje (registr - hodnota, 
+  paměť - hodnota, registr - registr, paměť - registr, registr - paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>TEST</STRONG> 
+  zdroj, cíl - logický součin zdroje s cílem, ale nastav jen registr příznaků F 
+  (registr - hodnota, paměť - hodnota, registr - registr, paměť - registr, 
+  registr - paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>OR</STRONG> zdroj, 
+  cíl - logický součet zdroje s cílem ulož do zdroje (registr - hodnota, paměť - 
+  hodnota, registr - registr, paměť - registr, registr - paměť) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>XOR</STRONG> 
+  zdroj, cíl - logický vylučovací součet zdroje s cílem ulož do zdroje (registr 
+  - hodnota, paměť - hodnota, registr - registr, paměť - registr, registr - 
+  paměť) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Kolikabitová operace je, 
+určuje opět specifikace zdroje a cíle. Instrukci <STRONG>TEST</STRONG> použijeme 
+k nastavení příznakového registru, a tak můžeme větvit program, aniž bychom 
+ovlivnili hodnoty zdroje a cíle. </FONT></P>
+<H4><A name="Použití logických operací"><FONT size=2 face=Arial></FONT></A><FONT 
+size=-1 face="Arial CE, Arial, Helvetica">Použití logických operací </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Vymaskování slabiky nebo 
+slova <BR>Často potřebuje programátor nastavit některé bity slabiky, nebo slova 
+do hodnoty log. 1, nebo 0. K tomu mu velmi dobře poslouží právě logické operace 
+AND nebo OR. Máme-li slabiku ve tvaru XXXXAXXX v registru AL a chceme, aby bity 
+X měly hodnotu 0 a hodnota bitu A zůstala zachována, provedeme instrukci 
+<STRONG>AND</STRONG>&nbsp;AL,&nbsp;$08&nbsp;(=00001000). Máme-li slabiku ve 
+tvaru XXXXAXXX v registru AL a chceme, aby bity X měly hodnotu 1 a hodnota bitu 
+A zůstala zachována, provedeme instrukci 
+<STRONG>OR</STRONG>&nbsp;AL,&nbsp;$F7&nbsp;(=11110111). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Nulování registru 
+<BR></STRONG>Zajímavější než instrukce <STRONG>MOV</STRONG> registr,0 je nulovat 
+pomocí <STRONG>XOR</STRONG> registr, registr. Efekt je stejný, doba vykonání 
+operace je kratší. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Zjištění zbytku po 
+celočíselném dělení mocninami 2 <BR></STRONG>Kdybychom vždy, když chceme zjistit 
+zbytek po dělení mocninami 2 (a ten často potřebujeme) používali instrukci 
+<STRONG>DIV</STRONG>, program bychom zdržovali. Stačí si jen uvědomit, že můžeme 
+zjistit hodnotu bitů v řádech za log. 1 v binárním tvaru dělence. Chceme-li 
+zjistit zbytek po celočíselném dělení 2 (sudé, liché číslo) čísla v registru AL, 
+stačí jen použít instrukci <STRONG>AND</STRONG> AL,1. V registru AL je potom jen 
+buď 1 (liché číslo), nebo 0 (sudé číslo). Pro lepší orientaci poslouží přehled: 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AND</STRONG> AL, 1 
+  &nbsp;(&nbsp;1 = 00000001) -&gt; AL := AL mod 2 (&nbsp;2 = 00000010)</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AND</STRONG> AL, 3 
+  &nbsp;(&nbsp;3&nbsp;= 00000011) -&gt; AL := AL mod 4 (&nbsp;4 = 
+  00000100)</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AND</STRONG> AL, 7 
+  &nbsp;(&nbsp;7&nbsp;= 00000111) -&gt; AL := AL mod 8 (&nbsp;8 = 00001000) 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>AND</STRONG> AL, 
+  15 (15 = 00001111) -&gt; AL := AL mod 16(16 = 00010000) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Převod čísla v nezhuštěném 
+BCD na ASCII <BR>Velmi jednoduchým prostředkem, jak převést číslo v rozsahu 0-9 
+do hodnoty jeho znaku v tabulce ASCII, je logický součet s číslem $30 (to je 
+stejné jako přičtení 48). Použitím této úpravy čísel v kódu BCD je zobrazení i 
+velkých čísel jednoduché. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var slabika:byte; <BR>&nbsp;&nbsp;&nbsp;&nbsp;znak:char; <BR>begin 
+<BR>&nbsp;repeat <BR>&nbsp;&nbsp;readln (slabika); <BR>&nbsp;until slabika in 
+[0..9]; <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, slabika {do 
+registru AL předej hodnotu slabiky} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>OR</STRONG></CODE><CODE> AL, 
+$30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {převeď na ASCII} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> znak, AL 
+&nbsp;&nbsp;&nbsp;{do proměnné znak předej ASCII hodnotu čísla} <BR>&nbsp;end; 
+<BR>&nbsp;writeln (znak); <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V příkladu je načtené číslo z 
+intervalu 0..9 převedeno do ASCII s pomocí log. instrukce <STRONG>OR</STRONG>. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Před dalším příkladem si 
+musíme vysvětlit, jak ukládá Pascal řetězce (typu string). Za řetězec je zde 
+považováno pole slabik, které má na prvním místě délku řetězce a na dalších 
+místech jsou kódy ASCII zapsaných znaků. Informace o délce řetězce je důležitá 
+pro jeho správné zobrazení. Ten proto nemusí obsahovat speciální ukončovací 
+znak. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var slovo:string; <BR>&nbsp;&nbsp;&nbsp;&nbsp;i:byte; <BR>begin 
+<BR>&nbsp;for i:=0 to 9 do <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> DI, 
+</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> slovo {do registru DI ulož 
+adresu proměnné slovo} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> DI 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{posuň 
+se až za slabiku délky řetězce} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> AH,AH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nuluj AH} 
+</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL,i {do AL vlož krok i} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>ADD</STRONG></CODE><CODE> DI,AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přičti krok k 
+adrese (posuv po řetězci)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>OR</STRONG></CODE><CODE> AL,$30 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{převeď obsah 
+AL na ASCII znak} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+[DI],AL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přesuň znak do 
+řetězce} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [OFFSET slovo]{zvyš délku 
+řetězce} <BR>&nbsp;end; <BR>&nbsp;writeln (slovo); <BR>&nbsp;readln; <BR>end. 
+</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tento příklad vytvoří slovo 
+typu string s čísly od 0 do 9. To, že zatím nevíme, jak se v ASM86 tvoří cykly, 
+není na závadu. Prostě si pomůžeme znalostmi z Pascalu. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Kódování 
+<BR></STRONG>Každý rád chrání svá data před neoprávněným přístupem kódováním. K 
+tomu dobře slouží logická operace XOR. Postup kódování naznačuje postup. 
+Provedeme-li operaci XOR s konstantou a kódovaným číslem, získáme kódované 
+číslo. Pokud s kódovaným číslem provedeme opět XOR se stejnou konstantou, 
+získáme zpět původní číslo. Čísla kódovaná přidáme do EXE souboru programu. Před 
+jejich použitím je dekódujeme. Protože tato čísla mohou nést např. jméno autora 
+(v ASCII), je jméno pro běžného uživatele po zakódování nečitelné (a tedy lehce 
+nepřepsatelné v souboru EXE). Pozor! Hodnota konstanty musí být při kódování i 
+dekódování stejná. Tento postup můžeme libovolně pozměňovat podle úrovně našich 
+znalostí (např. xorovat první znak s druhým, druhý s třetím, . . .). </FONT></P>
+<H3><A name="Instrukce posuvů a rotací"><FONT size=3 face=Arial></FONT></A><FONT 
+face="Arial CE, Arial, Helvetica">Instrukce posuvů a rotací </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tyto instrukce jsou dobrým 
+pomocníkem každému, kdo je umí používat. Jedná se o bitový posuv uvnitř slabiky, 
+nebo slova. Počet bitů posuvu je specifikován použitým registrem, nebo označením 
+paměťového místa. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Posuvy: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SHL</STRONG> cíl, 
+  počet &lt;=&gt; SAL cíl, počet - v cíli posuň tak, že nejnižší bit nahradíš 
+  nulou, ostatní přesuň z nižšího místa o jedno výše, nejvyšší bit přesuň do 
+  registru CF (registr - CL (který nese počet kroků posuvu), registr - 1, [286] 
+  registr - počet kroků posuvu) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SHR</STRONG> cíl, 
+  počet - v cíli posuň tak, že nejvyšší bit nahradíš nulou, ostatní přesuň z 
+  vyššího místa na nižší, nejnižší bit přesuň do registru CF (registr - CL 
+  (který nese počet kroků posuvu), registr - 1, [286] registr - počet kroků 
+  posuvu) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SAR</STRONG> cíl, 
+  počet - v cíli posuň tak, že nejvyšší bit nezměníš a kopíruj ho do nižšího 
+  bitu, ostatní přesuň z vyššího místa na nižší, nejnižší bit přesuň do registru 
+  CF (registr - CL (který nese počet kroků posuvu), registr - 1, [286] registr - 
+  počet kroků posuvu) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Rotace: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>ROL</STRONG> cíl, 
+  počet - v cíli posuň tak, že každý nižší bit kopíruj do vyššího, nejvyšší 
+  kopíruj na místo nejnižšího a do registru CF (registr - CL (který nese počet 
+  kroků posuvu), registr - 1, [286] registr - počet kroků posuvu) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>ROR</STRONG> cíl, 
+  počet - v cíli posuň tak, že každý vyšší bit kopíruj do nižšího, nejnižší 
+  kopíruj na místo nejvyššího a do registru CF (registr - CL (který nese počet 
+  kroků posuvu), registr - 1, [286] registr - počet kroků posuvu) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>RCL</STRONG> cíl, 
+  počet - v cíli posuň tak, že každý nižší bit kopíruj do vyššího, nejvyšší 
+  kopíruj do registru CF, obsah CF přenes na místo nejnižšího (registr - CL 
+  (který nese počet kroků posuvu), registr - 1, [286] registr - počet kroků 
+  posuvu) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>RCR</STRONG> cíl, 
+  počet - v cíli posuň tak, že každý vyšší bit kopíruj do nižšího, nejnižší 
+  kopíruj do registru CF, obsah CF přenes na místo nejvyššího (registr - CL 
+  (který nese počet kroků posuvu), registr - 1, [286] registr - počet kroků 
+  posuvu) </FONT></LI></UL>
+<H4><A name="Použití posuvů a rotací"><FONT size=2 face=Arial></FONT></A><FONT 
+size=-1 face="Arial CE, Arial, Helvetica">Použití posuvů a rotací </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Kontrola jednotlivých 
+bitů <BR></STRONG>Jestliže potřebujeme zkontrolovat, jakou hodnotu některý z 
+bitů nese, stačí slovo nebo slabiku rotovat přes registr CF. Hodnotu, kterou bit 
+nese, potom zjistíme kontrolou registru CF. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Tvorba masky 
+<BR></STRONG>Jestliže nevíme, jak vytvořit slabiku nebo slovo pro vymaskování, 
+použijeme instrukci posuvu. <STRONG>MOV</STRONG>&nbsp;AL, 1; 
+<STRONG>SHL</STRONG>&nbsp;AL,&nbsp;3. Takto získáme slabiku s nastaveným bitem 
+na čtvrtém místě (00001000). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Celočíselné dělení 
+mocninou 2 a násobení konstantou <BR></STRONG>Je to nejdůležitější použití 
+posuvů. Vychází z faktu, že bitový posuv čísla doleva o jeden krok je stejný, 
+jako bychom číslo vynásobili dvěma. Naopak bitový posuv čísla doprava o jeden 
+krok je stejný, jako bychom číslo dělili dvěma. Dělení: Do registru umístíme 
+dělence. Ten potom posuneme doprava o tolik, kolikátou mocninou 2 je dělitel: 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SHR</STRONG> AL, 1 
+  - AL := AL div 2 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SHR</STRONG> AL, 2 
+  - AL := AL div 4 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SHR</STRONG> AL, 3 
+  - AL := AL div 8 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SHR</STRONG> AL, 4 
+  - AL := AL div 16 . . . </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Pozor! Toto dělení je sice 
+velmi rychlé, ale použitelné jen tehdy, jestliže chceme číslo dělit mocninou 2 
+(a to bývá naštěstí nejčastěji). Ke zjištění zbytku po celočíselném dělení 
+použijeme operaci AND (jak bylo popsáno výše).<BR>Násobení čísla konstantou: Do 
+tolika registrů, kolik je log. 1 v binárním vyjádření konstanty, umístíme 
+hodnotu čísla. Potom jednotlivé registry posuneme doleva. Každý o tolik, na 
+kolikátém místě byla log. 1 v binárním vyjádření konstanty. Nakonec všechny 
+registry přičteme k jedinému, ve kterém bude výsledek. <BR>Příklad: Vynásobme 
+konstantou 18 vložené číslo: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">18 : 2 = 9 (0)...0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">&nbsp;9 : 2 = 4 (1)...1 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">&nbsp;4 : 2 = 2 (0)...2 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">&nbsp;2 : 2 = 1 (0)...3 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">&nbsp;1 : 2 = 0 (1)...4 
+  </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Logická 1 je tedy na místě 
+č.1 a č.4. Proto použijeme dva registry, ty posuneme o 1 a 4 kroky. Nakonec je 
+sečteme.</FONT></P>
+<P><CODE>{$G+} <BR>var cislo:word; <BR>begin <BR>&nbsp;readln (cislo); 
+<BR>&nbsp;asm <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+AX,cislo &nbsp;{naber číslo do prvního registru} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BX, AX 
+&nbsp;&nbsp;&nbsp;{naber číslo do druhého registru} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SHL</STRONG></CODE><CODE> AX, 1 
+&nbsp;&nbsp;&nbsp;&nbsp;{v prvním registru jednou doleva&lt;=&gt;vynásob 2} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SHL</STRONG></CODE><CODE> BX, 4 
+&nbsp;&nbsp;&nbsp;&nbsp;{v druhém registru čtyřikrát doleva&lt;=&gt;vynásob 16} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>ADD</STRONG></CODE><CODE> AX, 
+BX&nbsp;&nbsp; &nbsp;{sečti obsahy obou registrů} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> cislo, AX {vrať 
+přes proměnnou cislo} <BR>&nbsp;end; <BR>&nbsp;writeln ('Číslo*18=',cislo); 
+<BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Uvedený postup můžete snadno 
+převést na libovolnou konstantu. Vzhledem ke zdlouhavosti násobení instrukcí 
+<STRONG>MUL</STRONG> vám tento algoritmus občas zrychlí program. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Následující příklad vytváří 
+řetězec informací o čase. Ten si zjistí z paměti CMOS. Čtení provádíme tak, že 
+na adresu portu $70 vyšleme číslo čtené slabiky (0 - sekundy, 2 - minuty, 4 - 
+hodiny) v CMOS. Z portu $71 potom přečteme její hodnotu. Ta je v CMOS ve 
+zhuštěném BCD tvaru. Proto ji převedeme na nezhuštěný a teprve potom na kód 
+ASCII. Nakonec data zapíši do proměnné slovo typu string ve tvaru, v jakém je 
+zvykem čas zapisovat. Program jsem optimalizoval tak, aby měl co nejmenší počet 
+instrukcí. Vzhledem k tomu, že ve vloženém assembleru jsem nepoužil cyklus, 
+tvořím jej s pomocí pascalovského for cyklu. Podobným způsobem bychom četli i 
+jiné užitečné informace z paměti CMOS (datum, konfigurace . . .). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>var i:byte; <BR>&nbsp;&nbsp;&nbsp;&nbsp;slovo:string; 
+<BR>begin <BR>&nbsp;slovo[0]:=#8; 
+<BR>&nbsp;slovo[3]:='.';<BR>&nbsp;slovo[6]:='.'; <BR>&nbsp;clrscr; 
+<BR>&nbsp;repeat <BR>&nbsp;&nbsp;for i:=0 to 2 do <BR>&nbsp;&nbsp;asm 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BX,offset 
+slovo {naber adresu proměnné slovo do BX} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> AH,AH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vymaž horní 
+polovinu registru AX} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+AL,i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {naber do 
+dolní poloviny AX krok i} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> BX,AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{odečti od BX obsah 
+AX} <BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>SHL</STRONG></CODE><CODE> AL,1 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vynásob, 
+AL:=AL*2} <BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> 
+BX,AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {odečti od BX 
+obsah AX} <BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>OUT</STRONG></CODE><CODE> 
+$70,AL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pošli na CMOS 
+adresu čtené slabiky} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>IN</STRONG></CODE><CODE> AL,$71 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přečti z CMOS obsah 
+čtené slabiky} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AH,AL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{zkopíruj obsah 
+přečtené slabiky do AH} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>SHR</STRONG></CODE><CODE> AH,4 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{desítky posuň 
+do dolní poloviny AH} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>AND</STRONG></CODE><CODE> AX,$0F0F 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{odstraň zbytečné bity} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>OR</STRONG></CODE><CODE> AX,$3030 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{proveď převod do ASCII} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 8[BX],AL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nastav jednotky v proměnné slovo} 
+<BR>&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 7[BX],AH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nastav desítky v proměnné slovo} 
+<BR>&nbsp;&nbsp;end; <BR>&nbsp;&nbsp;gotoxy (1,1); <BR>&nbsp;&nbsp;write(slovo); 
+<BR>&nbsp;until keypressed; <BR>&nbsp;readkey; <BR>end. </CODE></P>
+<H3><A name="Instrukce skoku"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Instrukce 
+skoku </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Protože si mikroprocesor 
+vytváří frontu instrukcí, nejsou z hlediska rychlosti běhu programu skoky to 
+pravé. Přesto bychom složitější programy bez nich asi těžko tvořili. Abychom 
+mohli instrukce skoku používat, musíme umět vytvořit návěští. </FONT></P>
+<H4><A name=Návěští><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Návěští 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Assembler je správně jen 
+název překladače "Jazyka symbolických adres", který se pro něj čassem vžil. 
+Název "Jazyk symbolických adres" vyjadřuje to, že místo adres instrukcí 
+používáme symboly. V Turbo assembleru nejsme v názvech návěští nijak zvlášť 
+omezováni. Ve vkládaném assembleru můžeme za název návěští použít posloupnost 
+znaků začínající znakem @ (@1, @zacatek, @navesti). Jestliže používáme návěští, 
+deklarované mimo vkládaný assembler (s pomocí LABEL), není přítomnost znaku @ 
+nutná. Návěští s dvojtečkou uvedeme před instrukci, na kterou se odkazujeme. Při 
+překladu je v místech odkazu na návěští jeho název nahrazen skutečnou adresou 
+instrukce. </FONT></P>
+<H4><A name="Nepodmíněný skok"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Nepodmíněný 
+skok </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Je to nepodmíněný skok na 
+jiné místo programu. To musí být označené návěštím. Za instrukcí skoku je potom 
+uveden jeho název. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JMP</STRONG> 
+  návěští - proveď skok programu na návěští (ve skutečnosti se jen změní obsah 
+  čítače instrukcí IP, případně CS při vzdáleném skoku) V programu potom 
+  nepodmíněný skok vypadá takto: <BR></FONT><CODE>@navesti: instrukce na kterou 
+  bude odkaz <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> 
+  @navesti </CODE></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jestliže skoky používáme, 
+hrozí vždy nebezpečí, že se program zacykluje (a nikdy neskončí). Proto je 
+důležité si vždy rozmyslet, za jakých okolností by k této kolizi mohlo dojít. 
+</FONT></P>
+<H4><A name="Podmíněný skok"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Podmíněný 
+skok </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jedná se o skok podmíněný 
+stavem jednoho nebo více, bitů registru příznaků F. Jen tímto způsobem je možné 
+provádět v assembleru přímé větvení programu. Před instrukcí podmíněného skoku 
+proto vždy provedeme instrukci, která použitý příznak nastaví. V případě, že 
+není splněna podmínka skoku, pokračuje program dál, jako by se nic nedělo. 
+Instrukce podmíněného skoku začínají vždy písmenkem J. Za ním je zkratka 
+udávající na jakých bitech registru F je skok závislý. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JE</STRONG> 
+  návěští - skok na návěští při ZF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JZ</STRONG> 
+  návěští - skok na návěští při ZF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNE</STRONG> 
+  návěští - skok na návěští při ZF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNZ</STRONG> 
+  návěští - skok na návěští při ZF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JC</STRONG> 
+  návěští - skok na návěští při CF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNC</STRONG> 
+  návěští - skok na návěští při CF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JS</STRONG> 
+  návěští - skok na návěští při SF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNS</STRONG> 
+  návěští - skok na návěští při SF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JO</STRONG> 
+  návěští - skok na návěští při OF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNO</STRONG> 
+  návěští - skok na návěští při OF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JP</STRONG> 
+  návěští - skok na návěští při PF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNP</STRONG> 
+  návěští - skok na návěští při PF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JPE</STRONG> 
+  návěští - skok na návěští při PF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JPO</STRONG> 
+  návěští - skok na návěští při PF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JA</STRONG> 
+  návěští - skok na návěští při (CF = 0) AND (ZF = 0) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNBE</STRONG> 
+  návěští - skok na návěští při (CF = 0) AND (ZF = 0) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JAE</STRONG> 
+  návěští - skok na návěští při CF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNB</STRONG> 
+  návěští - skok na návěští při CF = 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JB</STRONG> 
+  návěští - skok na návěští při CF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNAE</STRONG> 
+  návěští - skok na návěští při CF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JBE</STRONG> 
+  návěští - skok na návěští při (CF = 1) OR (ZF = 1) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNA</STRONG> 
+  návěští&nbsp;- skok na návěští při (CF = 1) OR (ZF = 1) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JG</STRONG> 
+  návěští - skok na návěští při (ZF = 0) OR (SF = OF) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNLE</STRONG> 
+  návěští - skok na návěští při (ZF = 0) OR (SF = OF) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JGE</STRONG> 
+  návěští - skok na návěští při SF = OF </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNL</STRONG> 
+  návěští - skok na návěští při SF = OF </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JL</STRONG> 
+  návěští - skok na návěští při SF &lt;&gt; OF </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNGE</STRONG> 
+  návěští - skok na návěští při SF &lt;&gt; OF </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JLE</STRONG> 
+  návěští - skok na návěští při (ZF = 1) OR (SF &lt;&gt; OF) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>JNG</STRONG> 
+  návěští - skok na návěští při (ZF = 1) OR (SF &lt;&gt; OF) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Při hledání instrukce 
+podmíněného skoku musíme myslet na to, za jakých okolností chceme skok vykonat. 
+K tomu je také dobré si uvědomit: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">A &lt; B =&gt; A - B &lt; 
+  0 =&gt; SF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">A = B =&gt; A - B = 0 
+  =&gt; ZF = 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">A &gt; B =&gt; A - B &gt; 
+  0 =&gt; SF = 0 </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Rozdíl čísel v tomto případě 
+provedeme nejlépe instrukcí <STRONG>CMP</STRONG>. Pro tvorbu cyklu můžeme použít 
+jeden z registrů, který si pro krokovací proměnnou vyčleníme. Jednoduchý cyklus 
+pak vytvoříme podmíněným skokem: </FONT></P>
+<P><CODE>begin <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CL, 10 {do 
+registru CL dosaď 10, počet kroků} <BR>&nbsp;@nav: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{návěští, tady umístíme opakovanou činnost} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DEC</STRONG></CODE><CODE> CL 
+&nbsp;&nbsp;&nbsp;&nbsp;{odečti od CL číslo 1} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JNZ</STRONG></CODE><CODE> @nav 
+&nbsp;&nbsp;{jestliže není nula skoč na návěští} <BR>&nbsp;end; <BR>end. 
+</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Program opakuje skok dokud 
+není v registru CL nulový výsledek. </FONT></P>
+<H3><A name="Nepodmíněný a podmíněný cyklus"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Nepodmíněný a 
+podmíněný cyklus </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">ASM86 má i pro cyklus 
+instrukci. Její použití však předpokládá to, že si rezervujeme registr CX pro 
+čítání. Do něj před cyklem umístíme počet opakování. Instrukce 
+<STRONG>LOOP</STRONG> pak cyklus umožní realizovat. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LOOP</STRONG> 
+  návěští - od CX odečti jedna, jestliže je CX&lt;&gt;0 skoč na návěští 
+  </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>var pole:array [0..9] of byte; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;i:byte; <BR>begin <BR>&nbsp;clrscr; <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> DI, DI {nuluj 
+registr DI} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CX, 
+10 {do CX dej délku pole} <BR>&nbsp;@nav: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{návěští, začátek cyklu} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [DI+OFFSET pole], cl{přesuň do 
+pole na místo urč. DI} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> DI 
+&nbsp;&nbsp;&nbsp;&nbsp;{na další prvek pole} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LOOP</STRONG></CODE><CODE> @nav 
+&nbsp;{odečti od CX 1, není-li nula na @nav} <BR>&nbsp;end; <BR>&nbsp;for i:=0 
+to 9 do <BR>&nbsp;&nbsp;writeln (pole[i]); <BR>&nbsp;readkey; <BR>end. 
+</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Uvedený příklad naplní pole 
+hodnotami 1-10. Obsah v registru CX je použit ke krokování, a současně se s ním 
+plní pole. Prvky pole jsou slabiky. Proto se obsah registru DI zvyšuje o jednu. 
+V případě, že by se jednalo o slova, musíme k registru DI přičítat 2. Cyklu 
+vytvořenému pomocí <STRONG>LOOP</STRONG> se můžeme programově vyhnout instrukcí 
+<STRONG>JCXZ</STRONG> návěští - jestliže je v CX nula přesuň se na návěští. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>var pole1,pole2:array [0..9] of byte; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;i:byte; <BR>&nbsp;&nbsp;&nbsp;&nbsp;pocet:word; 
+<BR>begin <BR>&nbsp;clrscr; <BR>&nbsp;repeat {vstup počtu prvků kopie s 
+kontrolou hodnoty počet} <BR>&nbsp;&nbsp;write ('Zadej pocet kopirovanych prvku 
+(0..10):'); <BR>&nbsp;&nbsp;{$I-}readln (pocet);{$I+} <BR>&nbsp;until 
+(ioresult=0) and (pocet in [0..10]); <BR>&nbsp;randomize; <BR>&nbsp;for i:=0 to 
+9 do <BR>&nbsp;begin 
+<BR>&nbsp;&nbsp;pole1[i]:=random(256);<BR>&nbsp;&nbsp;pole2[i]:=random(256); 
+<BR>&nbsp;end; <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CX, pocet 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru CX dej počet prvků kopie} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JCXZ</STRONG></CODE><CODE> @konec 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{jestliže je nulový jdi na 
+konec} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> SI, 
+</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> pole1 {naber adresu pole1} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> DI, 
+</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> pole2 {naber adresu pole2} 
+<BR>&nbsp;@cykl: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{začátek 
+cyklu} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, [SI] 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru AL přesuň prvek z 
+pole1} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> [DI], AL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{z registru AL přesuň prvek do 
+pole2} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> SI 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{posuň 
+se na další prvek v polích} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> DI 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LOOP</STRONG></CODE><CODE> @cykl 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{sniž CX o jednu, 
+jestli je různé od nuly} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{skok 
+na @cykl} <BR>&nbsp;@konec: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{konec 
+bloku asm} <BR>&nbsp;end; <BR>&nbsp;for i:=0 to 9 do <BR>&nbsp;&nbsp;writeln 
+(pole1[i],'..',pole2[i]); <BR>&nbsp;readkey; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Až dosud jsme za podmínku 
+opakování považovali nenulové číslo v registru CX. ASM86 však umožňuje podmínky 
+opakování obohatit testováním příznaku ZF. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LOOPE</STRONG> 
+  návěští &lt;=&gt; <STRONG>LOOPZ</STRONG> návěští - sniž CX o jednu a přesuň se 
+  na návěští při (CX &lt;&gt; 0) AND (ZF = 1) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LOOPNE</STRONG> 
+  návěští &lt;=&gt; <STRONG>LOOPNZ</STRONG> návěští&lt;=&gt; LOOP návěští - sniž 
+  CX o jednu a přesuň se na návěští při (CX &lt;&gt; 0) AND (ZF = 0) 
+</FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Při použití těchto instrukcí 
+dáváme v programu možnost uniknout z cyklu i nastavením příznaku ZF. Nezapomeňte 
+ale, že ZF se musí před koncem cyklu opět nastavit vhodnou instrukcí. 
+</FONT></P>
+<H3><A name="Nastavení registru příznaků"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Nastavení registru 
+příznaků </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Registr příznaků se částečně 
+nastavuje současně s vykonáváním některých instrukcí. Obsahuje ale i registry, 
+které se automaticky nenastavují (IF, DF, TF). Proto ASM86 má instrukce, kterými 
+můžeme přímo ovlivnit hodnoty některých bitů registru F. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CLC</STRONG> - do 
+  registru CF vlož hodnotu log. 0 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CMC</STRONG> - 
+  neguj obsah registru CF </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>STC</STRONG> - do 
+  registru CF vlož hodnotu log. 1 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CLD</STRONG> - do 
+  registru DF vlož hodnotu log. 0 (DI, SI při práci s řetězci zvyšuj) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>STD</STRONG> - do 
+  registru DF vlož hodnotu log. 1 (DI, SI při práci s řetězci snižuj) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CLI</STRONG> - do 
+  registru IF vlož hodnotu log. 0 (zakaž přerušení) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>STI</STRONG> - do 
+  registru IF vlož hodnotu log. 1 (povol přerušení) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jestliže chceme nastavit 
+hodnotu v příznaku, pro který instrukce neexistuje, použijeme algoritmus: 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">registr F předáme přes 
+  zásobník do některého z registrů pro všeobecné použití </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">v tomto registru logickou 
+  operací nastavíme bit příznaku </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">přes zásobník opět předáme 
+  obsah registru do registru F </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var promenna:byte; <BR>begin <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> promenna,0 
+&nbsp;{nastav proměnnou do hodnoty 0} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSHF</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož registr 
+příznaků do zásobníku} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přesuň obsah vrcholku 
+zásobníku do registru AX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>OR</STRONG></CODE><CODE> AX,1 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nastav poslední bit (CF) do 
+logické 1} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož obsah AX do zásobníku} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POPF</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přesuň 
+nazpátek do registru příznaků} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JNC</STRONG></CODE><CODE> @konec 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{otestuj nastavení CF} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> promenna,1 
+&nbsp;{CF byl v 1, nastav hodnotu proměnné do 1} <BR>&nbsp;@konec: 
+<BR>&nbsp;end; <BR>&nbsp;writeln (promenna); {vypiš obsah proměnné} 
+<BR>end.</CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jednotlivé bity části 
+registru příznaků můžeme také ovlivnit vhodným použitím instrukcí 
+<STRONG>LAHF</STRONG> a <STRONG>SAHF</STRONG>. </FONT></P>
+<H3><A name="Vyčlenění paměti pro proměnné v bloku asm"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Vyčlenění paměti 
+pro proměnné v bloku asm </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Ne vždy je vhodné používat 
+pro naše proměnné paměť hlavního programu. Možnost vyčlenit si několik slabik 
+dává i vložený assembler. Ve skutečnosti se jedná o část paměti určenou pro 
+strojový kód. My si ale do ní umístíme hodnoty, na které většinou nezbylo místo 
+v registrech. Protože je tento blok v segmentu programu, musíme tento blok 
+proměnných programově obejít. Mikroprocesor by totiž tyto hodnoty v paměti 
+považoval za instrukce. Vyčlenit místo si můžeme pomocí direktiv: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DB</STRONG> - zde 
+  vyčleň slabiky (8 bitů, hodnoty -128-255) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DW</STRONG> - zde 
+  vyčleň slova (16 bitů, hodnoty -32 768-65 535) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>DD</STRONG> - zde 
+  vyčleň dvojslova (32bitů, hodnoty -2 147 483 648-4 294 967 295) 
+</FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Za direktivu považujeme 
+příkaz pro překladač, není to tedy instrukce. S pomocí těchto direktiv říkáme 
+překladači, aby v kódu programu rezervoval určitý počet slabik pro naše účely. 
+Za tyto direktivy rovnou píšeme počáteční hodnoty slabik, slov a dvojslov 
+oddělené čárkou. Pokud napíšeme jméno proměnné deklarované pomocí var nebo jméno 
+procedury, jedná se o jejich adresy (za direktivou <STRONG>DW</STRONG> offsetová 
+část adresy, za direktivou <STRONG>DD</STRONG> celá adresa, tedy ukazatel). Pro 
+názornost si rovnou uvedeme program s těmito direktivami. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var promenna:byte; <BR>begin <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> @dal 
+<BR>&nbsp;@slabiky: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DB</STRONG></CODE><CODE> 10, 200,'M','Ahoj' 
+<BR>&nbsp;@slova: <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DW</STRONG></CODE><CODE> 
+32000,'A',promenna <BR>&nbsp;@dvojslova: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DD</STRONG></CODE><CODE> promenna 
+<BR>&nbsp;@dal: <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+AL, CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slabiky] 
+&nbsp;&nbsp;{do AL přesuň slabiku z adresy} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{@slabiky, 
+AL:=10} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slabiky+1] {do AL přesuň 
+slabiku} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{z 
+@slabiky+1, AL:=200} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slabiky+2] {do AL přesuň 
+hodnotu ASCII} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{znaku 
+'M'} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slabiky+3] {do AL přesuň 
+ASCII prvního znaku} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{řetězce 
+'Ahoj'} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slabiky+4] {do AL přesuň 
+ASCII druhého znaku} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{řetězce 
+'Ahoj'} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slova] 
+&nbsp;&nbsp;&nbsp;&nbsp;{do AX přesuň slovo z adresy} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{@slova, 
+AX:=32000} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slova+2] &nbsp;&nbsp;{do 
+AX přesuň hodnotu ASCII znaku} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'A', 
+AH:=0,AL:=65} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BX, 
+CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @slova+4] &nbsp;&nbsp;{do 
+BX přesuň offset proměnné} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{promenna} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [BX], AL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do této proměnné zapiš 
+obsah} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{registru 
+AL} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> 
+BX,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @dvojslova]&nbsp; 
+{naber obsah ukazatele, tedy} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{celou 
+adresu proměnné do ES:BX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SEGES</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> PTR [BX], AL 
+&nbsp;&nbsp;&nbsp;{na celou adresu proměnné zapiš} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{obsah 
+AL} <BR>&nbsp;end; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Na takto vytvořená místa 
+můžeme samozřejmě i zapisovat. Pokud nechceme používat návěští pro každou část, 
+stačí si jen pamatovat, kolik místa zabere slabika, slovo, nebo dvojslovo. Potom 
+se na hledanou část dostaneme přičítáním, nebo odčítáním určitých hodnot k 
+offsetu návěští. Zajímavé je i využití adres proměnných. Protože proměnná za 
+direktivou <STRONG>DD</STRONG> je celá adresa, můžeme naplnit instrukcí 
+<STRONG>LES</STRONG> (<STRONG>LDS</STRONG>) oba registry, tedy segment i offset. 
+Pokud zapíšeme <STRONG>DB</STRONG> 4, 'Ahoj', jedná se o klasický pascalovský 
+řetězec z délkou na začátku. </FONT></P>
+<H3><A name="Instrukce pro práci s řetězci"><FONT size=3 
+face=Arial></FONT></A><FONT face="Arial CE, Arial, Helvetica">Instrukce pro 
+práci s řetězci </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">ASM86 má velmi silný nástroj 
+v řetězcových instrukcích. Za řetězec je zde na rozdíl od Pascalovského 
+považován blok dat v paměti o téměř libovolné délce (podle definice jsme omezeni 
+jen velikostí segmentu, to se ale dá snadno obejít). Pro použití řetězcových 
+instrukcí jsou vyčleněny dvojice registrů, které nesou adresy: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">DS:SI - pro adresu 
+  zdrojového řetězce </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">ES:DI - pro adresu 
+  cílového řetězce </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V praxi to znamená, že vždy 
+jeden blok v paměti je označen za zdrojový, druhý za cílový. Důležitou roli zde 
+hrají i registry:</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">CX - nese délku řetězce 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">DF - určuje směr 
+  zpracování řetězců (0 - adresy se zvyšují, 1 - adresy se snižují) 
+</FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Řetězové instrukce pak jsou 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>LODSB</STRONG> 
+  (<STRONG>LODSW</STRONG>) - přesuň z adresy DS:SI do registru AL (AX) a zvyš SI 
+  o jednu (o dvě) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>STOSB</STRONG> 
+  (<STRONG>STOSW</STRONG>) - přesuň z registru AL (AX) na adresu ES:DI a zvyš DI 
+  o jednu (o dvě) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>MOVSB</STRONG> 
+  (<STRONG>MOVSW</STRONG>) - přesuň z adresy DS:SI slabiku (slovo) na adresu 
+  ES:DI a SI, DI zvyš o jednu (o dvě) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CMPSB</STRONG> 
+  (<STRONG>CMPSW</STRONG>) - porovnej (odečti) slabiku (slovo) na adrese DS:SI 
+  se slabikou (slovem) na adrese ES:DI, podle výsledku nastav příznaky (ZF = 1 
+  při shodě, ZF = 0 při neshodě), potom zvyš adresy SI a DI o jednu (o dvě) 
+  </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>SCASB</STRONG> 
+  (<STRONG>SCASW</STRONG>) - porovnej (odečti) slabiku z adresy ES:DI z 
+  registrem AL (AX), podle výsledku nastav příznaky (ZF = 1 při shodě, ZF = 0 
+  při neshodě), potom zvyš adresu DI o jednu (o dvě) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>INSB</STRONG> 
+  (<STRONG>INSW</STRONG>) - [286], přesuň z portu s adresou v DX do paměti s 
+  adresou ES:DI slabiku (slovo) a adresu DI zvyš o jednu (o dvě) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>OUTSB</STRONG> 
+  (<STRONG>OUTSW</STRONG>) - [286], přesuň z paměti s adresou DS:SI slabiku 
+  (slovo) na port určený adresou v DX a zvyš adresu SI o jednu (o dvě) 
+  </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Slovo zvýšit v těchto 
+popisech činnosti nahradíme slovem snížit při DF = 1. Tyto instrukce umožní 
+najednou provést určitou činnost a přitom aktualizují adresy podle stavu DF a 
+podle toho, jestli pracujeme se slabikami nebo slovy. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Následující příklad využívá 
+přímého zápisu do videopaměti (VRAM) v textovém režimu VGA k výstupu 
+pascalovského řetězce. VRAM, začíná na adrese $B8000. Je organizovaná jako pole 
+slov nesoucích informace o zobrazovaných znacích. Každé slovo nese slabiku 
+atributů (barva znaku a jeho pozadí) a slabiku s ASCII kódem zobrazeného znaku. 
+80 slov VRAM je jeden řádek na obrazovce. Proto při zvýšení adresy $B8000 o 160 
+můžeme pracovat s druhým řádkem atd. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var slovo:string; <BR>begin <BR>&nbsp;slovo:='Ahoj'; <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> DS 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož obsah DS do zásobníku, budeme ho 
+měnit} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> 
+@dal&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{obejdi data} <BR>&nbsp;@vram: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DW</STRONG></CODE><CODE> $0000,$B800 
+{offset:segment VRAM, Pozor! je to obráceně} <BR>&nbsp;@adsl: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DD</STRONG></CODE><CODE> 
+slovo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {adresa slova, ukazatel na něj} 
+<BR>&nbsp;@dal: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{začátek programu} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LDS</STRONG></CODE><CODE> 
+SI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @adsl] {DS:SI nasměruj 
+na zdroj (na slovo)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> 
+DI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @vram] {ES:DI nesměruj 
+na VRAM} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> CH,CH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nuluj CH} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CL,[SI] 
+&nbsp;&nbsp;&nbsp;{do CL dej délku řetězce slovo, 1. slabiku} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> SI 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{posuň se za slabiku s délkou} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AH,$6F 
+&nbsp;&nbsp;&nbsp;&nbsp;{do AH dej atributy nápisu} <BR>&nbsp;@cyk: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cyklus pro znak po 
+znaku} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LODSB</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{naber kód znaku z řetězce 
+do AL a zvyš SI+1} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>STOSW</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož obsah AX do VRAM, 
+zvyš DI+2} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LOOP</STRONG></CODE><CODE> @cyk 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{sniž CX o jednu, není-li nula jdi na @cyk} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> DS 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vrať registr DS do původního 
+stavu} <BR>&nbsp;end; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Uvedený program změní slabiku 
+na slovo v registru AX s tím, že bude kód znaku doplněn o atributy. Jestliže 
+změníme hodnotu v AH ovlivníme tím barvu výstupu. </FONT></P>
+<H4><A name="Prefix opakování"><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Prefix 
+opakování</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Dosud známe jen prefix 
+přeskočení. Prefix opakování se používá před řetězcovými instrukcemi a umožňuje 
+tak jejich podmíněné i nepodmíněné opakování. Jejich použitím zrychlíme a 
+zjednodušíme program. Nepodmíněným prefixem je </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>REP</STRONG> 
+  instrukce - opakuj instrukci tolikrát, kolik je uvedeno v registru CX (CX := 
+  CX - 1, opakuj dokud CX &lt;&gt; 0) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tento prefix píšeme většinou 
+před instrukci <STRONG>MOVSB</STRONG> (<STRONG>MOVSW</STRONG>). Jestliže máme 
+nastavený registr CX na počet prvků řetězce a adresové registry zdrojového a 
+cílového řetězce, zajistí <STRONG>REP</STRONG> jejich zkopírování na jednom 
+řádku programu (např. <STRONG>REP</STRONG> <STRONG>MOVSB</STRONG>). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>var slovo1,slovo2:string; <BR>begin <BR>&nbsp;slovo1:='Ahoj'; 
+<BR>&nbsp;asm <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> 
+DS&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ulož do zásobníku 
+obsah DS, změníme ho} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> 
+@dal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{skoč na začátek, obejdi 
+data} <BR>&nbsp;@adr: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DD</STRONG></CODE><CODE> slovo1,slovo2 
+{definice ukazatelů na pole} <BR>&nbsp;@dal: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LDS</STRONG></CODE><CODE> 
+SI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @adr] 
+&nbsp;&nbsp;{naber adresu zdrojového řetězce} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> 
+DI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @adr+4] {naber adresu 
+cílového řetězce} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> 
+CH,CH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nuluj 
+CH} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CL,[SI] 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do 
+CL dej délku řetězce} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> CX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pascalovský 
+řetězec nese o slabiku více} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>REP</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>MOVSB</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{kopíruj 
+řetězce po slabikách} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> DS 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vrať 
+obsah DS ze zásobníku} <BR>&nbsp;end; <BR>&nbsp;writeln (slovo1,' ',slovo2); 
+<BR>&nbsp;readln; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V příkladu kopírujeme jen 
+tolik prvků, kolik má zdrojové slovo slabik. Tuto informaci si zjistíme z první 
+slabiky proměnné slovo1. K tomu musíme ještě přičíst 1, protože pascalovský 
+řetězec nese navíc informaci o délce. I když veškeré přesuny se odehrávají v 
+datovém segmentu s adresou v DS, je dobré si zvyknout na to, že vždy, když 
+měníme DS, ukládáme jeho obsah pro jistotu do zásobníku. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Řetězcové instrukce vyhledání 
+a porovnání využívají registr příznaků ZF. Proto ASM86 obsahuje navíc prefixy 
+podmíněného opakování: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>REPE</STRONG> 
+  instrukce &lt;=&gt; <STRONG>REPZ</STRONG> instrukce - opakuj tolikrát, kolik 
+  je v registru CX a dokud je ZF = 1 (CX := CX - 1, zopakuj pokud je (CX 
+  &lt;&gt; 0) AND (ZF = 1)) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>REPNE</STRONG> 
+  instrukce &lt;=&gt; <STRONG>REPNZ</STRONG> instrukce - opakuj tolikrát, kolik 
+  je v registru CX a dokud je ZF = 0 (CX := CX - 1, zopakuj pokud je (CX 
+  &lt;&gt; 0) AND (ZF = 0)) Opakování je tedy přerušeno nejen při nulovém CX, 
+  ale i při nastavení ZF do log. 1 nebo 0. </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>var pole:array [0..9] of word; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;hledany,pozice:word; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;i:byte; <BR>begin <BR>&nbsp;clrscr; 
+<BR>&nbsp;randomize; <BR>&nbsp;for i:=0 to 9 do 
+<BR>&nbsp;&nbsp;pole[i]:=random(65535); &nbsp;&nbsp;{do pole náhodná čísla} 
+<BR>&nbsp;hledany:=pole[random(10)]; {vyber hledané číslo} <BR>&nbsp;writeln 
+('Hledam:',hledany); <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> @zac 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{skok 
+na začátek} <BR>&nbsp;@adr: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DD</STRONG></CODE><CODE> pole 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{definice 
+ukazatele na pole} <BR>&nbsp;@zac: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX,hledany 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do AX vlož 
+hledané číslo} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+CX,10 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do 
+CX vlož délku řetězce (pole)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> 
+DI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @adr] 
+&nbsp;&nbsp;{naber adresu řetězce} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>REPNE</STRONG></CODE><CODE> SCASW 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{opakuj 
+do shody porovnání} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> pozice,9 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{spočítej 
+kolikátý je hledaný,} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> pozice,CX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{k tomu 
+použiješ to, co zbylo v CX} <BR>&nbsp;end; <BR>&nbsp;for i:=0 to 9 do 
+<BR>&nbsp;begin <BR>&nbsp;&nbsp;if i&lt;&gt;pozice then textcolor(15) else 
+textcolor(12); <BR>&nbsp;&nbsp;writeln (pole[i]); <BR>&nbsp;end; 
+<BR>&nbsp;readkey; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Tento program vyhledá slovo v 
+poli. K tomu slouží jen řádek <STRONG>REPNE</STRONG> <STRONG>SCASW</STRONG>. Ten 
+opakuje pohyb po poli, dokud nenajde shodu s hodnotou v registru AX (ta se 
+projeví nastavením ZF do 1) . K zjištění pozice hledaného dobře poslouží zbytek 
+v registru CX. Kdyby byl zbytek nulový, hledaný prvek by v poli nebyl. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad:</FONT></P>
+<P><CODE>uses crt; <BR>var slovo1,slovo2:string; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;ukazatel:pointer; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;i,misto,delka:word; <BR>begin 
+<BR>&nbsp;slovo1:='Nazdar programátoři! '+ 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Zkuste vyhledat 
+nějaké slovo z této věty.'; <BR>&nbsp;slovo2:='slovo'; 
+<BR>&nbsp;delka:=length(slovo2); <BR>&nbsp;asm 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> 
+DS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+{ulož DS, budeme ho měnit} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> @dal&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přeskoč 
+data} <BR>&nbsp;@ukp: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>DD</STRONG></CODE><CODE> slovo1,slovo2 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ukazatele na řetězce} 
+<BR>&nbsp;@dal: <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LDS</STRONG></CODE><CODE> 
+SI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @ukp] &nbsp;{naber 
+adresu zdroje} <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> 
+SI&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přeskoč 
+délku řetězce} <BR>&nbsp;@cyk: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> 
+DI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @ukp+4]{naber adresu 
+cíle, hledaného slova} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> DI 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přeskoč 
+slabiku s délkou řetězce} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CX,delka 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do CX 
+vlož délku řetězce} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>REPE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>CMPSB</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{opakuj 
+do neshody (konce hledaného)} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JZ</STRONG></CODE><CODE> @konec 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{byla 
+shoda tak na konec} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> SI,delka 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nebyla 
+shoda tak se v SI vrať} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> SI 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>ADD</STRONG></CODE><CODE> SI,CX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{k 
+návratu v SI použij zbytek v CX} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> @cyk 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{a 
+znovu hledat} <BR>&nbsp;@konec: 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> DS 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vrať 
+obsah DS, už ho nebudeme měnit} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> misto,SI 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vypočítej 
+místo v prohledávaném} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+SI,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @ukp]&nbsp; {k tomu 
+použiješ délku řetězce zdroje} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>ADD</STRONG></CODE><CODE> SI,delka 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{délku 
+cíle, tedy hledaného} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> misto,SI 
+<BR>&nbsp;end; <BR>&nbsp;clrscr; <BR>&nbsp;for i:=1 to length(slovo1) do 
+<BR>&nbsp;begin <BR>&nbsp;&nbsp;if not(i in [misto..misto+delka-1]) then 
+<BR>&nbsp;&nbsp;&nbsp;textcolor (15) 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 
+<BR>&nbsp;&nbsp;&nbsp;textcolor(12); <BR>&nbsp;&nbsp;write(slovo1[i]); 
+<BR>&nbsp;end; <BR>&nbsp;readkey; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V příkladu prohledáváme 
+řetězec slovo1. Hledáme v něm umístění podřetězce slovo2. Program má dva cykly v 
+sobě. První zajišťuje pohyb po prohledávaném řetězci v případě neshody (je 
+realizován <STRONG>JMP</STRONG>). Druhý vnitřní zajišťuje pohyb po prohledávaném 
+s kontrolou s hledaným (je realizován <STRONG>REPE</STRONG>). V případě shody je 
+po cyklu <STRONG>REPE</STRONG> v registru ZF = 1 (prostě nevyskočil neshodou ale 
+nulou v CX=&gt; konec hledaného slova a shoda). Proto cyklus prohledávání 
+ukončíme podmíněným skokem JZ na konec. Zde ze zjistí adresa v prohledávaném 
+řetězci. To je ale adresa za posledním znakem shody. Proto se vrátíme nazpátek o 
+délku slova (tam je hledané slovo). </FONT></P>
+<H3><A name="Nedokumentované instrukce"><FONT size=3 face=Arial></FONT></A><FONT 
+face="Arial CE, Arial, Helvetica">Nedokumentované instrukce</FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Když firma Intel navrhovala 
+mikroprocesor 8086, byly vloženy do instrukčního souboru i instrukce, které 
+nebyly oficiálně uvedeny v tabulkách. Přesto je metodou pokusů programátoři 
+objevili. Ve svých programech můžeme tyto instrukce používat. Máme však 
+následující omezení:</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Překladače assembleru tyto 
+  instrukce neznají, proto je do programu vložíme například 
+  následovně:<BR><STRONG>DB</STRONG> $D4, 10. Kde <STRONG>DB</STRONG> je 
+  definice slabiky (libovolné), $D4 je kód instrukce, která má jeden operand, 
+  nyní hotnotu 10. Část <STRONG>DB</STRONG> v tomto případě samozřejmě 
+  neobcházíme <STRONG>JMP</STRONG>, necháme jí tedy provést, jakoby se jednalo o 
+  program.</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Do budoucnosti není 
+  zaručena funkčnost těchto instrukcí na nových procesorech řady 86.</FONT> 
+</LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Seznam a funkci pro nás 
+použitelných nedokumentovaných instrukcí najdete v </FONT><A 
+href="http://www.mujweb.cz/www/j_schwarz/inssou86.html#Nedokumentovan%E9%20instrukce"><FONT 
+size=2 face=Arial>tabulce instrukcí</FONT></A><FONT size=2 
+face=Arial>.</FONT></P>
+<H3><A name="Volání podprogramů"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Volání 
+podprogramů </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V úvodu jsem upozornil na to, 
+že využití vkládaného assembleru je v tvorbě podprogramů. Předem si ale musíme 
+ukázat, jak se podprogramy volají. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Volání podprogramu spočívá v 
+uložení parametrů do zásobníku a změně adresy v registru IP (čítač instrukcí) na 
+adresu podprogramu s tím, že je uschována adresa odkud provádíme volání (to aby 
+procesor věděl kam se má vrátit). Parametry do zásobníku ukládáme my, zbytek 
+zařídí instrukce <STRONG>CALL</STRONG>. </FONT></P>
+<H4><FONT size=-1 face="Arial CE, Arial, Helvetica">Ukládání parametrů do 
+zásobníku </FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V hlavičce procedury (nebo 
+funkce) najdeme téměř vždy definici parametrů volaných: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">hodnotou - podprogram 
+  jejich hodnoty pouze využívá </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">odkazem - podprogram je 
+  může číst a může do nich i zapsat </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Například: 
+</FONT><CODE>procedure soucet (a,b:word;var c:word);</CODE><FONT size=-1 
+face="Arial CE, Arial, Helvetica"> je definice procedury s názvem součet s 
+parametry a, b volanými hodnotou a c volaným odkazem. Při volání této procedury 
+z některé části programu psaném v Pascalu na místa a, b zapíšeme konkrétní 
+hodnoty (nebo proměnné (ty ale podprogram nezmění) s těmito hodnotami) a na 
+místo c zapíšeme proměnnou, ve které najdeme hodnotu po provedení procedury 
+(např. </FONT><CODE>soucet (1,3,promenna_c);</CODE><FONT size=2 face=Arial>). Z 
+místa volání předáváme parametry do podprogramů vždy přes zásobník v pořadí 
+definice v hlavičce podprogramu. Do zásobníku před voláním procedury ukládáme 
+odlišně u parametrů volaných hodnotou a odkazem. </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Při volání 
+  hodnotou <BR></STRONG>Uložíme konkrétní hodnoty (přečtené třeba i z paměti). 
+  Vzhledem k organizaci zásobníku jsou parametry volané hodnotou uloženy po 
+  slovech následovně: </FONT>
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">parametry o délce jedné 
+    slabiky (byte, shortint, char, boolean) - obsadí celé slovo (pamětí nešetří) 
+    </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">parametry o délce 
+    jednoho slova (word, integer) - obsadí slovo </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">parametry o délce 
+    dvojslova (pointer, longint) - obsadí dvě slova (ukazatel je adresa, do 
+    zásobníku tedy napřed uložíme segmentovou a pak offsetovou část adresy) 
+    </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">parametry o délce 6 
+    slabik (real) - obsadí v zásovníku tři slova </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">parametry delší 
+    (řetězce, množina, pole, záznamy) - se ukládají jako ukazatele na hodnotu. 
+    </FONT></LI></UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>Při volání odkazem 
+  <BR></STRONG>Uložíme celou adresu místa (tedy segment i offset) odkud se má 
+  hodnota číst nebo kam se má zapsat (to je vlastně obsah ukazatele na paměťové 
+  místo). </FONT></LI></UL>
+<H4><FONT size=-1 face="Arial CE, Arial, Helvetica">Samotné volání 
+podprogramu</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Musíme rozlišovat volání 
+blízkého podprogramu a vzdáleného. Za vzdálený v tomto případě považujeme 
+podprogram s adresou v odlišném segmentu. I když se pro programátora nic nemění 
+je dobré vědět, že při vzdáleném volání se mění nejen IP, ale i CS. Označení 
+místa skoku nese tedy navíc informaci o segmentové adrese. Skok do podprogramu 
+zajistí instrukce </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica"><STRONG>CALL</STRONG> 
+  adresa - na vrchol zásobníku ulož obsah (CS při vzdáleném volání a) IP a naplň 
+  tyto registry adresou uvedenou v parametru (pro nás slovo adresa nahradíme 
+  názvem podprogramu) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Ukončení samotného 
+podprogramu zajistí instrukce </FONT></P>
+<UL>
+  <LI><FONT size=-1 
+  face="Arial CE, Arial, Helvetica"><STRONG>RET</STRONG>[<STRONG>F</STRONG>] - z 
+  vrcholu zásobníku vezmi adresy a dosaď je do (CS a) IP Volání podprogramů je 
+  tedy jednoduché. </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jednoduše napíšeme instrukci 
+<STRONG>CALL</STRONG> se jménem podprogramu (tedy procedury nebo funkce). 
+Ostatní zařídí překladač, který zjistí, jestli se jedná o blízké nebo vzdálené 
+volání. Podle toho dosadí adresu. Návrat si opět zařídí překladač při ukončení 
+podprogramu. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>{$G+} <BR>uses crt; <BR>procedure pocitej (a,b:word;var c,d:word); 
+<BR>begin <BR>&nbsp;c:=a+b;<BR>&nbsp;d:=a-b; <BR>end; <BR><BR>var 
+a_,b_,c_,d_:word; <BR>begin <BR>&nbsp;a_:=40;<BR>&nbsp;b_:=5; <BR>&nbsp;clrscr; 
+<BR>&nbsp;asm <BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> a_ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{proceduře posíláme hodnotu a_} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> 
+b_&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{proceduře posíláme hodnotu 
+b_}<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LEA</STRONG></CODE><CODE> 
+DI,c_&nbsp;&nbsp; &nbsp;{zjistíme adresu proměnné c_} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> DS 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do zásobníku segment adresy c_} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> 
+DI&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{do zásobníku offset adresy 
+c_}<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>LEA</STRONG></CODE><CODE> DI,d_ 
+&nbsp;&nbsp;&nbsp;{to samé pro d_} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> 
+DS&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{stejný segment} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> 
+DI&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{offset d_} 
+<BR>&nbsp;&nbsp;</CODE><CODE><STRONG>CALL</STRONG></CODE><CODE> pocitej {a 
+zavoláme počítej} <BR>&nbsp;end; <BR>&nbsp;writeln 
+(a_,'+(-)',b_,'=',c_,'(',d_,')'); <BR>&nbsp;readkey; <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Stejnou posloupnost instrukcí 
+jako blok asm v tomto programu provede řádek počítej (a_,b_,c_,d_); </FONT></P>
+<H4><FONT size=-1 face="Arial CE, Arial, Helvetica">Návrat hodnoty z funkce 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Funkce je podprogram, který 
+vrací jednu hodnotu typu uvedeného v záhlaví. Vracenou hodnotu zjistíme po 
+návratu z funkce vždy v registrech: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">AL - funkční hodnota o 
+  velikosti slabiky</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">AX - funkční hodnota o 
+  velikosti slova</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">DX, AX - funkční hodnota o 
+  velikosti dvojslova (u ukazatele DX - segment, AX - offset)</FONT> 
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">DX, BX, AX - funkční 
+  hodnota typu real </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Pokud funkce vrací řetězec, 
+musí být volána i s adresou místa, kam má výsledný řetězec zapsat. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>{$G+} <BR>uses crt; <BR>function bez1 (a:word):word; <BR>begin 
+<BR>&nbsp;bez1:=a-1; <BR>end; </CODE></P>
+<P><CODE>var a_,c_:word; <BR>begin <BR>&nbsp;a_:=40; <BR>&nbsp;clrscr; 
+<BR>&nbsp;asm <BR>&nbsp;&nbsp;<STRONG>PUSH</STRONG> a_ &nbsp;&nbsp;{posíláme 
+hodnotu a_} <BR>&nbsp;&nbsp;<STRONG>CALL</STRONG> bez1 {zavoláme } 
+<BR>&nbsp;&nbsp;<STRONG>MOV</STRONG> c_,AX {slovo si vyzvedneme v registru AX} 
+<BR>&nbsp;end; <BR>&nbsp;writeln (a_,'-1=',c_); <BR>&nbsp;readkey; <BR>end. 
+</CODE></P>
+<H3><A name="Tvorba podprogramů"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Tvorba 
+podprogramů </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Bloky programu, které 
+vykonávají činnost často se opakující, nazveme podprogramem. Jejich použitím 
+zjednodušíme program. Za podprogramy pokládáme procedury a funkce. Pascal 
+umožňuje vkládat assembler i do obyčejných podprogramů. Můžeme také tvořit 
+podprogramy pouze v assembleru. To vyjádříme zápisem assembler za definici 
+procedury nebo funkce. Ty potom neobsahují klasické vymezení bloku begin...end, 
+stačí jen assemblerovské asm..end (pokud tedy tvoříme podprogram jen v 
+assembleru, uvedeme za definici označení assembler, blok vymezíme asm...end). S 
+parametry pracujeme v podprogramech v souladu s tím, jak jsme je přes zásobník 
+předávali. To znamená, že k parametrům volaným hodnotou přistupujeme jako ke 
+klasickým proměnným, k parametrům volaným odkazem přistupujeme jako k ukazatelům 
+(dosazujeme jejich adresu instrukcí <STRONG>LES</STRONG>, <STRONG>LDS</STRONG>). 
+</FONT></P>
+<H4><FONT size=-1 face="Arial CE, Arial, Helvetica">Lokální proměnné 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V okamžiku vstupu do 
+podprogramu se na vrcholu zásobníku automaticky vytvoří místa pro lokální 
+proměnné definované v části var podprogramu. V případě, že se jedná o 
+pascalovskou funkci (není označena slovem assembler v definici), je navíc 
+vložena speciální proměnná @RESULT určená k předání funkční hodnoty (ta je i 
+stejného datového typu). Před návratem z funkce je obsah proměnné @RESULT 
+automaticky předán do registrů předepsaných pro návrat hodnoty (pokud tedy 
+tvoříme funkci s vloženým assemblerovským blokem, předáme funkční hodnotu do 
+proměnné @RESULT, ve funkci s označením assembler vracíme funkční hodnotu v 
+registrech, ve kterých funkční hodnotu očekává volající (AL, AX,..), jak bylo 
+uvedeno v části o volání podprogramů). Lokální proměnné používáme stejně jako 
+globální (s tím rozdílem, že jejich segmentová adresa není v DS). </FONT></P>
+<H4><FONT size=-1 face="Arial CE, Arial, Helvetica">Význam registru BP 
+</FONT></H4>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Registr BP je v době 
+vykonávání podprogramu nasměrován na vrcholek zásobníku v okamžiku vstupu do 
+něj. Proto použitím nepřímé bázové adresace s pomocí tohoto registru můžeme 
+přistupovat k:</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">parametrům - příčítáním k 
+  hodnotě v BP (např. [BP + 6] je označení pro přístup k parametru) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">lokálním proměnným - 
+  odečítáním od hodnoty v BP (např. [BP - 2] je označení přístupu k prvnímu 
+  parametru typu word) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Vzhledem k tomu, že se o tyto 
+přepočty adres může postarat překladač, je jednodušší používat pro přístupy k 
+proměnným a parametrům jen jejich symboly uvedené v definici podprogramu nebo 
+části var. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>uses crt; <BR>procedure pocitej (a,b:word;var c,d:word);assembler; 
+<BR>asm <BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX,a 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do registru ax, vlož hodnotu a} 
+<BR>&nbsp;</CODE><CODE><STRONG>ADD</STRONG></CODE><CODE> AX,b 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přičti b} 
+<BR>&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> DI,c 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do ES:DI vlož adresu c (to je výstup 
+součtu)} <BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> ES:[DI],AX {na 
+adresu ES:DI zapiš součet} 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+AX,a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {to samé pro rozdíl} 
+<BR>&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> AX,b 
+<BR>&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> DI,d 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> ES:[DI],AX {a na adresu 
+d zapiš rozdíl} <BR>end; <BR><BR>function bez1 (a:word):word;assembler; <BR>asm 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AX,a 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do AX vlož hodnotu parametru a} 
+<BR>&nbsp;</CODE><CODE><STRONG>DEC</STRONG></CODE><CODE> AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{kdyby to nebyla čistě 
+assemblerovská funkce, tak} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přidám 
+řádek:} 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+@RESULT, AX fce hodnotu pak také vrátí v AX} <BR>end; </CODE></P>
+<P><CODE>var a_,b_,c_,d_:word; {hlavní program} <BR>begin 
+<BR>&nbsp;a_:=40;b_:=5; <BR>&nbsp;clrscr; <BR>&nbsp;pocitej (a_,b_,c_,d_); 
+<BR>&nbsp;writeln (a_,'+(-)',b_,'=',c_,'(',d_,')'); <BR>&nbsp;c:=bez1 (a_); 
+<BR>&nbsp;writeln (a_,'-1=',c_); <BR>&nbsp;readkey; <BR>end. </CODE></P>
+<H3><A name=Přerušení><FONT face="Arial CE, Arial, Helvetica"></FONT></A><FONT 
+size=3 face=Arial>Přerušení </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V době vykonávání úlohy musí 
+být zajištěna i programová obsluha některých událostí. Za tyto události 
+považujeme například: stisk klávesy, pohyb myší, hrozící výpadek napájení, 
+kritická chyba v paměti, . . . I když by bylo možné testovat stisk klávesy v 
+rámci prováděné úlohy, je pohodlnější, jestliže obsluhu této události zajistí 
+počítač sám na úrovni technického vybavení. Přesto je k této činnosti nutný 
+mikroprocesor. Proto je dočasně přerušena probíhající úloha. Po obsluze se 
+procesor vrací zpět k té části úlohy, ze které byl přerušen. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Celý mechanismus přerušení se 
+dá popsat v několika krocích: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Do řadiče přerušení 
+  přichází požadavek o přerušení, ten vyhodnotí jeho prioritu. Jestliže je 
+  přerušení možné, je vyslán do procesoru signál požadavku o přerušení. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Mikroprocesor přijal 
+  signál požadavku přerušení. Jestliže je přerušení možné (není zakázáno 
+  nastavením IF = 0), po dokončení probíhající instrukce vyšle procesor signál 
+  potvrzení přerušení. </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Řadič přerušení přijal 
+  signál povolení přerušení. Vyšle na datovou sběrnici instrukci přerušení 
+  <STRONG>INT</STRONG> číslo, ta zajistí, že procesor provede tyto činnosti: 
+  </FONT>
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">do zásobníku se uloží 
+    registr příznaků F (po návratu se musí obnovit) </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">vynulují se příznaky IF 
+    (zakáže se další přerušení) a TF (nejde krokovat program) </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">do zásobníku se uloží 
+    obsahy CS a IP (místo, kde byla přerušovaná úloha) </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">registry CS a IP se 
+    naplní adresou, přečtenou z tabulky vektorů přerušení (to je tabulka na 
+    začátku paměti, v ní jsou za sebou uloženy celé adresy všech obsluh 
+    přerušení, klíčem pro hledání v této tabulce je právě číslo přerušení 
+    uvedené za instrukcí INT) </FONT></LI></UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Proběhne obsluha přerušení 
+  (například načtení dat, hláška na obrazovku,...). </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Po obsluze je ze zásobníku 
+  obnoven obsah registrů IP, CS, F (procesor se vrátí k původní úloze, příznaky 
+  TF, IF se obnoví s registrem F). Obnovu těchto registrů zajistí instrukce 
+  <STRONG>IRET</STRONG> (která je na konci obsluhy přerušení). </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Za instrukcí 
+<STRONG>INT</STRONG> může být číslo v rozpětí 0..255. Toto číslo v případě 
+obsluhy programové události udává, odkud požadavek přišel. Protože je ale 
+nemožné, aby všech 256 úrovní přerušení bylo obsazeno, jsou některé hodnoty 
+obsazeny tzv. službami. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Za služby můžeme považovat 
+podprogramy, které jsou součástí operačního systému nebo BIOSu. Jsou umístěny v 
+paměti počítače. Umožňují jednoduše provádět činnosti, které se v programech 
+často opakují, jsou pracné nebo se liší na počítačích s různou konfigurací. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Služby voláme stejně jako 
+obsluhy přerušení instrukcí <STRONG>INT</STRONG> číslo. Hodnota číslo určuje, o 
+jakou službu se jedná. Často se v rámci jedné služby může vyskytovat i několik 
+činností. Těm budeme říkat podslužby. Před voláním podslužeb musíme napřed 
+nastavit v určitém registru (nejčastěji v AH) hodnotu jim určenou. Potom teprve 
+voláme službu instrukcí <STRONG>INT</STRONG>. Mnoho služeb se chová jako 
+podprogramy volané parametry. Hodnoty parametrů se neukládají do zásobníku, ale 
+do některých registrů. Výstupy z těchto "podprogramů" najdeme opět v registrech. 
+Informace o službách DOSu i BIOSu najdete v odborných publikacích nebo v 
+SYSMANu. Zde také najdete informace o tom, které registry k čemu použijete. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Nejpoužívanější službou je 
+<STRONG>INT</STRONG> $21. Ta zahrnuje služby DOSu jako je vstup a výstup dat, 
+práce se soubory, čas, . . . Je také použita k výstupu pascalovského řetězce na 
+obrazovku v následujícím příkladu. Výstup řetězce realizuje podslužba AH = $9. 
+Vstupem do podslužby je adresa řetězce v registrech DS, DX. Výstup podslužba 
+nemá. Jediná činnost je výpis na obrazovku. Důležité je označení konce řetězce 
+znakem $. V případě, že tento znak na konci není, vypíše se obsah části paměti 
+až do jeho náhodného výskytu. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>procedure outstring (retezec:string);assembler; <BR>asm 
+<BR>&nbsp;</CODE><CODE><STRONG>PUSH</STRONG></CODE><CODE> DS&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;{ulož DS, budeme ho měnit} 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+AH,$09&nbsp;&nbsp;&nbsp;&nbsp; {nastav hodnotu podslužby} 
+<BR>&nbsp;</CODE><CODE><STRONG>LDS</STRONG></CODE><CODE> DI,retezec {čti adresu 
+řetězce} <BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> DX,DI 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vlož ji do registru DX pro podslužbu} 
+<BR>&nbsp;</CODE><CODE><STRONG>INC</STRONG></CODE><CODE> DX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{zvyš adresu až za informaci o 
+délce} <BR>&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> BH,BH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nuluj BH} 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> BL,[DI] 
+&nbsp;&nbsp;&nbsp;{do BL vlož délku řetězce} 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>BYTE</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> [DI+BX+1],'$'{na konec řetězce 
+dosaď ukončovací znak} <BR>&nbsp;</CODE><CODE><STRONG>INT</STRONG></CODE><CODE> 
+$21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{volej služby DOSu} 
+<BR>&nbsp;</CODE><CODE><STRONG>POP</STRONG></CODE><CODE> DS 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vrať DS} <BR>end; <BR><BR>begin 
+<BR>&nbsp;outstring ('Ahoj'); {zkus vypsat} <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Uvedený program převede 
+pascalovský řetězec do podoby řetězce, ve které ho očekává služba. Nastaví 
+registry hodnotami vstupů a zavolá podslužbu DOSu. Výstup řetězce touto 
+procedurou můžeme realizovat na libovolném grafickém adaptéru. Možné odlišnosti 
+si vyřeší právě služba DOS. </FONT></P>
+<H3><A name="Rezidentní programy"><FONT 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=3 face=Arial>Rezidentní 
+programy </FONT></H3>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Velká skupina programů je 
+schopna pracovat na pozadí prováděné úlohy. Patří mezi ně ovladače (myši, 
+klávesnice, . . .), utility (hodiny, antivirová kontrola, stahovače obrazovek, . 
+. .), viry (bez komentáře). Těmto programům přidáváme označení rezidentní. 
+</FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Jejich základní vlastností je 
+jejich neustálá přítomnost v paměti počítače a schopnost se vyvolat, jestliže je 
+to nutné. Z toho vyplývají i požadavky na ně: malá délka kódu (musí obsadit co 
+nejméně paměti) a nezávislost na spuštěných aplikacích. </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Činnost těchto programů na 
+pozadí aplikací zaručuje jejich volání spolu s obsluhami přerušení. Jestliže 
+tedy dojde k nějaké události (stisk klávesy, přijetí dat na port, uplynutí 
+určité doby, . . .), je voláno přerušení obsluhující tuto událost. Po této 
+obsluze (,nebo před ní) proběhne i část rezidentního programu připojeného k ní. 
+Aby k tomu došlo, musí tvůrce rezidentního programu změnit adresu v tabulce 
+vektorů přerušení na adresu svého podprogramu. Přitom si starou adresu obsluhy 
+uschová, aby mohl zajistit volání původní obsluhy události. Je jen na tvůrci, 
+jestli starou obsluhu bude volat nebo ne (jestliže ji ale nezavolá, mohou se 
+vyskytnout problémy). Programátor se také může rozhodnout, ve které části svého 
+programu bude obsluhu volat (např. nemohu číst jaká klávesa byla stisknuta, když 
+ještě neproběhla obsluha klávesnice). Rezidentní program má tyto části: 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">podprogramy, které jsou 
+  volány s přerušením (za jejich hlavičkou následuje slovo interrupt) 
+  vykonávající užitečnou nebo záškodnickou činnost; ty navíc mohou volat původní 
+  obsluhy (posloupností instrukcí PUSHF, CALL adresa staré obsluhy) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">hlavní program, který má 
+  za úkol: </FONT>
+  <UL>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">přečtení adresy původní 
+    obsluhy přerušení a její uložení do proměnné (typu procedure); to zajistí 
+    procedura z knihovny DOS: </FONT><CODE>GetIntVec (číslo přerušení, adresa 
+    proměnné typu procedure) </CODE>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">změna původní adresy na 
+    adresu našeho podprogramu; to zajistí procedura z knihovny DOS: 
+    </FONT><CODE>SetIntVec (číslo přerušení, adresa našeho podprogramu) </CODE>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">ohlášení instalace 
+    (např. </FONT><CODE>Writeln ('Rezidentní program instalován.');</CODE><FONT 
+    size=2 face=Arial>) </FONT>
+    <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">ukončení programu s tím, 
+    že zůstane v paměti; to zajistí procedura </FONT><CODE>Keep (0) 
+  </CODE></LI></UL></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">V Pascalu musíme navíc v 
+rezidentním programu ohraničit podprogramy interrupt direktivou {$F+}, která 
+zajistí, že bude uvnitř použito vzdálené volání (za podprogram napíšeme {$F-} 
+pro návrat do automatického zjišťování vzdálených adres). Navíc musíme zajistit 
+správnou alokaci paměti pro rezidentní program označením v úvodu programu {$M 
+400,0,0}, které vymezí oblast rezervovanou pro zásobník atd. (hodnoty je 
+nejlepší vyzkoušet). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Nejčastěji se pro rezidentní 
+programy používají přerušení: </FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">$1C - volané 18,2krát za 
+  vteřinu </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">$09 - volané po události 
+  na klávesnici (stisk klávesy) </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">$28 - volané v případě, že 
+  mikroprocesor není zatížený (čeká . . .) </FONT></LI></UL>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Ostatní hodnoty přerušení se 
+dají zjistit z literatury (nebo SYSMANu). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Na jaké přerušení rezident 
+připojíme, závisí do značné míry na tom, co má dělat a na co má reagovat. Občas 
+je dobré si v obsluze jednoho přerušení nastavit proměnné a v závislosti na 
+jejich stavu vykonat (nebo nevykonat) určitou činnost v obsluze jiného 
+přerušení. Často si ani neuvědomíme, že náš podprogram připojený k určitému 
+přerušení, ho nepřímo volá. Dojde tak k zacyklení. Toho se částečně vyvarujeme 
+tím, že veškeré činnosti, spojené se vstupy a výstupy, provádíme sami a nevoláme 
+pascalovské procedury (např. výstup na obrazovku realizujeme přímým zápisem do 
+VRAM, použití writeln vede k chybě). </FONT></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Příklad: </FONT></P>
+<P><CODE>{$M $400,0,0} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nastav paměť: 
+zásobník $400 slabik} <BR>uses Dos; <BR>var IntVec : Procedure; {proměnná pro 
+adresu staré obsluhy} </CODE></P>
+<P><CODE>{$F+} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vzdálená 
+volání} <BR>procedure hodiny;interrupt;assembler; {nová obsluha přerušení} 
+<BR>asm <BR>&nbsp;</CODE><CODE><STRONG>JMP</STRONG></CODE><CODE> @zac 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přeskoč 
+data} <BR>@vid: <BR>&nbsp;</CODE><CODE><STRONG>DW</STRONG></CODE><CODE> 
+156,$B800 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{adresa 
+místa VRAM, kde budou hodiny} <BR>@zac: 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> CL,2 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{hodiny, 
+minuty, vteřiny (cyklus)} <BR>@c1 : 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{začátek 
+cyklu} <BR>&nbsp;</CODE><CODE><STRONG>LES</STRONG></CODE><CODE> 
+BX,CS:[</CODE><CODE><STRONG>OFFSET</STRONG></CODE><CODE> @vid]{naber adresu 
+proměnné slovo do BX} <BR>&nbsp;</CODE><CODE><STRONG>XOR</STRONG></CODE><CODE> 
+AH,AH 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vymaž 
+horní polovinu registru AX} 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> AL,CL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{naber 
+do dolní poloviny AX krok i} 
+<BR>&nbsp;</CODE><CODE><STRONG>SHL</STRONG></CODE><CODE> AL,1 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vynásob, 
+AL:=AL*2} <BR>&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> BX,AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{odečti 
+od BX obsah AX} <BR>&nbsp;</CODE><CODE><STRONG>OUT</STRONG></CODE><CODE> $70,AL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pošli 
+na CMOS adresu čtené slabiky} 
+<BR>&nbsp;</CODE><CODE><STRONG>SHL</STRONG></CODE><CODE> AL,1 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{vynásob, 
+AL:=AL*2} <BR>&nbsp;</CODE><CODE><STRONG>SUB</STRONG></CODE><CODE> BX,AX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{odečti, 
+to ovlivní tvaru výstupu} 
+<BR>&nbsp;</CODE><CODE><STRONG>IN</STRONG></CODE><CODE> AL,$71 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{přečti 
+z CMOS obsah čtené slabiky} 
+<BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> DL,AL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{zkopíruj 
+obsah této slabiky do AH} 
+<BR>&nbsp;</CODE><CODE><STRONG>SHR</STRONG></CODE><CODE> DL,4 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{desítky 
+posuň do dolní poloviny AH} 
+<BR>&nbsp;</CODE><CODE><STRONG>AND</STRONG></CODE><CODE> AX,$F 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{odstraň 
+zbytečné bity} <BR>&nbsp;</CODE><CODE><STRONG>AND</STRONG></CODE><CODE> DX,$F 
+<BR>&nbsp;</CODE><CODE><STRONG>OR</STRONG></CODE><CODE> AX,$1F30 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{proveď převod 
+do ASCII, přidej atr.} <BR>&nbsp;</CODE><CODE><STRONG>OR</STRONG></CODE><CODE> 
+DX,$1F30 </CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> ES:2[BX],AX {nastav 
+jednotky ve VRAM} <BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+ES:[BX],DX &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{nastav desítky ve 
+VRAM} <BR>&nbsp;</CODE><CODE><STRONG>DEC</STRONG></CODE><CODE> CL 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{snížit 
+CL} <BR>&nbsp;</CODE><CODE><STRONG>JNS</STRONG></CODE><CODE> @c1 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{konec 
+cyklu} <BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>WORD</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> ES:[154],$1F00+'.'{ve VRAM odděl 
+vteřiny a minuty} <BR>&nbsp;</CODE><CODE><STRONG>MOV</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>WORD</STRONG></CODE><CODE> 
+</CODE><CODE><STRONG>PTR</STRONG></CODE><CODE> ES:[148],$1F00+'.'{ve VRAM odděl 
+minuty a hodiny} <BR>&nbsp;</CODE><CODE><STRONG>PUSHF</STRONG></CODE><CODE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{do 
+zásobníku registr příznaků} 
+<BR>&nbsp;</CODE><CODE><STRONG>CALL</STRONG></CODE><CODE> IntVec 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{volej starou 
+obsluhu $1C} <BR>end; <BR>{$F-} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{konec 
+vzdálených volání} </CODE></P>
+<P><CODE>begin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{hlavní 
+program} <BR>&nbsp;GetIntVec($1c,@IntVec);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{čti 
+adresu staré obsluhy} <BR>&nbsp;SetIntVec($1c,Addr(hodiny));{na její místo dej 
+adresu mojí obsluhy} <BR>&nbsp;Writeln('Rezidentní hodiny 
+instalovány.');{informuj o instalaci} <BR>&nbsp;Keep 
+(0);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ukonči 
+s tím, že zůstane program v paměti} <BR>end. </CODE></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">Uvedený program čte při 
+obsluze přerušení $1C stav hodin z paměti CMOS. Po přepočtu adres a úpravě znaků 
+z BCD kódu do ASCII je informace o čase zobrazena v pravém horním rohu 
+obrazovky. Hlavní program má za úkol jen změnu adresy původní obsluhy na naší. 
+</FONT></P>
+<P><A name=Literatura:><FONT size=-1 
+face="Arial CE, Arial, Helvetica"></FONT></A><FONT size=2 face=Arial>Literatura: 
+</FONT></P>
+<UL>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Michal Brandejs: 
+  Mikroprocesory INTEL 8086-80486, Grada 1991 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Tomáš Novák: Turbo Pascal 
+  6 - Popis jazyka, Grada 1991 </FONT>
+  <LI><FONT size=-1 face="Arial CE, Arial, Helvetica">Pavel Mikula, Kateřina 
+  Juhová, Jiří Soukenka: Borland Pascal 7.0, Kompendium, Grada 1994 
+</FONT></LI></UL>
+<DIV align=right>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica">© 1996-1997 <A 
+onmouseover="window.status='Napište mi na forwardovanou adresu: papousekt@usa.net'; return true" 
+onmouseout="window.status=''; return true" href="mailto:papousekt@usa.net">Mgr. 
+Tomáš Papoušek</A></FONT></P>
+<P></P></DIV>
+<P></P>
+<P><FONT size=-1 face="Arial CE, Arial, Helvetica"><B>Tento text je možné 
+používat pro studijní účely bez omezení. V případě komerčního využití 
+kontaktujte autora.</B></FONT></P></BODY></HTML>

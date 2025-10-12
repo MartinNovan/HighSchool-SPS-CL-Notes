@@ -1,0 +1,11 @@
+# Počítačové sítě
+- Počítačová síť = Network
+- Síť = propojení počítačů (min. 2)
+	- Přenosové médium
+	- Vodič – „Metalický kabel“
+	- Vzduch – „WiFi“
+	- Světlem – Optické vlákno
+- HW
+	- Síťová karta – (NIC – Network Interface Card)
+	- Další síťové prvky – (Switch, směrovač)
+		- Mezi propojenými PC

@@ -1,0 +1,64 @@
+# Komunikační model
+- Základní komunikační model
+    - Informace – zdroj -> informace – cíl
+- Informaci – připraví SW
+- Data – připraví OS
+- Signál – vytvoří vysílač (NIC karta)
+- Informace => data => signál …. (zpráva) …. signál => data => informace (zpráva)
+- Musí platit! => Zpráva = Zpráva
+- Fyzikální podstata signálu – elektromagnetické vlny
+- Způsoby šíření signálu
+    - UNICAST – „point-to-point“ dvě stanice
+    - BROADCAST – všesměrové, všem stanicím v LAN
+    - MULTICAST – skupinově (do určených stanic v LAN)
+- Dvoubodový přenos
+    - Jednosměrný – simplex
+    - Obousměrný střídavý – half duplex
+    - Obousměrný současný – full duplex
+## Server – Klient
+-  Přístup počítače do sítě
+	- Server/klient
+- Server – Hardware / software
+	- Server jako Hardware
+		- Počítač v počítačové síti
+		- Poskytuje služby ostatním počítačům
+	- Server jako Software
+		- Souborový (File server)
+		    - Řídí přístup k souborovým a diskovým zdrojům na síti
+		    - BEZPEČNOST (přístupová práva)
+		    - Synchronizace sítě (zamykání souborů)
+		- Tiskový (Print server)
+		    - Přístup k síťovým tiskárnám
+		    - Programy pro vytváření a řízení tiskových front
+		- Aplikační (Application server)
+		    - Aplikace určené pro pracovní stanice
+		    - Na pracovní stanici – klientské aplikace
+				- Vyžadující přenos datových souborů ze/na serveru
+		    - Bez klientských aplikací
+		- Komunikační (Communication Server)
+		    - Přístup k modemům, telefonním linkám
+		    - Propojuje dvě a více sítí
+		- Databázový (Database Server)
+		    - Přístup k datům (DB soubory)
+	- Většinou je vyžadováno:
+		- Kvalitní a výkonný HW
+		    - Procesory (Více CPU)
+		    - Paměť (rychlá a veliká)
+		    - Úložiště
+		- Dedicated Server (Vyhrazený Server)
+		    - Pouze pro správu sítě
+		    - NE JAKO PRACOVNÍ STANICE!
+		    - Velké sítě
+		- Non-Dedicated Server (Nevyhrazený Server)
+		    - Pro správu sítě
+		    - I jako pracovní stanice
+		    - Menší sítě
+	- Klient (Workstation, pracovní stanice)
+		- Počítač v počítačové síti
+		    - K práci uživatele
+		    - Poskytuje uživateli dostupné služby sítě
+		- Pojem KLIENT
+		    - Aplikace – Požadavky na:
+				- Další aplikace
+					- Služby, informace
+				- Přístup k prostředkům

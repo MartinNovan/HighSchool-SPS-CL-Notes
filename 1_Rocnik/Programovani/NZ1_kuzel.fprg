@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-22 01:03:25 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yMjsxMjo1MDowNCBvZHAuOzMxMzQ="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yMjswMTowMzoyNSBvZHAuOzE7MzI0MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="r, d, v, x, o, Va, Sa" type="Real" array="False" size=""/>
+            <output expression="&quot;Zadejte polom&#283;r podstavy&quot;" newline="True"/>
+            <input variable="r"/>
+            <output expression="&quot;Zadejte v&#253;&#353;ku ku&#382;elu&quot;" newline="True"/>
+            <input variable="v"/>
+            <assign variable="Va" expression="1/3*3.14*r*r*v"/>
+            <assign variable="x" expression="SQRT(v*v+r*r)"/>
+            <assign variable="Sa" expression="3.14*r*(r+x)"/>
+            <output expression="&quot;Povrch ku&#382;elu je &quot; &amp;Va&amp; &quot; a objem je &quot; &amp;Sa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

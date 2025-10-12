@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-08 02:17:08 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEs0MTY7MjAyMi0xMS0wODswMjowMTo1OCBvZHAuOzMxNDU="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEs0MTY7MjAyMi0xMS0wODswMjoxNzowOCBvZHAuOzE7MzI1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="S, o, a" type="Real" array="False" size=""/>
+            <output expression="&quot;vlo&#382;te d&#233;lku strany pravideln&#233;ho &#353;esti&#250;heln&#237;ku&quot;" newline="True"/>
+            <input variable="a"/>
+            <assign variable="o" expression="6*a"/>
+            <assign variable="S" expression="3*SQRT(3)/2*a*a"/>
+            <output expression="&quot;obsah=&quot; &amp;S&amp; &quot;  obvod=&quot; &amp;o" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

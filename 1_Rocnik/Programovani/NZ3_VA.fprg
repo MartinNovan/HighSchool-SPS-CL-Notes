@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-28 01:20:21 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMi0yODsxMjo1MTowNiBvZHAuOzMxNDI="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MjY7MjAyMy0wMi0yODswMToyMDoyMSBvZHAuOzE7MzI0MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hodnota, krok, cislo, x" type="Integer" array="False" size=""/>
+            <input variable="hodnota"/>
+            <input variable="krok"/>
+            <input variable="cislo"/>
+            <assign variable="cislo" expression="hodnota+(cislo*krok-1)"/>
+            <for variable="x" start="hodnota" end="cislo" direction="inc" step="krok">
+                <output expression="x" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

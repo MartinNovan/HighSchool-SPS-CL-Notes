@@ -1,0 +1,271 @@
+{
+  "main": {
+    "id": "dcd18be4242f2f2d",
+    "type": "split",
+    "children": [
+      {
+        "id": "79092303520c2f9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7dc0e9514c2353d9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2_Rocnik/Cesky_jazyk/cheatsheet.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "cheatsheet"
+            }
+          }
+        ]
+      },
+      {
+        "id": "3218cf965eaaf8c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34b97efca679d2b4",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "4_Rocnik/Matematika/20251023104925.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "20251023104925"
+            }
+          },
+          {
+            "id": "efa4bb7734892741",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "1_Rocnik/Pracovní_sešit.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Pracovní_sešit"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ae8eaf78de5f5451",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c3c012406e17c14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff0de9ed59e460a9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "15b8d04af8d65e7c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ff94b7d5c1fd5d66",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 421.5
+  },
+  "right": {
+    "id": "1828e2ef20855977",
+    "type": "split",
+    "children": [
+      {
+        "id": "f032b2784fc3f4dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fecea16aaced3668",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 04_Vlastnosti_posloupnosti"
+            }
+          },
+          {
+            "id": "497d0f1e54d3e8c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 04_Vlastnosti_posloupnosti"
+            }
+          },
+          {
+            "id": "d16864f79ff7bda3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9f186d26df415073",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01_School_notes/4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 04_Vlastnosti_posloupnosti"
+            }
+          },
+          {
+            "id": "94fa016979cc38a6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 297.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "audio-recorder:Start/stop recording": false,
+      "markdown-importer:Open format converter": false,
+      "publish:Publish changes...": false
+    }
+  },
+  "active": "7dc0e9514c2353d9",
+  "lastOpenFiles": [
+    "4_Rocnik/Matematika/20251023104925.pdf",
+    "Maturita/Maturitni_prace/Martin Novan-Maturitní práce 1. kontrolní termín.pdf",
+    "1_Rocnik/Informatika/eSesit_INF.pdf",
+    "README.md",
+    "2_Rocnik/Cesky_jazyk/cheatsheet.md",
+    "2_Rocnik/Cesky_jazyk/Cj_recap_2024.md",
+    "2_Rocnik/Cesky_jazyk/Bila_nemoc.md",
+    "2_Rocnik/Cesky_jazyk/20251031_154109.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_154055.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_153937.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_153616.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_153601.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_153530.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_153446.jpg",
+    "2_Rocnik/Cesky_jazyk/20251031_153230.jpg",
+    "1_Rocnik/Pracovní_sešit.pdf",
+    "1_Rocnik/Matematika/20251117_104324.jpg",
+    "1_Rocnik/Matematika/00_Pracovni_sesit_3.pdf",
+    "1_Rocnik/Cesky_jazyk/01_Literarni_druhy_a_zanry_literarni_formy.md",
+    "1_Rocnik/Cesky_jazyk/README.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/01_Czech_language/00_Literatura_ucebnice_1.pdf",
+    "02_Teaching_material/1_year/01_Applied_informatics/13_Programming/02_Nastroje_k_programovani.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/13_Programming/04_Python.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/14_Computer_science/00_Tematicke_plany.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/14_Computer_science/01_Uvod_do_informatiky.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/14_Computer_science/08_Uvod_do_algoritmu.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/07_Mathematics/01_Prirozena_cisla.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/07_Mathematics/02_Cela_cisla.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/07_Mathematics/README.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/02_Civics/README.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/01_Czech_language/README.md",
+    "02_Teaching_material/0_Curricula.md",
+    "02_Teaching_material/1_year/01_Applied_informatics/01_Czech_language/Pracovni_listy/01_Literarni_druhy_a_zanry_literarni_formy.md",
+    "4_Rocnik/Automatizace/20251006_141616.jpg",
+    "4_Rocnik/Cesky_jazyk/Otázky_Test.md",
+    "4_Rocnik/Automatizace/README.md",
+    "4_Rocnik/Automatizace/00_Zapisky_z_praktickych_hodin.md",
+    "4_Rocnik/Automatizace/03_Logicke_obvody.md",
+    "4_Rocnik/Automatizace/04_Programovani_PLC.md",
+    "Excalidraw/Drawing 2026-01-19 13.02.26.md",
+    "4_Rocnik/Dejepis/00_Prezentace.md",
+    "4_Rocnik/Automatizace/_Uvod do PLC 3C 4BDE 251209b.pdf",
+    "2_Rocnik/Matematika/Materiály/Jednotková kružnice pro žáky.pdf",
+    "2_Rocnik/Matematika/Zápisy/00_Pracovní_sešit_5.pdf",
+    "2_Rocnik/Matematika/Zápisy/00_Pracovní_sešit_6.pdf",
+    "2_Rocnik/Matematika/Zápisy/Matematika sešit.pdf"
+  ]
+}

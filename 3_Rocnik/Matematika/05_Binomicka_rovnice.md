@@ -1,0 +1,1 @@
+# Binomická rovnice

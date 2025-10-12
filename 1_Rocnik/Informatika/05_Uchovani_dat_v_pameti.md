@@ -1,0 +1,1 @@
+# Uchování dat v paměti

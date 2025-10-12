@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-29 02:20:06 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMjowNzo1NyBvZHAuOzMxNTA="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMjoyMDowNiBvZHAuOzE7MzI0Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, C" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <input variable="B"/>
+            <input variable="C"/>
+            <if expression="A&gt;B">
+                <then>
+                    <if expression="A&gt;C">
+                        <then>
+                            <if expression="B&gt;C">
+                                <then>
+                                    <output expression="&quot;prvn&#237; je &quot; &amp;A&amp; &quot; druh&#233; je &quot; &amp;B&amp; &quot; t&#345;et&#237; je &quot;&amp;C&amp; &quot; je t&#345;et&#237;&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;prvn&#237; je &quot; &amp;A&amp; &quot; druh&#233; je &quot; &amp;C&amp; &quot; t&#345;et&#237; je &quot;&amp;B&amp; &quot; je t&#345;et&#237;&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;prvn&#237; je &quot; &amp;C&amp; &quot; druh&#233; je &quot; &amp;A&amp; &quot; t&#345;et&#237; je &quot;&amp;B&amp; &quot; je t&#345;et&#237;&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="B&gt;C">
+                        <then>
+                            <if expression="A&gt;C">
+                                <then>
+                                    <output expression="&quot;prvn&#237; je &quot; &amp;B&amp; &quot; druh&#233; je &quot; &amp;A&amp; &quot; t&#345;et&#237; je &quot;&amp;C&amp; &quot; je t&#345;et&#237;&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;prvn&#237; je &quot; &amp;B&amp; &quot; druh&#233; je &quot; &amp;C&amp; &quot; t&#345;et&#237; je &quot;&amp;A&amp; &quot; je t&#345;et&#237;&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;prvn&#237; je &quot; &amp;C&amp; &quot; druh&#233; je &quot; &amp;B&amp; &quot; t&#345;et&#237; je &quot;&amp;A&amp; &quot; je t&#345;et&#237;&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

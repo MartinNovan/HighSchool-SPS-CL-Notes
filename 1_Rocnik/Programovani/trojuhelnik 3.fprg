@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-06 02:24:47 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMjowNzo1NyBvZHAuOzMxNTA="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0yOTswMjoyMDowNiBvZHAuOzE7MzI0Nw=="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1Mjc7MjAyMi0xMi0wNjswMjoyNDo0NyBvZHAuOzU7MzI1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, C, D" type="Integer" array="False" size=""/>
+            <input variable="A"/>
+            <input variable="B"/>
+            <input variable="C"/>
+            <if expression="B+C &gt; A">
+                <then>
+                    <if expression="C+A &gt; B">
+                        <then>
+                            <if expression="A+B&gt;C">
+                                <then>
+                                    <output expression="&quot;trojuhelnik lze sestavit&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;trojuhelnik nelze sestavit&quot;" newline="True"/>
+                                    <breakpoint/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;trojuhelnik nelze sestavit&quot;" newline="True"/>
+                            <breakpoint/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;trojuhelnik nelze sestavit&quot;" newline="True"/>
+                    <breakpoint/>
+                </else>
+            </if>
+            <declare name="shoda" type="Integer" array="False" size=""/>
+            <assign variable="shoda" expression="0"/>
+            <if expression="A=B">
+                <then>
+                    <assign variable="shoda" expression="shoda+1"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="A=C">
+                <then>
+                    <assign variable="shoda" expression="shoda+1"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="B=C">
+                <then>
+                    <assign variable="shoda" expression="shoda+1"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="shoda&gt;0">
+                <then>
+                    <if expression="shoda=1">
+                        <then>
+                            <output expression="&quot;rovnoramenny&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;rovnostranny&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;obecn&#253;&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

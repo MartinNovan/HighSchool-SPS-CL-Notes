@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="martin.novan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-01 01:23:59 odp."/>
+        <attribute name="created" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wMTswMTowOTo1NCBvZHAuOzMxMzg="/>
+        <attribute name="edited" value="bWFydGluLm5vdmFuO1cxMEQ1MTk7MjAyMi0xMS0wMTswMToyMzo1OSBvZHAuOzE7MzI0Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A, B, POM" type="Integer" array="False" size=""/>
+            <output expression="&quot;Zadejte prvn&#237; hodnotu&quot;" newline="True"/>
+            <input variable="A"/>
+            <output expression="&quot;Zadejte druhou hodnotu&quot;" newline="True"/>
+            <input variable="B"/>
+            <assign variable="POM" expression="A"/>
+            <assign variable="A" expression="B"/>
+            <assign variable="B" expression="POM"/>
+            <output expression="&quot;hodnota prvn&#237; prom&#283;nn&#233; &quot;&amp; A &amp;&quot; a hodnota druh&#233; prom&#283;nn&#233; &quot; &amp;B" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Flowgorithm.exe" version="3.2.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Flowgorithm Logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Flowgorithm" version="4.5.0.0" publicKeyToken="D8DC0E7118EFBEDF" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Flowgorithm.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Flowgorithm.exe" size="10860616">
+      <assemblyIdentity name="Flowgorithm" version="4.5.0.0" publicKeyToken="D8DC0E7118EFBEDF" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>to66vraUIanjbuT3xvZ5c4EzMSXzx+4J8R7LpD5Vzy4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Flowgorithm Chart Style.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GqomLzo6vHlzXrHiWzr4nr7/dRAqg/oP6pX1Cfk/n+k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Flowgorithm Color Scheme.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NoPWBnSmXR20AnH6ZaD81cw0OALxHIqanydG/Ks/ySQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Flowgorithm Logo.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5TAYziCgOFNsCwDnfYEYhF3DVjxYfFRaG4859+TIr4U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Flowgorithm Program Template.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>K9qG3sQsQFdQyE/YaKiwxWoU1fPIncoikD+SqIWh0Do=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Flowgorithm Program.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8fid5eEhPWRfX0lkMVgwF5SXbIpyxQPN/W98aPessN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Flowgorithm.exe.config" size="203">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Oo51jwk9wvcsSBZhkQUg6FU5Bsc7i0twu+RMJJ58HUo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Highlighter.png" size="1798">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>McC27N7ugMVyJG+E6etIpnNCs+nSfkpVNDy5CwRKSII=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Marker.png" size="2190">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yDBfxqmul8QJDBaaUoKdiIVp8KV4wb0NdRe2ETfomMY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Apply Scheme2.png" size="3057">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>v/bZo8WV5KpQBvXyPpMVEVqLGXeASnQiIB2Al1Op9Vc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Copy 24.png" size="194">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VZIMgpIX/YVLmHMNa/sd6CLuRP+9qfTh3zozHipN2Gw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Dropper Bullet.png" size="1988">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yOR7elWZ3tb7gCfeSGJtiWH9GSNMy35MT1KBtmolSv4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Error 48.png" size="9418">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0yKoAset9sZ2mzmglCMBLZep+vWy9PgWpwxRGdMZ+E0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Exclamation 48.png" size="4437">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MRWTggT8I16yvWNjSddw5gj8TM49itgTPMFE1KGDYz0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Flowgorithm Chart Style.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GqomLzo6vHlzXrHiWzr4nr7/dRAqg/oP6pX1Cfk/n+k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Flowgorithm Color Scheme.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3834r0PepGCwwojrX5VDIIe/SfFnAq4fbE+xZrR+CkY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Flowgorithm Logo.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5TAYziCgOFNsCwDnfYEYhF3DVjxYfFRaG4859+TIr4U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Flowgorithm Program Template.ico" size="410598">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>K9qG3sQsQFdQyE/YaKiwxWoU1fPIncoikD+SqIWh0Do=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Information 48.png" size="12096">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vjEjIFmtXM2KSbpKeGwuh+oj7fM8mFKX9nxtWwr0/E4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Newline RTL.png" size="1235">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4Pb63ejZCAIjn05kPQI4tEke/3qeKjeOs5E8xQyPFYI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Question 48.png" size="13650">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dtQ+fDpUcFb/D/FGx5NRRw0pkTUKvnkyGnY8U1Y25I4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Success 48.png" size="12496">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pd3oohVxIwe3AOQBEeKzh0FjmXenpyFpDUzs3Q91yls=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Translate_KR.png" size="8963">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uFNcZ8Zf2xGUoY5xOMNi9t5eLOur/TvE/afGOnKugyw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Translate_SR.png" size="11915">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gbi+8t9M1H5dI5HVORaDF7wOn2x8gxmlk6AXFcWDsTI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Turtle Graphics.png" size="1385">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cwuhFhkWh1Fk/A1AdCobDU5pWv0bL7coI6tf519GocA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <fileAssociation extension=".fcht" description="Flowgorithm Chart Style" progid="Flowgorithm" defaultIcon="Flowgorithm Chart Style.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+  <fileAssociation extension=".fclr" description="Flowgorithm Color Scheme" progid="Flowgorithm" defaultIcon="Flowgorithm Color Scheme.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+  <fileAssociation extension=".fpgt" description="Flowgorithm Program Template" progid="Flowgorithm" defaultIcon="Flowgorithm Program Template.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+  <fileAssociation extension=".fprg" description="Flowgorithm Program" progid="Flowgorithm" defaultIcon="Flowgorithm Program.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+    <windowsSettings>
+      <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+    </windowsSettings>
+  </application>
+</asmv1:assembly>
