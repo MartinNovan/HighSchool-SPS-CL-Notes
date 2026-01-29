@@ -57,5 +57,91 @@
 	- Přístupy a nástroje použitelné pro popis výpočetního procesu algoritmem
 - Imperativní
 	- Program určuje (řídí) počítači změnu stavu od počátečního (vstup) na koncový (výstup)
-	- 
+	- změna stavu je docílena změnou hodnoty v paměti počítače příkazy -> vedlejší efekt
+	- nestrukturované = řízení výpočetního procesu příkazy skoku GOTO (nepodmíněný a podmíněný)
+		- strojový kód = (1883) A. Lovelace, L. Babbage, mechanický počítač Analytical Engine (absolutní) = řídí činnost hardware řadičem překládajícího kódu na operace
+		- assembler = (1947) první abstrakce od strojového kódu k přirozenému jazyku (relativní) = absolutní kódy instrukcí a míst v paměti nahrazeny jejich názvy (obrazy)
+		- blokové = (1950) kódy příkazů seskupeny do sekvence s určitým významem
+		- 1. překladač = (1952) A. Glennie, překlad z vyšších jazyků do assembleru a strojového kódu
+		- COBOL = (1959) G. Hopper, databáze a finanční aplikace
+		- BASIC = (1964) Beginners All-purpose Symbolic Instruction Code
+	- strukturované = proces jako sekvence, rozhodování, opakování a rekurze příkazů
+		- FORTRAN = (1957) J. Backus, FORMula TRANslaton, matematické výpočty
+		- C = (1972) D. Ritchie, vyšší jazyk, systémové programování, nezávislý na hardware
+		- MATLAB = (1978) MATrix LABoratory, výkonné matematické programy
+		- Perl = (1987) skriptovací jazyk, zpracování výstupů, operační systém UNIX
+		- R = (1995) statistická analýza a data mining, informatika
+	- objektové (OOP) = (1972) objekt obsahuje data i procedury pro práci – přístup, čtení, změna dat
+		- Objective-C = (1983) jazyk C s podporou OOP, pro vývoj programů v Apple
+		- C++ = (1983) jazyk C s podporou OOP, zaměření na výkon programů
+		- Python = (1991) standardní knihovna a snadné připojení dalších knihoven
+		- Java = (1995) virtuální stroj JVM, multiplatformní, automatizovaná správa paměti
+	- události řízené = nadstavba OOP při změně dat objektu může být spuštěn kód programu
+	    - Visual Basic = (1991) Microsoft, grafické aplikace částečně pomocí vizuálního nástroje a IDE
+	    - JavaScript = (1995) aplikace pro webový prohlížeč, dnes na server i pro OS
+	    - C# = (2000) Windows aplikace, knihovna .NET, IDE visual studio
+	    - Scratch = (2007) výukový nástroj pro děti, blokové vizuální programování
+	- aspektové = rozdělení programu od samostatných modulů s vymezenou funkcionalitou
+	    - Groovy = (2003) programovací a skriptovací jazyk pro java (JVM)
+	- souběžné = (1965) vykonávání více toků instrukcí zároveň v jednom okamžiku bez blokování
+	    - Go = (2009) obdoba C, produktivita v sítích a u více-jádrových systémů
+	    - Rust = (2010) výkonný, také funkcionální a s automatizovanou správou paměti
+	    - Kotlin = (2011) multiplatformní, propojen s Java, aplikace pro Android
+	    - Swift = (2014) propojení s Objective-C knihovnami, Apple, Win 10, Android
 ## Programovací jazyky s deklarativními a jinými přístupy
+- nástroj = cokoliv co není součástí těla a umožní splnění úlohy (fyzický předmět i logický postup)
+	- používání = i zvířata používají nástroje pro řešení problému ve svém prostředí (např. mravenec)
+	- výroba = vytvoření díky naučené znalosti pomocí dostupných prostředků (materiálů)
+	- znalost = není součástí nástroje, ale umožní popsat proces vytváření či používání nástroje
+	- technologie = soubor nástrojů a znalostí jak je vytvořit a použít v prostředí
+	- lidé = pomocí nástrojů vytvářejí další nástroje, kterými transformují okolní prostředí
+- jazyk = psaný (a nebo mluvený) má schopnost měnit způsob jakým lidé myslí a řeší problémy
+	- matematika = logika poskytuje objektivní a univerzální způsob jak dojít k řešení úlohy
+		- λ calculus = A. Church (1930), formální systém pro popis výpočetního procesu pomocí funkcí
+	- formální = podle využití rozlišujeme Domain Specific Languages a General Purpose Languages
+	    - DSL = specializované na určitý typ úloh = doménu (např. Logo, HTML, CSS, MATLAB)
+	    - GPL = obecně použitelné pro různé domény (např. XML, C, Java, Python)
+	- deklarativní = program v jazyce pomocí dat a jejich struktury specifikuje požadavek na výsledek
+		- funkcionální = výsledek y je ze vstupní hodnoty x získán transformací pomoci funkce f: y=f(x)
+			- funkce: 
+				- definice vstupní a výstupní hodnotou nebo složením z již definovaných funkcí
+			    - např. logická, aritmetická, textová, informační (vyhledávací, řadící), statistická
+			- LISP: 
+				- J. McCarthy (1958) LISP Processing, základ A-calculus, výzkum umělé inteligence
+				- program popsán jako datová struktura a vyhodnocením pomocí definic získáme výsledek
+				- interaktivní vývoj software pomocí nástroje REPL místo překládání
+				- metaprogramování - rozšíření syntaxe jazyka pomocí make - program generující program
+			- Scheme: 
+				- G. Steele, G. Sussmann (1970), odvozen z LISPu -> dialekt, IEEE standard
+				- tail-call optimalizace pro rekursivní programy a lexikální užívání
+				- first-class continuation umožní práci s nekonečnými hodnotami pomocí generování sekvencí
+			- ML = R. Milner (1973), Meta Language, tvorba překladačů, formální kontrola programů
+			- Common LISP = ANSI (1984) dialekt jazyka LISP, ANSI standard, podpora mnoha různých přístupů
+			- Haskell = (1990) čistě funkcionální, výzkum, vývoj a průmyslové aplikace, systém datových typů
+			- Racket = PLT Inc. (1995), dialekt Scheme, návrh programovacích jazyků a jejich realizace
+			- F# = Microsoft (2005), vychází z ML, pro .NET Framework a virtuální stroj CLR
+			- a další... = JavaScript, R, XQuery, SQL, C++, C#, Kotlin, Perl, GO, Rust, Java 8
+		- souběžný = více toků (vlákna) vykonávají, pracuje souběžně se sdílenými daty
+			- Erlang / OTP: 
+				- Ericsson (1986), open telecom platform, ústředny a mobilní sítě GPRS, 3G, LTE
+			    - systémové programování (distribuované - mnoho uzlů v síti, RTC-běh v reálném čase)
+			    - spolehlivost (tolerující chyby, vysoká dostupnost, nezastavující, oprava programu za běhu)
+			- Clojure = R. Hickey (2007), z LISPu, pro JVM a JavaScript, neměnné datové struktury
+			- Elixir = J. Valim (2012), systémový, nadstavba Erlang s jeho výhodami, virtuální stroj Beam
+		- dotazovací = program jako specifikace požadavku na databázový nebo informační systém
+			- SQL = D. Chamberlin, R. Boyce (1974) práce s daty a databázemi pomocí systému dotazů
+			- XPath = W3C (1998) výrazový jazyk popisující dotazování a transformaci XML
+			- LINQ = Microsoft (2007) dotazování nad datovými strukturami pro C# a .NET Framework
+		- omezující = programu zadaná sada omezujících pravidel pro hledané řešení
+		- logické = program tvoří sada logických pravidel umožňující odvozování a odpovídání na otázky
+			- Prolog = A.Calmerauer, R. Kowalski (1972), vývoj umělé inteligence a výpočetní lingvistiky
+		- ontologické = kódování a výpočetní zpracování informací a znalostní pomocí pravidel a odvozování
+		- datové toky = program jako orientovaný graf, kde uzly představují funkce a hrany přenášejí data
+		- reaktivní = prostup změn dat v datových proudech a jejich vzájemné závislosti
+			- VHDL, Verilog = IEEE (1984), jazyk HDL (Hardware Description Language), popis hardwaru
+			- SystemVerilog = (2002) jazyk pro specifikaci (model, návrh) a ověřování (simulace testování) HW
+			- Simulink = (2002), MATLAB, tvorba modelů, simulace a analýza dynamických systémů
+	- automatové = různé typy automatů, např. konečný, zásobníkový nebo buňkový
+	- současně = model aktorů, agentové programování (např. více spolupracujících botů)
+	- nedeterministické = dopředu není určen tok programu a vynechá se na náhodné rozhodování
+	- paralelní = podobně jako současně, více programů vykonáváno v jeden okamžik

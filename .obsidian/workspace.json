@@ -4,52 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "79092303520c2f9f",
+        "id": "5be468aa00dfef15",
         "type": "tabs",
         "children": [
           {
-            "id": "7dc0e9514c2353d9",
+            "id": "4cc30382c08d3670",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_Rocnik/Cesky_jazyk/cheatsheet.md",
+                "file": "4_Rocnik/Matematika/02_Posloupnosti_a_rady.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "cheatsheet"
-            }
-          }
-        ]
-      },
-      {
-        "id": "3218cf965eaaf8c6",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "34b97efca679d2b4",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "4_Rocnik/Matematika/20251023104925.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "20251023104925"
-            }
-          },
-          {
-            "id": "efa4bb7734892741",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "1_Rocnik/Pracovní_sešit.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Pracovní_sešit"
+              "title": "02_Posloupnosti_a_rady"
             }
           }
         ]
@@ -173,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_School_notes/4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
+                "file": "4_Rocnik/Matematika/02_Posloupnosti_a_rady.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 04_Vlastnosti_posloupnosti"
+              "title": "Outline of 02_Posloupnosti_a_rady"
             }
           },
           {
@@ -201,11 +171,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5,
-    "collapsed": true
+    "width": 297.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:New drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -213,59 +183,57 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "audio-recorder:Start/stop recording": false,
       "markdown-importer:Open format converter": false,
       "publish:Publish changes...": false
     }
   },
-  "active": "7dc0e9514c2353d9",
+  "active": "4cc30382c08d3670",
   "lastOpenFiles": [
+    "4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
+    "4_Rocnik/Matematika/02_Posloupnosti_a_rady.md",
+    "4_Rocnik/Matematika/01_Kuzelosecky.md",
+    "4_Rocnik/Matematika/05_Uvod_do_diferencialnich_vypoctu.md",
+    "1_Rocnik/Informatika/03_Binarni_kodovani.md",
+    "Excalidraw/Drawing 2026-01-28 10.07.15.md",
     "4_Rocnik/Matematika/20251023104925.pdf",
-    "Maturita/Maturitni_prace/Martin Novan-Maturitní práce 1. kontrolní termín.pdf",
-    "1_Rocnik/Informatika/eSesit_INF.pdf",
-    "README.md",
-    "2_Rocnik/Cesky_jazyk/cheatsheet.md",
-    "2_Rocnik/Cesky_jazyk/Cj_recap_2024.md",
-    "2_Rocnik/Cesky_jazyk/Bila_nemoc.md",
-    "2_Rocnik/Cesky_jazyk/20251031_154109.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_154055.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_153937.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_153616.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_153601.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_153530.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_153446.jpg",
-    "2_Rocnik/Cesky_jazyk/20251031_153230.jpg",
-    "1_Rocnik/Pracovní_sešit.pdf",
-    "1_Rocnik/Matematika/20251117_104324.jpg",
-    "1_Rocnik/Matematika/00_Pracovni_sesit_3.pdf",
-    "1_Rocnik/Cesky_jazyk/01_Literarni_druhy_a_zanry_literarni_formy.md",
-    "1_Rocnik/Cesky_jazyk/README.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/01_Czech_language/00_Literatura_ucebnice_1.pdf",
-    "02_Teaching_material/1_year/01_Applied_informatics/13_Programming/02_Nastroje_k_programovani.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/13_Programming/04_Python.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/14_Computer_science/00_Tematicke_plany.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/14_Computer_science/01_Uvod_do_informatiky.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/14_Computer_science/08_Uvod_do_algoritmu.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/07_Mathematics/01_Prirozena_cisla.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/07_Mathematics/02_Cela_cisla.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/07_Mathematics/README.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/02_Civics/README.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/01_Czech_language/README.md",
-    "02_Teaching_material/0_Curricula.md",
-    "02_Teaching_material/1_year/01_Applied_informatics/01_Czech_language/Pracovni_listy/01_Literarni_druhy_a_zanry_literarni_formy.md",
-    "4_Rocnik/Automatizace/20251006_141616.jpg",
-    "4_Rocnik/Cesky_jazyk/Otázky_Test.md",
-    "4_Rocnik/Automatizace/README.md",
-    "4_Rocnik/Automatizace/00_Zapisky_z_praktickych_hodin.md",
-    "4_Rocnik/Automatizace/03_Logicke_obvody.md",
+    "4_Rocnik/Matematika/03_Financni_matematika.md",
+    "Maturita/Informatika/02_Webove_aplikace.md",
     "4_Rocnik/Automatizace/04_Programovani_PLC.md",
-    "Excalidraw/Drawing 2026-01-19 13.02.26.md",
-    "4_Rocnik/Dejepis/00_Prezentace.md",
+    "Pasted image 20260128130221.png",
+    "1_Rocnik/Pracovní_sešit.pdf",
+    "4_Rocnik/Automatizace/02_Regulacni_obvody.md",
+    "Untitled.md",
+    "Excalidraw/Drawing 2026-01-28 12.48.12.md",
+    "4_Rocnik/Automatizace/00_Zapisky_z_praktickych_hodin.md",
+    "4_Rocnik/Automatizace/00_Schématické_značky.svg",
+    "Maturita/Informatika/README.md",
+    "Pasted image 20260128102451.png",
+    "Excalidraw/Drawing 2026-01-28 10.07.15.svg",
+    "Excalidraw",
+    "1_Rocnik/Kyberneticka_bezpecnost/Materiály/1D_KYB_pojmy.pdf",
+    "1_Rocnik/Informatika/eSesit_INF.pdf",
+    "1_Rocnik/Informatika/02_Programovaci_jazyky.md",
+    "Maturita/Informatika/01_Datove_struktury.md",
+    "Maturita/Informatika/05_Datove_typy.md",
+    "4_Rocnik/Automatizace/01_Uvod_do_automatizace.md",
+    "4_Rocnik/Automatizace/03_Logicke_obvody.md",
+    "4_Rocnik/Automatizace/20251006_141616.jpg",
+    "4_Rocnik/Vyvoj_aplikaci/01_Sql_Server_Management_Studio.md",
+    "4_Rocnik/Vyvoj_aplikaci/02_Sql_dotazy_v_aplikacich.md",
+    "1_Rocnik/Cesky_jazyk/01_Literarni_druhy_a_zanry_literarni_formy.md",
+    "4_Rocnik/Automatizace/Materialy/Automatizace_Laborky_Učebnice.pdf",
+    "4_Rocnik/Automatizace/20251006_142803.jpg",
+    "4_Rocnik/Automatizace/20251006_142759.jpg",
+    "4_Rocnik/Automatizace/Laborky/README.md",
+    "4_Rocnik/Automatizace/Laborky/01_Uvod_do_uloh_z_pneumatiky_elektropneumatiky.md",
+    "4_Rocnik/Automatizace/Laborky",
+    "4_Rocnik/Operacni_systemy/07_Souborove_systemy_GNU_Linux.md",
+    "4_Rocnik/Operacni_systemy/Snímek obrazovky pořízený 2025-11-12 11-19-35.png",
+    "4_Rocnik/Operacni_systemy/Snímek obrazovky pořízený 2025-11-12 11-20-42.png",
+    "4_Rocnik/Operacni_systemy/06GNULinux_uzivatel_prava.pdf",
+    "4_Rocnik/Operacni_systemy/07GNULinux_uzivatele_procesy.pdf",
     "4_Rocnik/Automatizace/_Uvod do PLC 3C 4BDE 251209b.pdf",
-    "2_Rocnik/Matematika/Materiály/Jednotková kružnice pro žáky.pdf",
-    "2_Rocnik/Matematika/Zápisy/00_Pracovní_sešit_5.pdf",
-    "2_Rocnik/Matematika/Zápisy/00_Pracovní_sešit_6.pdf",
-    "2_Rocnik/Matematika/Zápisy/Matematika sešit.pdf"
+    "4_Rocnik/Matematika/20251006_092107.jpg"
   ]
 }

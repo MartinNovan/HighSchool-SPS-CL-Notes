@@ -4,12 +4,12 @@
 - značí se
 	- $h(x)=g(f(x))$
 	- nebo $h(x)=g\cdot f$
-- Pořadí nemůžeme zaměňovat (viz níže)
-- Příklad
-	- $f:y=2x+3$
-	- $g:y=\sqrt{x}$
-	- $f\cdot g=2\cdot \sqrt{x}+3$
-	- $g\cdot f=\sqrt{2x+3}$
+- Pořadí nemůžeme zaměňovat
+	- Příklad
+		- $f:y=2x+3$
+		- $g:y=\sqrt{x}$
+		- $f\cdot g=2\cdot \sqrt{x}+3$
+		- $g\cdot f=\sqrt{2x+3}$
 - příklad
 	- Z kolika funkcí se skládá $y=sin^23x$
 	- První: $3x$
@@ -66,4 +66,19 @@
 		- -1/2 výsledek
 	- $\lim_{x\to 0}\frac{sin(3x)}{5x}$
 		- 3/5 výsledek
-		- 
+
+## Jednostranné limity
+- $\lim_{x\to 0^+}$
+- $\lim_{x\to 0^-}$
+
+## Limity v nevlastních bodech
+- $\lim_{x\to a}=\infty$ -> nevlastní limita ve vlastním bodě
+- $\lim_{x\to\infty}=\infty$ -> nevlastní limita v nevlastním bodě
+- $\lim_{x\to a}=a$ -> vlastní limita ve vlastním bodě
+- $\lim_{x\to\infty}=a$ -> vlastní limita v nevlastním bodě
+	- $x\to\infty$ -> nevlastní / $x\to a$ -> vlastní
+	- $... = \infty$ -> nevlastní bod / $... = a$ -> vlastní bod /
+- příklad
+	- $\lim_{x\to\infty}(4x^3-x^2+x+2)$
+	- výsledek $+\infty$
+- 

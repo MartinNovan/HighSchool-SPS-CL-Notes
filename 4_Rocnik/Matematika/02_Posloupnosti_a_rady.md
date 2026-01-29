@@ -2,17 +2,37 @@
 ## Zápis
 - výčtem 
 	- $2,4,6,8,...$
+		- Vypíšeme jednotlivá čísla
 - Vzorcem pro N-tý člen 
 	- $(n+1)_{n=1}^{\infty}$ -> 2,3,4,5,6,...
+		- Tento zápis definuje **celou posloupnost jako objekt**. Říká nám nejen _jak_ vypočítat členy, ale také _odkud a kam_ indexujeme.
+		- **Výhoda:** Explicitně určuje **definiční obor** (rozsah indexů).
+		- **Použití:** Tento zápis se používá k jasnému rozlišení, zda je posloupnost **konečná** nebo **nekonečná**.
+		    - Horní mez $\infty$ = nekonečná posloupnost (např. $(5)^{\infty}_{n=1}$).
+		    - Horní mez číslo (např. 8) = konečná posloupnost (např. $(n)^8_{n=1}$ končí na indexu 8).
+		    - Dolní mez určuje, kde se začíná (obvykle $n=1$, ale může být i 0).
 	- $a_n=\frac{2n+1}{n}$
+		- Tento zápis definuje předpis pro **konkrétní hodnotu n-tého členu**. Je to čistě funkční předpis (vzorec).
+		- **Výhoda:** Je stručný a zaměřuje se přímo na výpočet hodnoty. Často se používá, když je z kontextu jasné, že jde o $n \in \mathbb{N}$ (přirozená čísla).
+		- **Použití:** Tento tvar se objevuje tam, kde prostě definujeme vzorec, nebo když se přechází k rekurentnímu zadání, kde se pracuje s jednotlivými členy (např. $a_{n+1} = a_n - 2$).
 - Rekurentní zadání
-	- využívá předchozí členy
+	- Zatímco **vzorec pro $n$-tý člen** ($a_n = \dots$) ti umožňuje "teleportovat se" rovnou na jakékoliv číslo v řadě (např. vypočítat rovnou $a_{100}$), **rekurentní zadání** popisuje **vztah mezi sousedy**. Říká ti, jak se dostat z jednoho kroku na další.
+	- Zde je hlavní rozdíl oproti předchozím dvěma zápisům:
+		- 1. Princip "Dominového efektu"
+			- U rekurentního zadání nemůžeš vypočítat $a_{100}$, aniž bys znal $a_{99}$. A abys znal $a_{99}$, musíš znát $a_{98}$, atd. Musíš si celou posloupnost "odkrokovat" od začátku.
+		- 2. Nutnost "Startovního bodu"
+			- To je to nejdůležitější, na co se v písemkách zapomíná. Rekurentní vzorec sám o sobě nestačí.
+			- Kdybych řekl jen: _"Další číslo je o 2 menší než to předchozí"_ ($a_{n+1} = a_n - 2$), nevíme, kde začít.
+			    - Může to být: $10, 8, 6...$
+			    - Nebo: $0, -2, -4...$
+			- Proto **musí** být vždy zadán alespoň jeden člen pevně, obvykle první ($a_1 = 1$).
 	- $a_{n+1}=a_n-2$
 	- $a_1 =1$
 		- $a_2 = -1$
 		- $a_3 =-3$
 		- $a_4 =-5$
-- Za $n$ dosazujeme pouze přirozená čísla, maximálně můžeme přidat 0. Jiné čísla nejsou připuštěna.
+
+- Za $n$ dosazujeme pouze přirozená čísla ($1;2;\to\infty$), maximálně můžeme přidat 0. Jiné čísla nejsou připuštěna.
 ### Příklady
 - Zadání
 	- máme posloupnost $1,2,3,4,5,6,7,8$ vyrobte vzorec pro N-tý člen
@@ -119,7 +139,13 @@
 		- Máme hodnoty $a_1=85;a_n=102;d=1$
 		- 
 ## Geometrická posloupnost
-
+- ${2;4;8;16}$ -> pokaždé vynásobíme 2
+	- Číslo kterým násobíme nazýváme kvocient ($q$)
+- vzorce
+	- $a_{n+1}=a_n\cdot q$
+	- $a_n=a_1\cdot q^{n-1}$
+	- $a_s=a_r\cdot q^{s-r}$
+	- $S_n=a_1\cdot \frac{q^n-1}{q-1}$
 
 - příklad
 	- máme zadané hodnoty $a_1=6$ a $a_{2}=24$ vypočítejte kvocient $q$ a hodnoty $a_5$ a $a_8$

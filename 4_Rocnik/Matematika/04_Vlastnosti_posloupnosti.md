@@ -6,10 +6,9 @@
 ## Aritmetická posloupnost vlastnosti
 - vzorec $a_{n+1}=a_n+d$
 - Pokud je $d$ 
-	- $d>0$ tak 
-	- $d<0$ tak
-	- $d=0$ tak 
-==Dopsat==
+	- Pokud je $d > 0$, posloupnost je **rostoucí** (např. 2, 4, 6...).
+	- Pokud je $d < 0$, posloupnost je **klesající** (např. 6, 4, 2...).
+	- Pokud je $d = 0$, posloupnost je **konstantní** (např. 5, 5, 5...).
 ## Limita posloupnosti
 - Říkáme, že posloupnost $(a_{n})_{n=1}^{\infty}$ je **konvergentní** (má limitu), právě když existuje číslo $a\in R$ takové, že platí: Ke každému $\epsilon>0$ existuje $n_0\in N$ tak, že pro všechna přirozená čísla $n\ge n_0$ je $|a_n - a|<\varepsilon$ 
 	- neboli zapsáno
@@ -24,6 +23,7 @@
 	- Slouží k **formálnímu určení, jak blízko jsou členy posloupnosti limitě**.
 - Bod/index $n_0$​ je tedy první člen posloupnosti, který do pásu spadl — a od něj dál už posloupnost pás nikdy neopustí.
 	- **První člen v pásu nemusí být první člen v posloupnosti**, vše záleží na tom jaké zvolíme $\varepsilon$
+### Příklady
 - příklad
 	- Najděte limitu: $\lim_{n\to\infty}\frac{n+1}{n}$
 	- Postup
@@ -116,6 +116,7 @@
 		- Toto můžeme klasicky vydělit a výsledek nám vyjde $2$
 ## Nekonečná geometrická řada
 - součet nekonečné geometrické řady: $S=\frac{a_1}{1-q}$ 
+- Vzorec pro součet je $S = \frac{a_1}{1-q}$, platí pouze pokud $|q| < 1$.
 - Příklad
 	- Máme zadanou řadu $\Sigma_{n=1}^{\infty}\frac{1}{2^n-1}$
 	- Postup
@@ -136,10 +137,6 @@
 	- Máme zadanou řadu $\Sigma_{n=1}^{\infty}(\frac{2}{3})^n$
 	- Postup
 		- stejně
-- Trojuhelník v trojuhelníku (rovnostranný - součet obvodu)
-- Čtverec ve čtverci (součet obsahu)
-- Spirála PPho záda (délka poloměru spirály)
-
 
 - Příklad Řešte v R rovnice $1+\frac{2}{x}+\frac{4}{x^2}+\frac{8}{x^3}+...=\frac{4x-3}{3x-4}$
 	- Postup
@@ -158,14 +155,4 @@
 		- $-1<\frac{2}{x_2}<1$ -> pravda
 		- $K=\{6\}$
 
-
-
-o = 15,42
-S = 16,06
-
-
-S = 201.06-50.26 = 150.8
-O = 75,39 
-
-S =  1,732 - 1,57 = 0,162
 

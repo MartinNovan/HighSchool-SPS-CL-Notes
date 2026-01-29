@@ -17,6 +17,7 @@
 		- $K$ je půjčka
 		- $n$ je období (roky/měsíce)
 		- $r$ dopočítáme pomocí pravého vzorce
+## Příklady
 - příklad
 	- Nač vzroste jistina 2 700 Kč za 6 let při úrokovací míře 11%
 	- Postup
@@ -68,5 +69,3 @@
 - Příklad
 	- Za jak dlouho splatíme dluh 90 000 Kč při 14.5% p.a. ročními anuitami 14 000Kč placenými koncem období?
 	- $n=19.869let$
-- Příklad
-	- 

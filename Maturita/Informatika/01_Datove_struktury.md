@@ -286,16 +286,18 @@ Console.WriteLine("null");
 
 ```csharp
 // Příklad dvojitě propojeného seznamu
-public class Node
-{
-    public int Value;
-    public Node Next;
-
-    public Node(int value)
-    {
-        Value = value;
-        Next = null;
-    }
+public class Node  
+{  
+    public int Value;  
+    public Node Next;  
+    public Node Prev;  
+  
+    public Node(int value)  
+    {  
+        Value = value;  
+        Next = null;  
+        Prev = null;  
+    }  
 }
 
 // Vytvoření uzlů
@@ -381,11 +383,13 @@ public class Node
 {
     public int Value;
     public Node Next;
+    public Node Prev;
 
     public Node(int value)
     {
         Value = value;
         Next = null;
+        Prev = null;
     }
 }
 
@@ -963,7 +967,7 @@ set.Add("Stuart");
 set.Add("Bob");
 
 // Odstranění hodnoty
-set.Remove("Pete")
+set.Remove("Pete");
 
 // vypsání hodnot
 Console.WriteLine("Obsah HashSetu:");
@@ -977,64 +981,82 @@ Console.WriteLine("Contains 'Stuart': " + set.Contains("Stuart"));
 ```
 
 ```csharp
-// Vytvoření vlastního Hash Setu
-public class HashSet
-{
-	private readonly List<string>[] buckets; // Pole bucketů
-    private readonly int size;
-    
-    // Konstruktor – vytvoří pole bucketů o dané velikosti
-    public MyHashSet(int size)
-    {
-        this.size = size;
-        buckets = new List<string>[size];
-        // Inicializace prázdných bucketů
-        for (int i = 0; i < size; i++)
-            buckets[i] = new List<string>();
-    }
-    
-    public int HashFunction(string value)
-    {
-        int sum = 0; // Pomocná proměnná pro vypočítání hash
-        foreach (char c in value) // Pro každé písmeno v hodnotě
-        {
-	        sum += c; // Přičti jeho Unicode hodnotu do proměnné sum
-        }
-        return sum % 10; // Nakonec vrať zbytek po dělení "sum / 10" jako index, na kterém má být hodnota uložena 
-    }
-    
-    public void Add(string value)
-    {
-        int index = HashFunction(value); // Zjisti na jakým indexu v poli má prvek být uložen
-        var bucket = buckets[index]; // Načti si bucket do proměnné pro následné porovnání
-        if (!bucket.Contains(value)) // Pokud bucket již neobsahuje prvek
-            bucket.Add(value); // tak ho přidej
-    }
-    
-    public bool Contains(string value)
-    {
-        int index = HashFunction(value); // Zjisti na jakým indexu v poli má prvek být uložen
-        var bucket = buckets[index]; // Načti si bucket do proměnné
-        return bucket.Contains(value); // Vrať ano/ne pokud bucket obsahuje námi hledanou hodnotu
-    }
-    
-    public void Remove(string value)
-    {
-        int index = HashFunction(value); // Zjisti na jakým indexu v poli má prvek být uložen
-        var bucket = buckets[index]; // Načti si bucket do proměnné pro následné porovnání
-        if (bucket.Contains(value)) // Pokud bucket obsahuje prvek
-            bucket.Remove(value); // tak ho odeber
-    }
-    
-    public void Print()
-    {
-        Add("Stuart"); // Přidej Stuart do hash tabulky
-        // Výpis celého hash setu
-        for (int i = 0; i < buckets.Count; i++)
-        {
-            Console.WriteLine($"[{i}]: [{string.Join(", ", my_hash_set[i])}]");
-        }
-    }
+// Vytvoření vlastního Hash Setu  
+public class MyHashSet  
+{  
+    private readonly List<string>[] buckets; // Pole bucketů  
+    private readonly int size;  
+      
+    // Konstruktor – vytvoří pole bucketů o dané velikosti  
+    public MyHashSet(int size)  
+    {  
+        this.size = size;  
+        buckets = new List<string>[size];  
+        // Inicializace prázdných bucketů  
+        for (int i = 0; i < size; i++)  
+            buckets[i] = new List<string>();  
+    }  
+  
+    private int HashFunction(string value)  
+    {  
+        int sum = 0; // Pomocná proměnná pro vypočítání hash  
+        foreach (char c in value) // Pro každé písmeno v hodnotě  
+        {  
+            sum += c; // Přičti jeho Unicode hodnotu do proměnné sum  
+        }  
+        return Math.Abs(sum) % size; // Nakonec vrať zbytek po dělení "sum / 10" jako index, na kterém má být hodnota uložena   
+}  
+      
+    public void Add(string value)  
+    {  
+        int index = HashFunction(value); // Zjisti na jakým indexu v poli má prvek být uložen  
+        var bucket = buckets[index]; // Načti si bucket do proměnné pro následné porovnání  
+        if (!bucket.Contains(value)) // Pokud bucket již neobsahuje prvek  
+            bucket.Add(value); // tak ho přidej  
+    }  
+      
+    public bool Contains(string value)  
+    {  
+        int index = HashFunction(value); // Zjisti na jakým indexu v poli má prvek být uložen  
+        var bucket = buckets[index]; // Načti si bucket do proměnné  
+        return bucket.Contains(value); // Vrať ano/ne pokud bucket obsahuje námi hledanou hodnotu  
+    }  
+      
+    public void Remove(string value)  
+    {  
+        int index = HashFunction(value); // Zjisti na jakým indexu v poli má prvek být uložen  
+        var bucket = buckets[index]; // Načti si bucket do proměnné pro následné porovnání  
+        if (bucket.Contains(value)) // Pokud bucket obsahuje prvek  
+            bucket.Remove(value); // tak ho odeber  
+    }  
+      
+    public void Print()  
+    {  
+        // Výpis celého hash setu  
+        for (int i = 0; i < buckets.Length; i++)  
+        {  
+            Console.WriteLine($"[{i}]: [{string.Join(", ", buckets[i])}]");  
+        }  
+    }  
+}  
+  
+public class Program()  
+{  
+    public static void Main(string[] args)  
+    {  
+        MyHashSet myHashSet =  new MyHashSet(10);  
+        myHashSet.Add("Eve");  
+        myHashSet.Add("Alice");  
+        myHashSet.Add("Thomas");  
+        myHashSet.Add("Pete");  
+          
+        myHashSet.Print();  
+        myHashSet.Add("Stuart");  
+        myHashSet.Remove("Pete");  
+        myHashSet.Contains("Stuart");  
+        myHashSet.Contains("Pete");  
+        myHashSet.Print();  
+    }  
 }
 ```
 ---
@@ -1310,6 +1332,18 @@ public void PostOrderTraversal(TreeNode node)
     InOrderTraversal(node.Right);
     // 3) Zpracujeme aktuální uzel
     Console.Write(node.Data + ", ");
+}
+public void InOrderTraversal(TreeNode node)  
+{  
+    // Pokud je uzel prázdný, není co zpracovat  
+    if (node == null)  
+        return;  
+    // 1) Projdeme levý podstrom  
+    InOrderTraversal(node.Left);  
+    // 2) Projdeme pravý podstrom  
+    InOrderTraversal(node.Right);  
+    // 3) Zpracujeme aktuální uzel  
+    Console.Write(node.Data + ", ");  
 }
 ```
 - Funkce `PostOrderTraversal()` pokračuje v rekurzivním procházení levého podstromu, dokud není vrácena hodnota `null`, když je levý podřízený uzel C volán jako argument uzlu.
