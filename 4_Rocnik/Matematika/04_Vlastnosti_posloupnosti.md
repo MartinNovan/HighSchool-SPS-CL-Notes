@@ -1,8 +1,7 @@
-
 # Vlastnosti posloupností
 - Posloupnosti dokážeme převést na grafy, mají také podobné vlastnosti
 	- Rostoucí/klesající/Konstantní
-	- Omezená zhora/zdola/zhora i zdola/není omezená
+	- Omezená shora/zdola/shora i zdola/není omezená
 ## Aritmetická posloupnost vlastnosti
 - vzorec $a_{n+1}=a_n+d$
 - Pokud je $d$ 
@@ -103,9 +102,9 @@
 			- $\frac{5n^3-4}{5n^2}$ -> $\frac{\frac{5n^3}{n^3}-\frac{4}{n^3}}{\frac{5n^2}{n^3}}$
 		- Zkrátíme vše
 			- $\frac{\frac{5n^3}{n^3}-\frac{4}{n^3}}{\frac{5n^2}{n^3}}$
-			- Vyjde nám ale
-			- $\frac{5-0}{0}$
-			- To je nevalidní, tedy toto nemá řešení a posloupnost je **divergentní** (nemá limitu)
+			- Vyjde nám dělení nulou (respektive velmi malým číslem).
+            - Výsledek je $+\infty$.
+            - Posloupnost je **divergentní** (má nevlastní limitu).
 - příklad
 	- Najděte limitu: $\lim_{n\to\infty}\frac{(n-3)(2n-1)}{(n+1)^2}$
 	- Postup
@@ -118,41 +117,61 @@
 - součet nekonečné geometrické řady: $S=\frac{a_1}{1-q}$ 
 - Vzorec pro součet je $S = \frac{a_1}{1-q}$, platí pouze pokud $|q| < 1$.
 - Příklad
-	- Máme zadanou řadu $\Sigma_{n=1}^{\infty}\frac{1}{2^n-1}$
-	- Postup
-		- Najdeme první a druhý člen a q ($q=\frac{a_2}{a_1}$), a dosadíme do vzorce
+    - Máme zadanou řadu $\Sigma_{n=1}^{\infty}\frac{1}{2^n}$
+    - Postup
+        - Rozepíšeme si řadu: $\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots$
+        - Určíme $a_1 = \frac{1}{2}$
+        - Určíme $q = \frac{a_2}{a_1} = \frac{1/4}{1/2} = \frac{1}{2}$
+        - Dosadíme do vzorce: $S = \frac{\frac{1}{2}}{1 - \frac{1}{2}} = \frac{0.5}{0.5} = 1$
 - Příklad
-	- Máme zadanou řadu $\Sigma_{n=1}^{\infty}10^{-n}$
-	- Postup
-		- stejně
+    - Máme zadanou řadu $\Sigma_{n=1}^{\infty}10^{-n}$
+    - Postup
+        - Rozepíšeme si řadu: $10^{-1} + 10^{-2} + \dots = 0,1 + 0,01 + 0,001 \dots$
+        - $a_1 = 0,1$
+        - $q = 0,1$ (každý další člen je 10x menší)
+        - $S = \frac{0,1}{1-0,1} = \frac{0,1}{0,9} = \frac{1}{9}$
 - Příklad
-	- Máme zadanou řadu $0.3\overline{25}$
-	- Postup
-		- $0.3$+$a_1=0.025$; $a_2=0.00025$ //idk
+    - Převeďte periodické číslo $0.3\overline{25}$ na zlomek
+    - Postup
+        - Číslo roz dělíme na před-periodickou část a periodickou řadu: $0,3 + (0,025 + 0,00025 + ...)$
+        - Opíšeme $0,3$ a řešíme jen závorku jako geometrickou řadu.
+        - Pro řadu: $a_1 = 0,025$, $q = 0,01$ (perioda má 2 cifry, posouváme o 2 místa)
+        - Součet řady: $S_{perioda} = \frac{0,025}{1-0,01} = \frac{0,025}{0,99} = \frac{25}{990} = \frac{5}{198}$
+        - Celkový výsledek: $0,3 + S_{perioda} = \frac{3}{10} + \frac{5}{198} = \frac{297 + 25}{990} = \frac{322}{990} = \frac{161}{495}$
 - Příklad
-	- Máme zadanou řadu $0.\overline{4}$
-	- Postup
-		- $a_1=0.4$; $a_2=0.04$ //idk
+    - Převeďte periodické číslo $0.\overline{4}$ na zlomek
+    - Postup
+        - Je to číslo $0,4444...$, což můžeme zapsat jako řadu $0,4 + 0,04 + 0,004...$
+        - $a_1 = 0,4$
+        - $q = 0,1$
+        - $S = \frac{0,4}{1-0,1} = \frac{0,4}{0,9} = \frac{4}{9}$
 - Příklad
-	- Máme zadanou řadu $\Sigma_{n=1}^{\infty}(\frac{2}{3})^n$
-	- Postup
-		- stejně
-
-- Příklad Řešte v R rovnice $1+\frac{2}{x}+\frac{4}{x^2}+\frac{8}{x^3}+...=\frac{4x-3}{3x-4}$
-	- Postup
-		- Podmínky $x\ne0$ a $x\ne\frac{4}{3}$ a $x\ne2$
-		- $q=\frac{2}{x}$
-		- $-1<\frac{2}{x}<1$
-		- $\frac{1}{1-\frac{2}{x}}=\frac{4x-3}{3x-4}$
-		- $\frac{1}{\frac{x-2}{x}}=\frac{4x-3}{3x-4}$
-		- $\frac{x}{x-2}=\frac{4x-3}{3x-4}$
-		- $x(3x-4)=(4x-3)(x-2)$
-		- $3x^2-4x=4x^2-11x+6$
-		- $x^2-7x^2+6=0$
-		- $(x-1)(x-6)=0$
-		- $x_1=1$ ; $x_2=6$
-		- $-1<\frac{2}{x_1}<1$ -> nepravda
-		- $-1<\frac{2}{x_2}<1$ -> pravda
-		- $K=\{6\}$
-
-
+    - Máme zadanou řadu $\Sigma_{n=1}^{\infty}(\frac{2}{3})^n$
+    - Postup
+        - Rozepíšeme si řadu: $\frac{2}{3} + \frac{4}{9} + \frac{8}{27} \dots$
+        - $a_1 = \frac{2}{3}$
+        - $q = \frac{2}{3}$
+        - Dosadíme do vzorce: $S = \frac{\frac{2}{3}}{1-\frac{2}{3}} = \frac{\frac{2}{3}}{\frac{1}{3}} = 2$
+- Příklad
+    - Řešte v R rovnici $1+\frac{2}{x}+\frac{4}{x^2}+\frac{8}{x^3}+...=\frac{4x-3}{3x-4}$
+    - Postup
+        - Levou stranu chápeme jako nekonečnou geometrickou řadu.
+        - Určíme parametry: $a_1=1$ a kvocient $q=\frac{2}{x}$.
+        - **Podmínka konvergence:** Aby řada měla součet, musí platit $|q| < 1$, tedy $|\frac{2}{x}| < 1 \Rightarrow |x| > 2$. (Tedy $x \in (-\infty, -2) \cup (2, \infty)$).
+        - Vyjádříme součet levé strany: $S = \frac{1}{1-\frac{2}{x}} = \frac{1}{\frac{x-2}{x}} = \frac{x}{x-2}$.
+        - Dosadíme součet zpět do rovnice:
+            - $\frac{x}{x-2}=\frac{4x-3}{3x-4}$
+        - Vynásobíme jmenovateli (křížem):
+            - $x(3x-4)=(4x-3)(x-2)$
+        - Roznásobíme závorky:
+            - $3x^2-4x=4x^2-8x-3x+6$
+            - $3x^2-4x=4x^2-11x+6$
+        - Převedeme na jednu stranu:
+            - $x^2-7x+6=0$
+        - Rozložíme na součin (nebo přes diskriminant):
+            - $(x-1)(x-6)=0$
+        - Kořeny jsou $x_1=1$ a $x_2=6$.
+        - **Kontrola podmínek:**
+            - $x_1=1$: Neplatí podmínka $|x|>2$ (řada by divergovala). -> **Není řešením.**
+            - $x_2=6$: Platí podmínka $|x|>2$. -> **Je řešením.**
+        - Výsledek: $K=\{6\}$

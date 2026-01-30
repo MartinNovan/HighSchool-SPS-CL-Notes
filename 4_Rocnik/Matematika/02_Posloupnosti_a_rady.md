@@ -49,49 +49,48 @@
 		- $3,-3,3,-3,3,-3,3,-3,3,-3$
 	- máme posloupnost $\frac12+\frac23+\frac34+\frac45,\ldots$ vyrobte vzorec pro N-tý člen
 		- Jedná se o nekonečnou posloupnost
+		- Čitatel je $n$, jmenovatel je o jedna větší ($n+1$).
 		- $(\frac{n}{n+1})_{n=1}^{\infty}$
 	- Máme zadaný zápis $a_n=\frac{2n+1}{n}$ napište prvních 5 členů
+		- Dosazujeme za $n=1, 2, 3, 4, 5$.
 		- $3;\frac52;\frac73;\frac94;\frac{11}{5}$
-	- Máme zadány hodnoty $1;3;5;7;...$ zapište vzorcem pro n-tý člen a také rekurentně
-		- N-tý člen
-			- $a_n=2n-1$
-		- Rekurentní zadání
-			- $a_1=1;a_{n+1}=a_n+2$
-	- Máme zadané hodnoty $1;-1;1;-1;1;-1;...$ zapište vzorcem pro n-tý člen a také rekurentně
-		- N-tý člen
-			- $a_n=(-1)^{n+1}$
-		- Rekurentní zadání
-			- $a_1=1;a_{n+1}=-a_n$
-	- Máme zadané hodnoty $5;7;9;11;13;...$ zapište vzorcem pro n-tý člen a také rekurentně
-		- N-tý člen
-			- $a_n=2n+3$
-		- Rekurentní zadání
-			- $a_1=5;a_{n+1}=a_n+2$
-	- Máme zadanou rovnici $a_{n+2}=a_{n+1}-a_n;a_1=1;a_2=2$
-		- $a_1=1$
-		- $a_2=2$
-		- $a_3=a_2−a_1=2−1=1$
-		- $a_4=a3−a2=1−2=−1$
-		- $a_5=a4−a3=−1−1=−2$
-	- Máme zadanou rovnici $a_{n+2}=a_{n+1}+a_n;a_1=1;a_2=2$
-		- $a_1=1$
-		- $a_2=2$
-		- $a_3=a_2+a_1=2+1=3$
-		- $a_4=a3+a2=3+2=5$
-		- $a_5=a4+a3=5+3=8$
+	- - **Zadání:** Máme hodnoty $1; 3; 5; 7; \dots$, zapište vzorcem pro n-tý člen a rekurentně.
+    
+    - **N-tý člen:** $a_n=2n-1$ (lichá čísla)
+        
+    - **Rekurentně:** $a_1=1; a_{n+1}=a_n+2$
+        
+- Zadání: 
+	- Máme hodnoty $1; -1; 1; -1; \dots$, zapište vzorcem pro n-tý člen a rekurentně.
+	    - **N-tý člen:** $a_n=(-1)^{n+1}$
+	    - **Rekurentně:** $a_1=1; a_{n+1}=-a_n$ (násobení -1 obrátí znaménko)
+- Zadání: 
+	- Máme hodnoty $5; 7; 9; 11; 13; \dots$, zapište vzorcem pro n-tý člen a rekurentně.
+	    - **N-tý člen:** $a_n=2n+3$
+	    - **Rekurentně:** $a_1=5; a_{n+1}=a_n+2$
+- Zadání: 
+	- Máme rekurentní rovnici $a_{n+2}=a_{n+1}-a_n; a_1=1; a_2=2$.
+	    - $a_3 = a_2 - a_1 = 2 - 1 = 1$
+	    - $a_4 = a_3 - a_2 = 1 - 2 = -1$
+	    - $a_5 = a_4 - a_3 = -1 - 1 = -2$
+- Zadání: 
+	- Máme rekurentní rovnici $a_{n+2}=a_{n+1}+a_n; a_1=1; a_2=2$ (Fibonacciho princip).
+	    - $a_3 = a_2 + a_1 = 2 + 1 = 3$
+	    - $a_4 = a_3 + a_2 = 3 + 2 = 5$
+	    - $a_5 = a_4 + a_3 = 5 + 3 = 8$
 ## Aritmetická posloupnost
 - V posloupnosti se přičítá nebo odčítá určitá hodnota 
-	- např. $1;3;5;7;9$ u každé další hodnoty přičítáme hodnotu $2$
+	- např. $1;3;5;7;9$ u každé hodnoty přičítáme hodnotu $2$
 ### Vzorečky
 - $a_{n+1}=a_n+d$
 	- číslo $d$ se nazývá **diference**
-	- Vzoreček pro 2 členy co jsou po sobě
+	- Vztah mezi dvěma sousedními členy.
 - $a_n=a_1+(n-1)d$
-	- Přepis N-tý člen
+	- Vzorec pro výpočet N-tého členu pomocí prvního členu a diference
 - $a_s=a_r+(s-r)d$
-	- Vzoreček pro 2 libovolné členy
+	- Vzorec pro vztah mezi dvěma libovolnými členy (kde $s > r$).
 - $s_{n}=\frac{n}{2}\left(a_1+a_{n}\right)$
-	- Součet prvních N-členů (vždy se začíná na čísle 1 a hodnota $n$ udá kolik prvků sečíst dohromady)
+	- Součet prvních $n$ členů.
 ###  Příklady
 - Příklad
 	- Máme posloupnost $a_n=2n-4$ zjistěte zda je aritmetická
@@ -128,42 +127,69 @@
 		- Nyní to vše hodíme do vzorce
 			- $s_{100}=\frac{100}{2}\left(1+100\right)$
 			- $s_{100}=5050$
-- Příklad
-	- Máme zadané diferenci $d=0.04$ hodnotu $a_{50}=6$ Zjistěte hodnoty $a_1$ $a_{100}$ a $s_100$
-	- Postup
-		- a
-		- $a_1=4.04$ $a_{100}=8$ $s_{100}=602$
-- Příklad
-	- Máme střechu do tvaru lichoběžníku, do první řady se vejde 85 tašek, v poslední řadě je 102 tašek, do každé řady přidáváme 1 tašku navíc než do minulé. Kolik tašek budeme potřebovat?
-	- Postup
-		- Máme hodnoty $a_1=85;a_n=102;d=1$
-		- 
+- Příklad: 
+	- Máme diferenci $d=0.04$ a hodnotu $a_{50}=6$. Zjistěte $a_1, a_{100}, s_{100}$.
+    - Výpočet $a_1$:
+        - $a_{50} = a_1 + 49d$
+        - $6 = a_1 + 49 \cdot 0,04$
+        - $6 = a_1 + 1,96 \Rightarrow a_1 = 4,04$
+    - Výpočet $a_{100}$:
+        - $a_{100} = a_1 + 99d$
+        - $a_{100} = 4,04 + 99 \cdot 0,04 = 4,04 + 3,96 = 8$
+    - Výpočet $s_{100}$:
+        - $s_{100} = \frac{100}{2}(a_1 + a_{100}) = 50(4,04 + 8) = 50 \cdot 12,04 = 602$
+- Příklad: 
+	- Střecha tvaru lichoběžníku. 1. řada = 85 tašek, poslední řada = 102 tašek, každá další řada o 1 tašku více ($d=1$). Kolik tašek celkem ($s_n$)?
+    - Postup:
+        - Známe $a_1=85, a_n=102, d=1$. Musíme zjistit počet řad $n$.
+        - $a_n = a_1 + (n-1)d$
+        - $102 = 85 + (n-1) \cdot 1$
+        - $17 = n - 1 \Rightarrow n = 18$ (střecha má 18 řad)
+        - Nyní součet $s_{18}$:
+        - $s_{18} = \frac{18}{2}(85 + 102) = 9 \cdot 187 = 1683$ tašek.
 ## Geometrická posloupnost
+- V posloupnosti se násobí stále stejnou hodnotou.
 - ${2;4;8;16}$ -> pokaždé vynásobíme 2
 	- Číslo kterým násobíme nazýváme kvocient ($q$)
+### Vzorečky
 - vzorce
 	- $a_{n+1}=a_n\cdot q$
 	- $a_n=a_1\cdot q^{n-1}$
 	- $a_s=a_r\cdot q^{s-r}$
 	- $S_n=a_1\cdot \frac{q^n-1}{q-1}$
-
-- příklad
-	- máme zadané hodnoty $a_1=6$ a $a_{2}=24$ vypočítejte kvocient $q$ a hodnoty $a_5$ a $a_8$
-	- Postup
-		- $q=4$
-			- vzorec pouzity je q=a2/a1
-		- dopocitani pak pomoci vzorce an=blablabla
-- Příklad
-	- Máme hodnoty $a_4=\frac{1}{3}$ a $a_5=\frac{1}{9}$ vypočtěte součet prvních 7 hodnot $S_7$
-	- Postup
-		- Dopočítáme a1
-		- Dosadíme do vzorce pro S7 (s7=13.5)
-- Příklad
-	- Máme hodnoty $a_1-a_3=-1.5$ a $a_2+a_1=1.5$ vypočtěte součet prvních 5 hodnot $S_7$
-	- Postup
-		- $a_n=a_1\cdot q^{n-1}$
-		- $a_3=a_1\cdot q^2$
-		- $a_2=a_1\cdot q$
-		- $a_1-a_1\cdot q^2=-1.5$
-		- $a_1\cdot q+a_1=1.5$
+	- $q = \frac{a_2}{a_1}$
+### Příklady
+- Příklad: 
+	- Zadáno $a_1=6, a_2=24$. Vypočítejte $q, a_5, a_8$.
+    - **Výpočet $q$:**
+        - $q = \frac{a_2}{a_1} = \frac{24}{6} = 4$
+    - **Výpočet $a_5$:**
+        - $a_5 = a_1 \cdot q^{5-1} = 6 \cdot 4^4 = 6 \cdot 256 = 1536$
+    - **Výpočet $a_8$:**
+        - $a_8 = a_1 \cdot q^{7} = 6 \cdot 4^7 = 6 \cdot 16384 = 98304$
+- Příklad: 
+	- Zadáno $a_4=\frac{1}{3}, a_5=\frac{1}{9}$. Vypočtěte součet prvních 7 hodnot $S_7$.
+    - **Postup:**
+        1. Zjistíme $q$: $q = \frac{a_5}{a_4} = \frac{\frac{1}{9}}{\frac{1}{3}} = \frac{3}{9} = \frac{1}{3}$.
+        2. Dopočítáme $a_1$:
+            - $a_4 = a_1 \cdot q^3$
+            - $\frac{1}{3} = a_1 \cdot (\frac{1}{3})^3 = a_1 \cdot \frac{1}{27}$
+            - $a_1 = \frac{1}{3} \cdot 27 = 9$.
+        3. Dosadíme do vzorce pro $S_7$:
+            - $S_7 = 9 \cdot \frac{(\frac{1}{3})^7 - 1}{\frac{1}{3} - 1} = 9 \cdot \frac{\frac{1}{2187} - 1}{-\frac{2}{3}}$
+            - $S_7 = 9 \cdot \frac{-\frac{2186}{2187}}{-\frac{2}{3}} = 9 \cdot \frac{2186}{2187} \cdot \frac{3}{2}$
+            - $S_7 = \frac{1093}{81} \doteq 13,49$ 
+- Příklad: 
+	- Zadáno $a_1 - a_3 = -1,5$ a $a_2 + a_1 = 1,5$. Vypočtěte součet prvních 5 hodnot $S_5$.
+    - **Postup (Soustava rovnic):**
+        1. Vyjádříme vše pomocí $a_1$ a $q$:
+            - $a_1 - a_1 q^2 = -1,5 \Rightarrow a_1(1-q^2) = -1,5$
+            - $a_1 q + a_1 = 1,5 \Rightarrow a_1(1+q) = 1,5$
+        2. Vydělíme první rovnici druhou:
+            - $\frac{a_1(1-q)(1+q)}{a_1(1+q)} = \frac{-1,5}{1,5}$
+            - $1-q = -1 \Rightarrow q = 2$
+        3. Dosadíme $q$ zpět a zjistíme $a_1$:
+            - $a_1(1+2) = 1,5 \Rightarrow 3a_1 = 1,5 \Rightarrow a_1 = 0,5$
+        4. Vypočítáme $S_5$:
+            - $S_5 = 0,5 \cdot \frac{2^5 - 1}{2 - 1} = 0,5 \cdot \frac{31}{1} = 15,5$
   

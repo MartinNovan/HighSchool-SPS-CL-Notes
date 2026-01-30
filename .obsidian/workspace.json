@@ -21,8 +21,58 @@
               "icon": "lucide-file",
               "title": "02_Posloupnosti_a_rady"
             }
+          },
+          {
+            "id": "6829602a3761446d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "4_Rocnik/Matematika/05_Uvod_do_diferencialnich_vypoctu.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "05_Uvod_do_diferencialnich_vypoctu"
+            }
+          },
+          {
+            "id": "19bca0a1018733e2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "4e2305f9f2e1cd79",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawing 2026-01-30 09.54.13.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-01-30 09.54.13"
+            }
+          },
+          {
+            "id": "572e9d85c58fbdd5",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "4_Rocnik/Matematika/20251006_092107.jpg"
+              },
+              "icon": "lucide-image",
+              "title": "20251006_092107"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -143,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4_Rocnik/Matematika/02_Posloupnosti_a_rady.md",
+                "file": "4_Rocnik/Matematika/05_Uvod_do_diferencialnich_vypoctu.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 02_Posloupnosti_a_rady"
+              "title": "Outline of 05_Uvod_do_diferencialnich_vypoctu"
             }
           },
           {
@@ -188,52 +238,53 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "4cc30382c08d3670",
+  "active": "6829602a3761446d",
   "lastOpenFiles": [
-    "4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
-    "4_Rocnik/Matematika/02_Posloupnosti_a_rady.md",
-    "4_Rocnik/Matematika/01_Kuzelosecky.md",
+    "Pasted image 20260130100141.png",
+    "Excalidraw/Drawing 2026-01-30 09.54.13.md",
+    "Pasted Image 20260130100012_437.png",
     "4_Rocnik/Matematika/05_Uvod_do_diferencialnich_vypoctu.md",
+    "Pasted image 20260130095755.png",
+    "Excalidraw/Drawing 2026-01-30 09.54.13.svg",
+    "Pasted Image 20260130095431_336.png",
+    "Excalidraw/Drawing 2026-01-30 09.22.06.md",
+    "Pasted image 20260130095321.png",
+    "Pasted image 20260130093145.png",
+    "4_Rocnik/Matematika/20251006_092107.jpg",
+    "Excalidraw/Drawing 2026-01-30 09.22.06.svg",
+    "Pasted Image 20260130092213_268.png",
+    "Pasted image 20260130091552.png",
+    "4_Rocnik/Matematika/04_Vlastnosti_posloupnosti.md",
+    "4_Rocnik/Matematika/03_Financni_matematika.md",
+    "4_Rocnik/Matematika/02_Posloupnosti_a_rady.md",
+    "Maturita/Cestina/README.md",
+    "Untitled.md",
+    "Maturita/Cestina/Vypracovane_knihy/Neni_uz_v_seznamu/Hasek-Osudy_dobreho_vojaka_Svejka.md",
+    "Maturita/Cestina/Vypracovane_knihy/Neni_uz_v_seznamu/Fitzgerald-Velky_Gastby.md",
+    "Maturita/Cestina/20_Osudy_dobreho_vojaka_Svejka_za_svetove_valky.md",
+    "Maturita/Cestina/19_Velky_Gatsby.md",
+    "Maturita/Informatika/02_Webove_aplikace.md",
+    "Maturita/Informatika/01_Datove_struktury.md",
+    "Maturita/Informatika/30_Referencni_model_OSI_ISO.md",
+    "Untitled 1.md",
+    "4_Rocnik/Matematika/01_Kuzelosecky.md",
     "1_Rocnik/Informatika/03_Binarni_kodovani.md",
     "Excalidraw/Drawing 2026-01-28 10.07.15.md",
     "4_Rocnik/Matematika/20251023104925.pdf",
-    "4_Rocnik/Matematika/03_Financni_matematika.md",
-    "Maturita/Informatika/02_Webove_aplikace.md",
     "4_Rocnik/Automatizace/04_Programovani_PLC.md",
-    "Pasted image 20260128130221.png",
     "1_Rocnik/Pracovní_sešit.pdf",
     "4_Rocnik/Automatizace/02_Regulacni_obvody.md",
-    "Untitled.md",
     "Excalidraw/Drawing 2026-01-28 12.48.12.md",
     "4_Rocnik/Automatizace/00_Zapisky_z_praktickych_hodin.md",
-    "4_Rocnik/Automatizace/00_Schématické_značky.svg",
     "Maturita/Informatika/README.md",
-    "Pasted image 20260128102451.png",
-    "Excalidraw/Drawing 2026-01-28 10.07.15.svg",
     "Excalidraw",
     "1_Rocnik/Kyberneticka_bezpecnost/Materiály/1D_KYB_pojmy.pdf",
     "1_Rocnik/Informatika/eSesit_INF.pdf",
     "1_Rocnik/Informatika/02_Programovaci_jazyky.md",
-    "Maturita/Informatika/01_Datove_struktury.md",
-    "Maturita/Informatika/05_Datove_typy.md",
-    "4_Rocnik/Automatizace/01_Uvod_do_automatizace.md",
-    "4_Rocnik/Automatizace/03_Logicke_obvody.md",
-    "4_Rocnik/Automatizace/20251006_141616.jpg",
-    "4_Rocnik/Vyvoj_aplikaci/01_Sql_Server_Management_Studio.md",
-    "4_Rocnik/Vyvoj_aplikaci/02_Sql_dotazy_v_aplikacich.md",
-    "1_Rocnik/Cesky_jazyk/01_Literarni_druhy_a_zanry_literarni_formy.md",
     "4_Rocnik/Automatizace/Materialy/Automatizace_Laborky_Učebnice.pdf",
-    "4_Rocnik/Automatizace/20251006_142803.jpg",
-    "4_Rocnik/Automatizace/20251006_142759.jpg",
-    "4_Rocnik/Automatizace/Laborky/README.md",
-    "4_Rocnik/Automatizace/Laborky/01_Uvod_do_uloh_z_pneumatiky_elektropneumatiky.md",
     "4_Rocnik/Automatizace/Laborky",
-    "4_Rocnik/Operacni_systemy/07_Souborove_systemy_GNU_Linux.md",
-    "4_Rocnik/Operacni_systemy/Snímek obrazovky pořízený 2025-11-12 11-19-35.png",
-    "4_Rocnik/Operacni_systemy/Snímek obrazovky pořízený 2025-11-12 11-20-42.png",
     "4_Rocnik/Operacni_systemy/06GNULinux_uzivatel_prava.pdf",
     "4_Rocnik/Operacni_systemy/07GNULinux_uzivatele_procesy.pdf",
-    "4_Rocnik/Automatizace/_Uvod do PLC 3C 4BDE 251209b.pdf",
-    "4_Rocnik/Matematika/20251006_092107.jpg"
+    "4_Rocnik/Automatizace/_Uvod do PLC 3C 4BDE 251209b.pdf"
   ]
 }

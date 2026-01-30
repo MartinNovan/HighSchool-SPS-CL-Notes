@@ -35,13 +35,6 @@
 		- Dosadíme do vzorce $a_0=\frac{a_n}{(1+\frac{p}{100})n}$
 		- $a_0=\frac{100000}{(1+\frac{9}{100})12}=35553Kč$
 - příklad
-	- Za jak dlouho se jistina zdvojnásobí při 8% a kolik při 12%
-	- Postup
-		- Při 8%
-			- ==Dopsat==
-		- Při 12%
-			- ==Dopsat==
-- příklad
 	- Kolik nastřádáme za 10 let při úrocích 10% když pokaždé vložíme 6000 Kč
 	- Postup
 		- $n=10let$
@@ -68,4 +61,14 @@
 		- $s=270000(1.16^4\cdot\frac{1,16-1}{1.16^4-1})=96491.20Kč$
 - Příklad
 	- Za jak dlouho splatíme dluh 90 000 Kč při 14.5% p.a. ročními anuitami 14 000Kč placenými koncem období?
-	- $n=19.869let$
+	- Postup
+	    - $K=90000$, $s=14000$, $p=14.5 \rightarrow r=1.145$
+	    - Vyjdeme ze vzorce $s = K \cdot \frac{r^n(r-1)}{r^n - 1}$ a vyjádříme $n$.
+	    - Úprava:
+	        - $r^n = \frac{s}{s - K(r-1)}$
+	    - Dosazení:
+	        - $K(r-1) = 90000 \cdot 0,145 = 13050$
+	        - $s - 13050 = 14000 - 13050 = 950$
+	        - $1,145^n = \frac{14000}{950} \doteq 14,74$
+	    - Výpočet $n$ pomocí logaritmu:
+	        - $n = \frac{\ln(14,74)}{\ln(1,145)} \doteq 19,87 \text{ let}$

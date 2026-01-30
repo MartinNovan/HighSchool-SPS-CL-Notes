@@ -4442,21 +4442,37 @@ body {
 - Příklad:
 	1. **Stáhněte a nainstalujte** xampp.
 	2. Stáhněte a vložte složku 'wordpress' do složky 'htdocs' v kořenové složce xampp
-	3. Spusťte servery
-	4. odkažte se na 'localhost'
-	5. vytvoříme databazový server pro wordpress
-		1. Potřeba na linuxu spustit tyto příkazy
+		 1. Potřeba na linuxu spustit tyto příkazy
 	```bash
 	# Změna vlastníka na uživatele, pod kterým běží Apache (v XAMPP obvykle daemon)
 	sudo chown -R daemon:daemon /opt/lampp/htdocs/wordpress
 	# Nastavení práv pro zápis
 	sudo chmod -R 755 /opt/lampp/htdocs/wordpress
 	```
-	1. odkažte se na 'localhost/wordpress'
-	2. projdeme instalací wordpressu
-	3. Nainstalujeme si šablonu a aktivujeme ji
-	4. Nainstalujeme plugin a aktivujeme ho
-	5. Vytvoříme stránky
+	4. Spusťte servery
+	5. odkažte se na 'localhost' a klikněte na "phpMyAdmin"
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-16-33.png)
+	6. vytvoříme databazový server pro wordpress
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-16-50.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-17-26.png)
+	7. odkažte se na 'localhost/wordpress'
+	8. projdeme instalací wordpressu
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-13-34.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-24-25.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-32-10.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-34-15.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-34-24.png)
+	9. Nainstalujeme si šablonu a aktivujeme ji
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-36-14.png)
+	10. Nainstalujeme plugin a aktivujeme ho
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-36-49.png)
+	11. Vytvoříme stránky
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-37-29.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-43-57.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-44-17.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-44-40.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-45-46.png)
+	![](../../Snímek%20obrazovky%20z%202025-12-30%2001-49-51.png)
 ---
 ## 8 Pokročilé webové technologie
 ### 8.1 API architektury

@@ -36,6 +36,62 @@
 - Funkce $f$ má v bodě $a$ a limitu $L$, jestliže k libovolně zvolenému okolí bodu $L$ existuje okolí bodu $a$ tak, že pro všechna $x\ne a$ z tohoto okolí náleží hodnoty $f(x)$ zvolenému okolí bodu $L$.
 - Můžeme tedy psát
 	- $\lim_{x\to a}f\left(x\right)=L\lrArr\forall_{\varepsilon}>0\exists\delta>0$ tak že pro $0<|x-a|<\delta$ platí $|f(x)-L|<\varepsilon$
+- Ukázka limity
+	- funkce $y=\frac{x^-1}{x-1}$
+		- Podmínka je $x\ne1$
+		- ![](../../Pasted%20image%2020260130093145.png)
+		- Tudíž funkce není v bodě $x=1$ definována. Ale pomocí funkce dokážeme zjistit jakou hodnotu by funkce měla mít.
+			- Představte si to jako že v grafu je díra, kterou se snažíme zalepit. 
+		- Tím pádem máme $lim_{x\to 1}\frac{x^2-1}{x-1}$ a pouhým dosazením čísla jedna získáme $\frac{0}{0}$. 
+		- Kvůli tomuto nyní upravíme funkci aby jsme vytvořili funkci "identickou", která by tuto podmínku ("díru") neměla. 
+			- Rozdělíme si $x^2-1$ do dvou závorek
+				- $lim_{x\to 1}\frac{(x+1)(x-1)}{x-1}$
+			- Zkrátíme
+				- $lim_{x\to 1}\frac{(x+1)(x-1)}{x-1}$ -> $lim_{x\to 1} x+1$
+			- Nyní máme funkci $y=x+1$ což je prakticky funkce identická a nemá podmínku $x\ne 1$ a díky ní můžeme dopočítat jaká hodnota by zde byla u naší původní funkce.
+			- Dosadíme hodnotu $1$ do nové funkce
+				- $lim_{x\to 1} x+1$ -> $lim_{x\to 1} 1+1$ -> $lim_{x\to 1}=2$
+			- Této limitě říkáme "Vlastní limita ve vlastním bodě"
+## Typy limit
+- $\lim_{x\to a}=\infty$ -> nevlastní limita ve vlastním bodě
+- $\lim_{x\to\infty}=\infty$ -> nevlastní limita v nevlastním bodě
+- $\lim_{x\to a}=a$ -> vlastní limita ve vlastním bodě
+- $\lim_{x\to\infty}=a$ -> vlastní limita v nevlastním bodě
+	- $x\to\infty$ -> nevlastní / $x\to a$ -> vlastní
+	- $... = \infty$ -> nevlastní bod / $... = a$ -> vlastní bod /
+- Ukázky
+	- Vlastní limita ve vlastním bodě ($\lim_{x\to a} = L$)
+		- **Co to znamená:** Jdu ke konkrétnímu číslu a funkce se blíží ke konkrétní výšce.
+		- **Příklad:** $\lim_{x\to 1} (x+1) = 2$
+			- Když se $x$ blíží k 1, $y$ se blíží ke 2.
+			- _To je ten příklad s "lepením díry" v grafu, co je výše._
+	- Nevlastní limita ve vlastním bodě ($\lim_{x\to a} = \infty$)
+		- **Co to znamená:** Jdu ke konkrétnímu číslu, ale graf mi "vystřelí nahoru" nebo "propadne dolů".
+		- **Příklad:** $y=\frac{1}{x}$
+			- ![](../../Pasted%20image%2020260130095321.png)
+			- $\lim_{x\to 0^+} \frac{1}{x} = +\infty$
+			    - Blížím se k nule (zprava) a graf letí strmě nahoru.
+			    - ![](../../Pasted%20image%2020260130095755.png)
+		    - $\lim_{x\to 0^-} \frac{1}{x} = -\infty$
+			    - Blížím se k nule (zleva) a graf letí strmě dolů.
+			    - ![](../../Pasted%20image%2020260130100141.png)
+	- Vlastní limita v nevlastním bodě ($\lim_{x\to \infty} = L$)
+		- **Co to znamená:** Jdu doprava do nekonečna a graf se "ustálí" na nějaké hladině.
+		- **Příklad:** $\lim_{x\to \infty} \frac{1}{x} = 0$
+		    - Čím větší číslo dělím, tím menší výsledek dostanu. V nekonečnu je to nula.
+	- Nevlastní limita v nevlastním bodě ($\lim_{x\to \infty} = \infty$)
+		- **Co to znamená:** Jdu do nekonečna a graf letí taky do nekonečna.
+		- **Příklad:** $\lim_{x\to \infty} x^2 = \infty$
+		    - Čím dál jdu doprava, tím výš graf stoupá.
+- příklad
+	- $\lim_{x\to\infty}(4x^3-x^2+x+2)$
+	- výsledek $+\infty$
+### Jednostranné limity
+- $\lim_{x\to 0^+}$
+- $\lim_{x\to 0^-}$
+
+
+## Příklady limit
 - příklad
 	- $\lim_{x\to 2}\frac{3x+4}{x^2+1}$
 		- $\lim_{x\to 2}\frac{3x+4}{x^2+1}=2$
@@ -67,18 +123,43 @@
 	- $\lim_{x\to 0}\frac{sin(3x)}{5x}$
 		- 3/5 výsledek
 
-## Jednostranné limity
-- $\lim_{x\to 0^+}$
-- $\lim_{x\to 0^-}$
 
-## Limity v nevlastních bodech
-- $\lim_{x\to a}=\infty$ -> nevlastní limita ve vlastním bodě
-- $\lim_{x\to\infty}=\infty$ -> nevlastní limita v nevlastním bodě
-- $\lim_{x\to a}=a$ -> vlastní limita ve vlastním bodě
-- $\lim_{x\to\infty}=a$ -> vlastní limita v nevlastním bodě
-	- $x\to\infty$ -> nevlastní / $x\to a$ -> vlastní
-	- $... = \infty$ -> nevlastní bod / $... = a$ -> vlastní bod /
-- příklad
-	- $\lim_{x\to\infty}(4x^3-x^2+x+2)$
-	- výsledek $+\infty$
-- 
+## Užití limity funkce: Asymptoty
+- Asymptota je přímka, ke které se graf funkce nekonečně přibližuje, ale (obvykle) se jí nedotkne. Limity nám slouží jako nástroj k jejich nalezení.
+### 1. Asymptota bez směrnice (ABS)
+- Je to **svislá čára** (kolmá na osu x).
+- Hledáme ji v bodech, kde funkce **není definovaná** (body nespojitosti, "díry").
+- **Postup:**
+    1. Najdeme podezřelý bod $x_0$ (tam, kde je např. jmenovatel nula).
+    2. Spočítáme jednostranné limity v tomto bodě ($\lim_{x\to x_0^+}$ a $\lim_{x\to x_0^-}$).
+    3. Pokud alespoň jedna vyjde $\pm\infty$, pak přímka $x = x_0$ je ABS.
+- **Příklad:** $y = \frac{1}{x+2}$
+    1. **Podezřelý bod:** $x = -2$ (protože ve jmenovateli by byla nula).
+    2. **Ověření:**
+        - $\lim_{x\to -2^+} \frac{1}{x+2} = \frac{1}{0^+} = +\infty$ (Jdeme k -2 zprava, např. -1.99, jmenovatel je kladná nula).
+        - $\lim_{x\to -2^-} \frac{1}{x+2} = \frac{1}{0^-} = -\infty$ (Jdeme k -2 zleva, např. -2.01, jmenovatel je záporná nula).
+    3. **Závěr:** Protože vyšlo nekonečno, přímka $x = -2$ je asymptota bez směrnice.
+### 2. Asymptota se směrnicí (ASS)
+- Je to **šikmá přímka** ve tvaru $y = kx + q$.
+- Zkoumá chování funkce "na koncích světa" (v $\pm\infty$).
+- **Vzorce:**
+    - $k = \lim_{x\to \infty} \frac{f(x)}{x}$
+    - $q = \lim_{x\to \infty} (f(x) - kx)$
+    - _(Pozor: Pokud $k$ vyjde $\pm\infty$ nebo neexistuje, ASS neexistuje. Pokud $k=0$, může jít o vodorovnou asymptotu)._
+### Příklad na výpočet (Doplnění tvého příkladu)
+**Zadání:** Najděte asymptoty funkce $y = x + \frac{1}{x}$
+**A) Asymptota bez směrnice (ABS)**
+1. **Definiční obor:** $x \neq 0$. Podezřelý bod je $x=0$.
+2. **Limity:**
+    - $\lim_{x\to 0^+} (x + \frac{1}{x}) = 0 + \infty = +\infty$
+    - $\lim_{x\to 0^-} (x + \frac{1}{x}) = 0 - \infty = -\infty$
+3. **Závěr:** Přímka **$x=0$** (osa y) je ABS.
+**B) Asymptota se směrnicí (ASS)**
+Hledáme přímku $y = kx + q$.
+4. **Výpočet $k$:**
+    - $k = \lim_{x\to \infty} \frac{f(x)}{x} = \lim_{x\to \infty} \frac{x + \frac{1}{x}}{x} = \lim_{x\to \infty} (\frac{x}{x} + \frac{1}{x^2}) = \lim_{x\to \infty} (1 + 0) = \mathbf{1}$
+5. **Výpočet $q$:**
+	- $q = \lim_{x\to \infty} (f(x) - kx) = \lim_{x\to \infty} ((x + \frac{1}{x}) - 1\cdot x) = \lim_{x\to \infty} (x + \frac{1}{x} - x) = \lim_{x\to \infty} (\frac{1}{x}) = \mathbf{0}$
+6. **Závěr:**
+    - Máme $k=1$ a $q=0$. Rovnice asymptoty je $y = 1x + 0$, tedy **$y=x$**.
+- **Celkový výsledek:** Funkce má svislou asymptotu $x=0$ a šikmou asymptotu $y=x$.

@@ -19,10 +19,10 @@
 12. [Pán prstenů - Společenstvo prstenu](12_Pan_prstenu-Spolecenstvo_prstenu.md)
 13. [Petr a Lucie](13_Petr_a_Lucie.md)
 14. [Na západní frontě klid](14_Na_zapadni_fronte_klid.md)
+15. [Velký Gatsby](19_Velky_Gatsby.md)
 ## 20. a 21. století česká literatura
 15. [Bílá nemoc](15_Bila_nemoc.md)
 16. [R.U.R](16_RUR.md)
 17. [Petrolejové lampy](17_Petrolejove_lampy.md)
 18. [Ostře sledované vlaky](18_Ostre_sledovane_vlaky.md)
-19. [Smrt krásných srnců](19_Smrt_krasnych_srncu.md)
-20. [Spalovač mrtvol](20_Spalovac_mrtvol.md)
+19. [Osudy dobrého vojáka Švejka za světové války](20_Osudy_dobreho_vojaka_Svejka_za_svetove_valky.md)
